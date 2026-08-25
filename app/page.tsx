@@ -1,11 +1,19 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, type PointerEvent } from 'react';
 import { featuredProjects, projects, type Project } from './projects';
+
+const fanPositions = [
+  { x: 'clamp(-370px, -31vw, -230px)', y: 'clamp(-170px, -14vw, -110px)', r: '-9deg' },
+  { x: 'clamp(230px, 31vw, 370px)', y: 'clamp(-170px, -14vw, -110px)', r: '9deg' },
+  { x: 'clamp(-400px, -33vw, -245px)', y: 'clamp(120px, 14vw, 165px)', r: '7deg' },
+  { x: 'clamp(245px, 33vw, 400px)', y: 'clamp(120px, 14vw, 160px)', r: '-7deg' },
+];
 
 export default function Home() {
   const [active, setActive] = useState<Project | null>(null);
   const [loading, setLoading] = useState(false);
+  const [fanOpen, setFanOpen] = useState(false);
 
   const loadProject = useCallback((project: Project) => {
     setActive(project);
@@ -20,6 +28,17 @@ export default function Home() {
     const nextIndex = (currentIndex + direction + featuredProjects.length) % featuredProjects.length;
     loadProject(featuredProjects[nextIndex]);
   }, [active, loadProject]);
+
+  const revealNearbyCartridges = (event: PointerEvent<HTMLElement>) => {
+    if (event.pointerType === 'touch') return;
+    const consoleElement = event.currentTarget.querySelector<HTMLElement>('.console-stage');
+    if (!consoleElement) return;
+    const bounds = consoleElement.getBoundingClientRect();
+    const centerX = bounds.left + bounds.width / 2;
+    const centerY = bounds.top + bounds.height / 2;
+    const distance = Math.hypot(event.clientX - centerX, event.clientY - centerY);
+    setFanOpen(distance < Math.max(520, bounds.width * 1.25));
+  };
 
   useEffect(() => {
     const handleKey = (event: KeyboardEvent) => {
@@ -40,10 +59,44 @@ export default function Home() {
         <span className="nav-year">2023—2026</span>
       </nav>
 
-      <section className="hero" id="top">
+      <section
+        className={`hero ${fanOpen ? 'is-fan-open' : ''}`}
+        id="top"
+        onPointerMove={revealNearbyCartridges}
+        onPointerLeave={() => setFanOpen(false)}
+        onFocusCapture={() => setFanOpen(true)}
+        onBlurCapture={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) setFanOpen(false);
+        }}
+      >
         <div className="hero-copy" data-reveal>
           <p className="pixel-kicker">VISUAL DESIGNER / PLAYER 01</p>
           <h1>选择一张卡带，<span>开始浏览我的作品。</span></h1>
+        </div>
+
+        <div className={`hero-cartridge-fan ${fanOpen ? 'is-open' : ''}`} aria-label="靠近游戏机后出现的项目卡带">
+          {featuredProjects.map((project, index) => (
+            <button
+              key={project.id}
+              className={`fan-cartridge ${active?.id === project.id ? 'is-active' : ''}`}
+              style={{
+                '--cart-color': project.color,
+                '--fan-x': fanPositions[index].x,
+                '--fan-y': fanPositions[index].y,
+                '--fan-r': fanPositions[index].r,
+                '--fan-delay': `${index * 55}ms`,
+              } as React.CSSProperties}
+              type="button"
+              onClick={() => loadProject(project)}
+              aria-label={`载入项目：${project.title}`}
+              aria-pressed={active?.id === project.id}
+            >
+              <span className="fan-grip" />
+              <span className="fan-cover"><img src={project.image} alt="" /></span>
+              <span className="fan-meta"><small>{project.id}</small><strong>{project.title}</strong></span>
+              <span className="fan-contacts"><i /><i /><i /><i /><i /></span>
+            </button>
+          ))}
         </div>
 
         <div className="console-stage" aria-label="互动作品游戏机" data-reveal="scale">
@@ -85,7 +138,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-aside" data-reveal><span>四款精选游戏</span><p>品牌视觉 / IP 衍生 / 原创角色</p><small>← → SELECT · ENTER START</small></div>
+        <div className="hero-aside" data-reveal><span>靠近游戏机 · 弹出卡带</span><p>品牌视觉 / IP 衍生 / 原创角色</p><small>HOVER TO REVEAL · CLICK TO LOAD</small></div>
       </section>
 
       <section className="cartridge-dock" id="work" aria-labelledby="dock-title" data-reveal>
@@ -165,3 +218,4 @@ export default function Home() {
     </main>
   );
 }
+
