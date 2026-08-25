@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { projects } from '../../projects';
+import ProjectGallery from './project-gallery';
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -34,7 +35,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <Link href="/#contact">CONTACT</Link>
       </nav>
 
-      <header className="manual-hero">
+      <header className="manual-hero" data-reveal>
         <div className="manual-title">
           <p>GAME MANUAL / {project.category}</p>
           <span>{project.id}</span>
@@ -49,14 +50,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </div>
       </header>
 
-      <section className="meta-strip" aria-label="项目元数据">
+      <section className="meta-strip" aria-label="项目元数据" data-reveal>
         <div><small>RELEASE</small><b>{project.year}</b></div>
         <div><small>CATEGORY</small><b>{project.category}</b></div>
         <div><small>PLAYER ROLE</small><b>{project.role}</b></div>
         <div><small>STATUS</small><b>COMPLETED ●</b></div>
       </section>
 
-      <section className="manual-chapter" id="chapter-one">
+      <section className="manual-chapter" id="chapter-one" data-reveal>
         <div className="chapter-label"><span>CHAPTER 01</span><b>MISSION BRIEF</b></div>
         <div className="chapter-grid">
           <h2>从需求出发，<br />建立完整视觉关卡。</h2>
@@ -68,16 +69,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      <section className="visual-chapter">
+      <section className="visual-chapter" data-reveal>
         <div className="chapter-label"><span>CHAPTER 02</span><b>VISUAL WALKTHROUGH</b></div>
-        <div className="visual-stack">
-          {project.gallery.map((image, imageIndex) => (
-            <figure key={image}><img src={image} alt={`${project.title}设计展示 ${imageIndex + 1}`} /><figcaption><span>{project.id}—{String(imageIndex + 1).padStart(2,'0')}</span><span>DESIGN SHOWCASE</span></figcaption></figure>
-          ))}
-        </div>
+        <ProjectGallery gallery={project.gallery} projectId={project.id} projectTitle={project.title} />
       </section>
 
-      <section className="next-game">
+      <section className="next-game" data-reveal>
         <div><p>GAME COMPLETE / AUTO SAVE</p><h2>弹出当前卡带，<br />载入下一款游戏。</h2></div>
         <Link href={`/work/${next.slug}`} style={{ '--next-color': next.color } as React.CSSProperties}>
           <div className="next-cart"><img src={next.image} alt="" /><span>{next.id}</span></div>

@@ -41,12 +41,12 @@ export default function Home() {
       </nav>
 
       <section className="hero" id="top">
-        <div className="hero-copy">
+        <div className="hero-copy" data-reveal>
           <p className="pixel-kicker">VISUAL DESIGNER / PLAYER 01</p>
           <h1>选择一张卡带，<span>开始浏览我的作品。</span></h1>
         </div>
 
-        <div className="console-stage" aria-label="互动作品游戏机">
+        <div className="console-stage" aria-label="互动作品游戏机" data-reveal="scale">
           <div className="stage-glow" /><div className="console-shadow" />
           <div className={`console ${active ? 'has-cartridge' : ''}`}>
             <div className="console-highlight" />
@@ -60,7 +60,7 @@ export default function Home() {
                 ) : active ? (
                   <div className="project-preview">
                     <img src={active.image} alt={`${active.title}项目预览`} />
-                    <div className="preview-meta"><span>{active.id}</span><strong>{active.title}</strong><a href={`/work/${active.slug}`}>ENTER PROJECT →</a></div>
+                    <div className="preview-meta"><span>{active.id}</span><strong>{active.title}</strong><small>{active.category} / {active.year}</small><a href={`/work/${active.slug}`}>A · ENTER PROJECT →</a></div>
                   </div>
                 ) : (
                   <div className="boot-screen"><span className="boot-brand">YANG TING</span><strong>PORTFOLIO</strong><p>INSERT A PROJECT</p><i>PRESS START</i></div>
@@ -85,14 +85,14 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-aside"><span>四款精选游戏</span><p>品牌视觉 / IP 衍生 / 原创角色</p><small>← → SELECT · ENTER START</small></div>
+        <div className="hero-aside" data-reveal><span>四款精选游戏</span><p>品牌视觉 / IP 衍生 / 原创角色</p><small>← → SELECT · ENTER START</small></div>
       </section>
 
-      <section className="cartridge-dock" id="work" aria-labelledby="dock-title">
+      <section className="cartridge-dock" id="work" aria-labelledby="dock-title" data-reveal>
         <div className="dock-heading"><p id="dock-title">SELECTED GAME LIBRARY</p><span>04 CARTRIDGES</span></div>
         <div className="cartridge-list">
           {featuredProjects.map((project) => (
-            <button key={project.id} className={`cartridge ${active?.id === project.id ? 'is-active' : ''}`} style={{ '--cart-color': project.color } as React.CSSProperties} type="button" onClick={() => loadProject(project)} aria-label={`载入项目：${project.title}`}>
+            <button key={project.id} className={`cartridge ${active?.id === project.id ? 'is-active' : ''}`} style={{ '--cart-color': project.color } as React.CSSProperties} type="button" onClick={() => loadProject(project)} aria-label={`载入项目：${project.title}`} aria-pressed={active?.id === project.id}>
               <span className="cartridge-shell">
                 <span className="cart-grip" />
                 <span className="cart-label"><img src={project.image} alt="" /><span className="cart-overlay"><small>{project.id}</small><strong>{project.title}</strong></span></span>
@@ -104,7 +104,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="library-section" aria-labelledby="library-title">
+      <section className="library-section" aria-labelledby="library-title" data-reveal>
         <div className="section-index"><span>02 / GAME LIBRARY</span><span>ALL RELEASES — 2023/2026</span></div>
         <div className="library-intro">
           <p>COMPLETE COLLECTION</p>
@@ -114,15 +114,16 @@ export default function Home() {
         <div className="bonus-grid">
           {projects.slice(4).map((project) => (
             <a key={project.id} className="bonus-game" href={`/work/${project.slug}`} style={{ '--cart-color': project.color } as React.CSSProperties}>
+              <div className="bonus-slot-bar"><span>EXPANSION SLOT / {project.id}</span><b>READY ●</b></div>
               <div className="bonus-image"><img src={project.image} alt={`${project.title}项目封面`} /><span>{project.id}</span></div>
               <div><small>{project.category} / {project.year}</small><h3>{project.title}</h3><p>{project.subtitle}</p></div>
-              <i>UNLOCK →</i>
+              <i>INSERT / UNLOCK →</i>
             </a>
           ))}
         </div>
       </section>
 
-      <section className="about-section" id="about" aria-labelledby="about-title">
+      <section className="about-section" id="about" aria-labelledby="about-title" data-reveal>
         <div className="profile-card">
           <div className="profile-head"><span>PLAYER PROFILE</span><span>01</span></div>
           <div className="profile-main">
@@ -145,7 +146,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact-section" id="contact" aria-labelledby="contact-title">
+      <section className="contact-section" id="contact" aria-labelledby="contact-title" data-reveal>
         <div className="contact-copy"><p>READY TO CONNECT?</p><h2 id="contact-title">添加我的<br /><span>FRIEND CODE</span></h2><small>期待新的工作机会与创意合作。</small></div>
         <div className="friend-card">
           <div className="friend-top"><span>PLAYER 01</span><i>● ONLINE</i></div>

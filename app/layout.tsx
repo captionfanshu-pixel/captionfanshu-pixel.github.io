@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import SiteEffects from './site-effects';
 
 const siteUrl = process.env.GITHUB_PAGES === 'true'
   ? 'https://captionfanshu-pixel.github.io'
@@ -23,5 +24,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-CN"><body>{children}</body></html>;
+  return <html lang="zh-CN"><body><SiteEffects />{children}</body></html>;
 }
