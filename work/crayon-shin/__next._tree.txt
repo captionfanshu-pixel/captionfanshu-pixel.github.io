@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/00rb8di~ib6s_.css","style"]
+:HL["/_next/static/chunks/0yt_qqslum914.css","style"]
 :HL["/projects/crayon-shin.jpg","image"]
 :HL["/projects/veggie-kingdom.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"crayon-shin","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"sFb8AhsYwApWLrmrA-Hbh"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"crayon-shin","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"3R26czJfilgyvNjRjsXDC"}
