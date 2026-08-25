@@ -10,10 +10,17 @@ const fanPositions = [
   { x: 'clamp(245px, 33vw, 400px)', y: 'clamp(120px, 14vw, 160px)', r: '-7deg' },
 ];
 
+const projectGroups = [
+  { id: '01', title: '品牌与营销视觉', english: 'BRAND / CAMPAIGN', projects: projects.slice(0, 3) },
+  { id: '02', title: '商业 IP 与空间', english: 'COMMERCIAL IP', projects: projects.slice(3, 4) },
+  { id: '03', title: '原创角色世界', english: 'ORIGINAL IP', projects: projects.slice(4) },
+];
+
 export default function Home() {
   const [active, setActive] = useState<Project | null>(null);
   const [loading, setLoading] = useState(false);
   const [fanOpen, setFanOpen] = useState(false);
+  const [archiveActive, setArchiveActive] = useState(projects[0].slug);
 
   const loadProject = useCallback((project: Project) => {
     setActive(project);
@@ -141,37 +148,54 @@ export default function Home() {
         <div className="hero-aside" data-reveal><span>靠近游戏机 · 弹出卡带</span><p>品牌视觉 / IP 衍生 / 原创角色</p><small>HOVER TO REVEAL · CLICK TO LOAD</small></div>
       </section>
 
-      <section className="cartridge-dock" id="work" aria-labelledby="dock-title" data-reveal>
-        <div className="dock-heading"><p id="dock-title">SELECTED GAME LIBRARY</p><span>04 CARTRIDGES</span></div>
-        <div className="cartridge-list">
-          {featuredProjects.map((project) => (
-            <button key={project.id} className={`cartridge ${active?.id === project.id ? 'is-active' : ''}`} style={{ '--cart-color': project.color } as React.CSSProperties} type="button" onClick={() => loadProject(project)} aria-label={`载入项目：${project.title}`} aria-pressed={active?.id === project.id}>
-              <span className="cartridge-shell">
-                <span className="cart-grip" />
-                <span className="cart-label"><img src={project.image} alt="" /><span className="cart-overlay"><small>{project.id}</small><strong>{project.title}</strong></span></span>
-                <span className="cart-board"><i /><i /><i /><i /><i /></span>
-              </span>
-              <span className="cartridge-caption"><b>{project.title}</b><small>{project.subtitle}</small></span>
-            </button>
-          ))}
+      <section className="project-index" id="work" aria-labelledby="project-index-title" data-reveal>
+        <div className="section-index"><span>02 / PROJECT ARCHIVE</span><span>HOVER TO PREVIEW — 2024/2025</span></div>
+        <div className="project-index-intro">
+          <p>SELECTED WORKS</p>
+          <h2 id="project-index-title">按创作类型，<br />浏览全部项目。</h2>
+          <span>将鼠标停在项目上即可展开详情；点击绿色按钮进入完整项目页面。</span>
         </div>
-      </section>
 
-      <section className="library-section" aria-labelledby="library-title" data-reveal>
-        <div className="section-index"><span>02 / GAME LIBRARY</span><span>ALL RELEASES — 2023/2026</span></div>
-        <div className="library-intro">
-          <p>COMPLETE COLLECTION</p>
-          <h2 id="library-title">还有两款隐藏游戏，<br />等待解锁。</h2>
-          <span>精选项目之外，收藏库保留两个完整的原创 IP 世界。</span>
-        </div>
-        <div className="bonus-grid">
-          {projects.slice(4).map((project) => (
-            <a key={project.id} className="bonus-game" href={`/work/${project.slug}`} style={{ '--cart-color': project.color } as React.CSSProperties}>
-              <div className="bonus-slot-bar"><span>EXPANSION SLOT / {project.id}</span><b>READY ●</b></div>
-              <div className="bonus-image"><img src={project.image} alt={`${project.title}项目封面`} /><span>{project.id}</span></div>
-              <div><small>{project.category} / {project.year}</small><h3>{project.title}</h3><p>{project.subtitle}</p></div>
-              <i>INSERT / UNLOCK →</i>
-            </a>
+        <div className="project-groups">
+          {projectGroups.map((group) => (
+            <div className="project-group" key={group.id}>
+              <div className="project-group-heading"><span>{group.id}</span><h3>{group.title}</h3><small>{group.english}</small></div>
+              <div className="project-rows">
+                {group.projects.map((project) => {
+                  const isOpen = archiveActive === project.slug;
+                  return (
+                    <article
+                      className={`project-row ${isOpen ? 'is-open' : ''}`}
+                      key={project.id}
+                      style={{ '--project-row-color': project.color } as React.CSSProperties}
+                      onMouseEnter={() => setArchiveActive(project.slug)}
+                      onFocusCapture={() => setArchiveActive(project.slug)}
+                    >
+                      <button className="project-row-trigger" type="button" onClick={() => setArchiveActive(project.slug)} aria-expanded={isOpen}>
+                        <span>{project.id}</span>
+                        <strong>{project.title}</strong>
+                        <small>{project.category}</small>
+                        <em>{project.year}</em>
+                        <i aria-hidden="true">↗</i>
+                      </button>
+                      <div className="project-row-detail">
+                        <div>
+                          <a className="project-row-image" href={`/work/${project.slug}`} aria-label={`查看${project.title}完整项目`}>
+                            <img src={project.image} alt={`${project.title}项目预览`} />
+                            <span>{project.english}</span>
+                          </a>
+                          <div className="project-row-copy">
+                            <p>{project.summary}</p>
+                            <dl><div><dt>ROLE</dt><dd>{project.role}</dd></div><div><dt>TYPE</dt><dd>{project.subtitle}</dd></div></dl>
+                            <a href={`/work/${project.slug}`}>VIEW PROJECT <b>→</b></a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
           ))}
         </div>
       </section>
