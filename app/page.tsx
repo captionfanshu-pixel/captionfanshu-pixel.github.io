@@ -10,6 +10,13 @@ const fanPositions = [
   { x: 'clamp(245px, 33vw, 400px)', y: 'clamp(120px, 14vw, 160px)', r: '-7deg' },
 ];
 
+const cartridgeImages = [
+  '/cartridges/ip.webp',
+  '/cartridges/practice.webp',
+  '/cartridges/linlee.webp',
+  '/cartridges/ldcx.webp',
+];
+
 const projectGroups = [
   { id: '01', title: '品牌与营销视觉', english: 'BRAND / CAMPAIGN', projects: projects.slice(0, 3) },
   { id: '02', title: '商业 IP 与空间', english: 'COMMERCIAL IP', projects: projects.slice(3, 4) },
@@ -21,13 +28,15 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [fanOpen, setFanOpen] = useState(false);
   const [archiveActive, setArchiveActive] = useState(projects[0].slug);
+  const activeCartridgeIndex = active ? featuredProjects.findIndex((project) => project.id === active.id) : -1;
+  const activeCartridgeImage = activeCartridgeIndex >= 0 ? cartridgeImages[activeCartridgeIndex] : null;
 
   const loadProject = useCallback((project: Project) => {
     setActive(project);
     setLoading(true);
     window.setTimeout(() => {
       setLoading(false);
-    }, 520);
+    }, 360);
   }, []);
 
   const moveSelection = useCallback((direction: number) => {
@@ -93,10 +102,8 @@ export default function Home() {
               aria-label={`载入项目：${project.title}`}
               aria-pressed={active?.id === project.id}
             >
-              <span className="fan-grip" />
-              <span className="fan-cover"><img src={project.image} alt="" /></span>
-              <span className="fan-meta"><small>{project.id}</small><strong>{project.title}</strong></span>
-              <span className="fan-contacts"><i /><i /><i /><i /><i /></span>
+              <img className="fan-art" src={cartridgeImages[index]} alt="" />
+              <span className="fan-project-name">{project.id} · {project.title}</span>
             </button>
           ))}
         </div>
@@ -105,17 +112,15 @@ export default function Home() {
           <div className="stage-glow" /><div className="console-shadow" />
           <div className={`console-render-wrap ${active ? 'has-project' : ''}`}>
             <img className="console-render" src="/console-wumi.webp" alt="WUMI 紫色掌上游戏机" />
-            {(loading || active) && (
-              <div className={`render-screen-overlay ${loading ? 'is-loading' : ''}`} key={active?.id ?? 'loading'}>
+            {activeCartridgeImage && <img className="inserted-render-cartridge" key={activeCartridgeImage} src={activeCartridgeImage} alt={`${active?.title ?? ''}项目卡带已插入`} />}
+            {active && (
+              <div className={`render-screen-overlay ${loading ? 'is-loading' : ''}`} key={active.id}>
                 <div className="render-scanlines" />
-                {loading ? (
-                  <div className="render-loading"><span>LOADING</span><i /></div>
-                ) : active ? (
-                  <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
-                    <img src={active.image} alt={`${active.title}项目预览`} />
-                    <span><small>{active.id} / {active.year}</small><strong>{active.title}</strong><em>ENTER →</em></span>
-                  </a>
-                ) : null}
+                <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
+                  <img src={active.image} alt={`${active.title}项目预览`} />
+                  <span><small>{active.id} / {active.year}</small><strong>{active.title}</strong><em>ENTER →</em></span>
+                </a>
+                {loading && <div className="render-loading"><span>LOADING</span><i /></div>}
               </div>
             )}
             <button className="render-prev" type="button" onClick={() => moveSelection(-1)} aria-label="上一个项目">PREV</button>
