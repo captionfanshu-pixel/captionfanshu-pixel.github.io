@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/09djf-0_a33_l.css","style"]
+:HL["/_next/static/chunks/0_oxrr6eea2g7.css","style"]
 :HL["/projects/spring-duck.jpg","image"]
 :HL["/projects/weilong.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"spring-duck","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"1sH9kqeOKpMcVGUWlcHYr"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"spring-duck","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"pFZxDVzinSlesaQtwwSPC"}
