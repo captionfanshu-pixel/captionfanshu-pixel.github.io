@@ -19,6 +19,13 @@ const cartridgeImages = [
 
 const cartridgeGlows = ['#f3a46f', '#63d8f4', '#8bea68', '#ff646b'];
 
+const cartridgeScreenImages = [
+  '/screen-content/orange.webp',
+  '/screen-content/blue.webp',
+  '/screen-content/green.webp',
+  '/screen-content/red.webp',
+];
+
 const projectGroups = [
   { id: '01', title: '品牌与营销视觉', english: 'BRAND / CAMPAIGN', projects: projects.slice(0, 3) },
   { id: '02', title: '商业 IP 与空间', english: 'COMMERCIAL IP', projects: projects.slice(3, 4) },
@@ -30,6 +37,8 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [fanOpen, setFanOpen] = useState(false);
   const [archiveActive, setArchiveActive] = useState(projects[0].slug);
+  const activeCartridgeIndex = active ? featuredProjects.findIndex((project) => project.id === active.id) : -1;
+  const activeScreenImage = activeCartridgeIndex >= 0 ? cartridgeScreenImages[activeCartridgeIndex] : null;
 
   const loadProject = useCallback((project: Project) => {
     setActive(project);
@@ -115,7 +124,7 @@ export default function Home() {
             {active && (
               <div className={`render-screen-overlay ${loading ? 'is-loading' : ''}`} key={active.id}>
                 <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
-                  <img src={active.image} alt={`${active.title}项目预览`} />
+                  <img src={activeScreenImage ?? active.image} alt={`${active.title}项目预览`} />
                 </a>
                 {loading && <div className="render-loading"><span>LOADING</span><i /></div>}
               </div>
