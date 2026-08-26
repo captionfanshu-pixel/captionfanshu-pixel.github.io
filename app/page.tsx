@@ -51,13 +51,34 @@ export default function Home() {
 
   const revealNearbyCartridges = (event: PointerEvent<HTMLElement>) => {
     if (event.pointerType === 'touch') return;
-    const consoleElement = event.currentTarget.querySelector<HTMLElement>('.console-stage');
+    const heroElement = event.currentTarget;
+    const consoleElement = heroElement.querySelector<HTMLElement>('.console-stage');
     if (!consoleElement) return;
+    const heroBounds = heroElement.getBoundingClientRect();
     const bounds = consoleElement.getBoundingClientRect();
     const centerX = bounds.left + bounds.width / 2;
     const centerY = bounds.top + bounds.height / 2;
+    const followX = Math.max(-1, Math.min(1, (event.clientX - (heroBounds.left + heroBounds.width / 2)) / (heroBounds.width / 2)));
+    const followY = Math.max(-1, Math.min(1, (event.clientY - (heroBounds.top + heroBounds.height / 2)) / (heroBounds.height / 2)));
+
+    heroElement.style.setProperty('--follow-x', `${followX * 14}px`);
+    heroElement.style.setProperty('--follow-y', `${followY * 10}px`);
+    heroElement.style.setProperty('--follow-rotate-x', `${followY * -2.4}deg`);
+    heroElement.style.setProperty('--follow-rotate-y', `${followX * 3.2}deg`);
+    heroElement.classList.add('is-pointer-tracking');
+
     const distance = Math.hypot(event.clientX - centerX, event.clientY - centerY);
     setFanOpen(distance < Math.max(520, bounds.width * 1.25));
+  };
+
+  const resetConsoleFollow = (event: PointerEvent<HTMLElement>) => {
+    const heroElement = event.currentTarget;
+    heroElement.style.setProperty('--follow-x', '0px');
+    heroElement.style.setProperty('--follow-y', '0px');
+    heroElement.style.setProperty('--follow-rotate-x', '0deg');
+    heroElement.style.setProperty('--follow-rotate-y', '0deg');
+    heroElement.classList.remove('is-pointer-tracking');
+    setFanOpen(false);
   };
 
   useEffect(() => {
@@ -83,7 +104,7 @@ export default function Home() {
         className={`hero ${fanOpen ? 'is-fan-open' : ''}`}
         id="top"
         onPointerMove={revealNearbyCartridges}
-        onPointerLeave={() => setFanOpen(false)}
+        onPointerLeave={resetConsoleFollow}
         onFocusCapture={() => setFanOpen(true)}
         onBlurCapture={(event) => {
           if (!event.currentTarget.contains(event.relatedTarget)) setFanOpen(false);
