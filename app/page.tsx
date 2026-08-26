@@ -4,10 +4,10 @@ import { useCallback, useEffect, useState, type PointerEvent } from 'react';
 import { featuredProjects, projects, type Project } from './projects';
 
 const fanPositions = [
-  { x: 'clamp(-370px, -31vw, -230px)', y: 'clamp(-170px, -14vw, -110px)', r: '-9deg' },
-  { x: 'clamp(230px, 31vw, 370px)', y: 'clamp(-170px, -14vw, -110px)', r: '9deg' },
-  { x: 'clamp(-400px, -33vw, -245px)', y: 'clamp(120px, 14vw, 165px)', r: '7deg' },
-  { x: 'clamp(245px, 33vw, 400px)', y: 'clamp(120px, 14vw, 160px)', r: '-7deg' },
+  { x: 'clamp(-340px, -27vw, -210px)', y: 'clamp(-150px, -12vw, -92px)', r: '-8deg' },
+  { x: 'clamp(255px, 27vw, 340px)', y: 'clamp(145px, 14vw, 190px)', r: '20deg' },
+  { x: 'clamp(255px, 27vw, 340px)', y: 'clamp(-150px, -12vw, -92px)', r: '16deg' },
+  { x: 'clamp(-340px, -28vw, -220px)', y: 'clamp(145px, 14vw, 190px)', r: '-26deg' },
 ];
 
 const cartridgeImages = [
@@ -28,8 +28,6 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [fanOpen, setFanOpen] = useState(false);
   const [archiveActive, setArchiveActive] = useState(projects[0].slug);
-  const activeCartridgeIndex = active ? featuredProjects.findIndex((project) => project.id === active.id) : -1;
-  const activeCartridgeImage = activeCartridgeIndex >= 0 ? cartridgeImages[activeCartridgeIndex] : null;
 
   const loadProject = useCallback((project: Project) => {
     setActive(project);
@@ -103,7 +101,6 @@ export default function Home() {
               aria-pressed={active?.id === project.id}
             >
               <img className="fan-art" src={cartridgeImages[index]} alt="" />
-              <span className="fan-project-name">{project.id} · {project.title}</span>
             </button>
           ))}
         </div>
@@ -112,13 +109,11 @@ export default function Home() {
           <div className="stage-glow" /><div className="console-shadow" />
           <div className={`console-render-wrap ${active ? 'has-project' : ''}`}>
             <img className="console-render" src="/console-wumi.webp" alt="WUMI 紫色掌上游戏机" />
-            {activeCartridgeImage && <img className="inserted-render-cartridge" key={activeCartridgeImage} src={activeCartridgeImage} alt={`${active?.title ?? ''}项目卡带已插入`} />}
             {active && (
               <div className={`render-screen-overlay ${loading ? 'is-loading' : ''}`} key={active.id}>
                 <div className="render-scanlines" />
                 <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
                   <img src={active.image} alt={`${active.title}项目预览`} />
-                  <span><small>{active.id} / {active.year}</small><strong>{active.title}</strong><em>ENTER →</em></span>
                 </a>
                 {loading && <div className="render-loading"><span>LOADING</span><i /></div>}
               </div>
