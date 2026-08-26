@@ -34,7 +34,6 @@ const projectGroups = [
 
 export default function Home() {
   const [active, setActive] = useState<Project | null>(null);
-  const [loading, setLoading] = useState(false);
   const [fanOpen, setFanOpen] = useState(false);
   const [archiveActive, setArchiveActive] = useState(projects[0].slug);
   const activeCartridgeIndex = active ? featuredProjects.findIndex((project) => project.id === active.id) : -1;
@@ -42,10 +41,6 @@ export default function Home() {
 
   const loadProject = useCallback((project: Project) => {
     setActive(project);
-    setLoading(true);
-    window.setTimeout(() => {
-      setLoading(false);
-    }, 360);
   }, []);
 
   const moveSelection = useCallback((direction: number) => {
@@ -69,12 +64,12 @@ export default function Home() {
     const handleKey = (event: KeyboardEvent) => {
       if (event.key === 'ArrowLeft') moveSelection(-1);
       if (event.key === 'ArrowRight') moveSelection(1);
-      if (event.key === 'Enter' && active && !loading) window.location.href = `/work/${active.slug}`;
+      if (event.key === 'Enter' && active) window.location.href = `/work/${active.slug}`;
       if (event.key.toLowerCase() === 'b') setActive(null);
     };
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
-  }, [active, loading, moveSelection]);
+  }, [active, moveSelection]);
 
   return (
     <main className="site-shell">
@@ -122,11 +117,10 @@ export default function Home() {
           <div className={`console-render-wrap ${active ? 'has-project' : ''}`}>
             <img className="console-render" src="/console-wumi.webp" alt="WUMI 紫色掌上游戏机" />
             {active && (
-              <div className={`render-screen-overlay ${loading ? 'is-loading' : ''}`} key={active.id}>
+              <div className="render-screen-overlay" key={active.id}>
                 <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
                   <img src={activeScreenImage ?? active.image} alt={`${active.title}项目预览`} />
                 </a>
-                {loading && <div className="render-loading"><span>LOADING</span><i /></div>}
               </div>
             )}
             <button className="render-prev" type="button" onClick={() => moveSelection(-1)} aria-label="上一个项目">PREV</button>
