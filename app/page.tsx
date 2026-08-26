@@ -108,40 +108,24 @@ export default function Home() {
 
         <div className="console-stage" aria-label="互动作品游戏机" data-reveal="scale">
           <div className="stage-glow" /><div className="console-shadow" />
-          <div className={`console ${active ? 'has-cartridge' : ''}`}>
-            <div className="console-highlight" />
-            <div className="cartridge-slot" aria-hidden="true" />
-            {active && <div className="inserted-cartridge" key={active.id}><img src={active.image} alt="" /><span>{active.id}</span></div>}
-            <div className="screen-bezel">
-              <div className={`screen ${loading ? 'is-loading' : ''}`}>
-                <div className="scanlines" />
+          <div className={`console-render-wrap ${active ? 'has-project' : ''}`}>
+            <img className="console-render" src="/console-wumi.webp" alt="WUMI 紫色掌上游戏机" />
+            {(loading || active) && (
+              <div className={`render-screen-overlay ${loading ? 'is-loading' : ''}`} key={active?.id ?? 'loading'}>
+                <div className="render-scanlines" />
                 {loading ? (
-                  <div className="loading-screen"><span>LOADING CARTRIDGE</span><i /></div>
+                  <div className="render-loading"><span>LOADING</span><i /></div>
                 ) : active ? (
-                  <div className="project-preview">
+                  <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
                     <img src={active.image} alt={`${active.title}项目预览`} />
-                    <div className="preview-meta"><span>{active.id}</span><strong>{active.title}</strong><small>{active.category} / {active.year}</small><a href={`/work/${active.slug}`}>A · ENTER PROJECT →</a></div>
-                  </div>
-                ) : (
-                  <div className="boot-screen"><span className="boot-brand">YANG TING</span><strong>PORTFOLIO</strong><p>INSERT A PROJECT</p><i>PRESS START</i></div>
-                )}
+                    <span><small>{active.id} / {active.year}</small><strong>{active.title}</strong><em>ENTER →</em></span>
+                  </a>
+                ) : null}
               </div>
-              <div className="screen-labels"><span>DOT MATRIX WITH STEREO SOUND</span><span>BATTERY ●</span></div>
-            </div>
-
-            <div className="console-controls" aria-label="游戏机辅助控制">
-              <div className="dpad">
-                <i /><b /><span />
-                <button className="dpad-left" type="button" onClick={() => moveSelection(-1)} aria-label="上一个项目">‹</button>
-                <button className="dpad-right" type="button" onClick={() => moveSelection(1)} aria-label="下一个项目">›</button>
-              </div>
-              <div className="system-buttons"><button type="button" onClick={() => setActive(null)} /><button type="button" onClick={() => loadProject(active ?? featuredProjects[0])} /><span>SELECT</span><span>START</span></div>
-              <div className="action-buttons">
-                <a className={!active || loading ? 'is-disabled' : ''} href={active && !loading ? `/work/${active.slug}` : '#work'} aria-label="进入当前项目">A</a>
-                <button type="button" onClick={() => setActive(null)} aria-label="退出当前项目">B</button>
-              </div>
-            </div>
-            <div className="speaker" aria-hidden="true">{Array.from({ length: 6 }).map((_, index) => <i key={index} />)}</div>
+            )}
+            <button className="render-prev" type="button" onClick={() => moveSelection(-1)} aria-label="上一个项目">PREV</button>
+            <button className="render-next" type="button" onClick={() => moveSelection(1)} aria-label="下一个项目">NEXT</button>
+            <button className="render-reset" type="button" onClick={() => setActive(null)} aria-label="返回待机画面">RESET</button>
           </div>
         </div>
 
