@@ -20,10 +20,10 @@ const cartridgeImages = [
 const cartridgeGlows = ['#f3a46f', '#63d8f4', '#8bea68', '#ff646b'];
 
 const cartridgeScreenImages = [
-  '/screen-content/orange.webp',
-  '/screen-content/blue.webp',
-  '/screen-content/green.webp',
-  '/screen-content/red.webp',
+  '/screen-composites/orange.webp',
+  '/screen-composites/blue.webp',
+  '/screen-composites/green.webp',
+  '/screen-composites/red.webp',
 ];
 
 const projectGroups = [
