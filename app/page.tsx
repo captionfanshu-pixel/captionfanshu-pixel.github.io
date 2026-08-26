@@ -76,11 +76,6 @@ export default function Home() {
           if (!event.currentTarget.contains(event.relatedTarget)) setFanOpen(false);
         }}
       >
-        <div className="hero-copy" data-reveal>
-          <p className="pixel-kicker">VISUAL DESIGNER / PLAYER 01</p>
-          <h1>选择一张卡带，<span>开始浏览我的作品。</span></h1>
-        </div>
-
         <div className={`hero-cartridge-fan ${fanOpen ? 'is-open' : ''}`} aria-label="靠近游戏机后出现的项目卡带">
           {featuredProjects.map((project, index) => (
             <button
@@ -129,7 +124,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-aside" data-reveal><span>靠近游戏机 · 弹出卡带</span><p>品牌视觉 / IP 衍生 / 原创角色</p><small>HOVER TO REVEAL · CLICK TO LOAD</small></div>
       </section>
 
       <section className="project-index" id="work" aria-labelledby="project-index-title" data-reveal>
