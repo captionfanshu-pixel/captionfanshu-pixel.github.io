@@ -17,6 +17,8 @@ const cartridgeImages = [
   '/cartridges/ldcx.webp',
 ];
 
+const cartridgeGlows = ['#f3a46f', '#63d8f4', '#8bea68', '#ff646b'];
+
 const projectGroups = [
   { id: '01', title: '品牌与营销视觉', english: 'BRAND / CAMPAIGN', projects: projects.slice(0, 3) },
   { id: '02', title: '商业 IP 与空间', english: 'COMMERCIAL IP', projects: projects.slice(3, 4) },
@@ -94,6 +96,7 @@ export default function Home() {
                 '--fan-y': fanPositions[index].y,
                 '--fan-r': fanPositions[index].r,
                 '--fan-delay': `${index * 55}ms`,
+                '--cart-glow': cartridgeGlows[index],
               } as React.CSSProperties}
               type="button"
               onClick={() => loadProject(project)}
@@ -111,7 +114,6 @@ export default function Home() {
             <img className="console-render" src="/console-wumi.webp" alt="WUMI 紫色掌上游戏机" />
             {active && (
               <div className={`render-screen-overlay ${loading ? 'is-loading' : ''}`} key={active.id}>
-                <div className="render-scanlines" />
                 <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
                   <img src={active.image} alt={`${active.title}项目预览`} />
                 </a>
