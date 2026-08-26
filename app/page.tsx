@@ -89,6 +89,7 @@ export default function Home() {
           if (!event.currentTarget.contains(event.relatedTarget)) setFanOpen(false);
         }}
       >
+        <div className="hero-backdrop-word" aria-hidden="true">PORTFOLIO</div>
         <div className={`hero-cartridge-fan ${fanOpen ? 'is-open' : ''}`} aria-label="靠近游戏机后出现的项目卡带">
           {featuredProjects.map((project, index) => (
             <button
