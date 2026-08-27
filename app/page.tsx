@@ -188,7 +188,7 @@ export default function Home() {
               <div className="render-screen-overlay" key={active.id}>
                 {isScreenLoading ? (
                   <div className="render-screen-loading" role="status" aria-live="polite">
-                    <span>LOADING</span>
+                    <span>WELCOME</span>
                     <i aria-hidden="true" />
                   </div>
                 ) : (
@@ -306,15 +306,15 @@ export default function Home() {
             <i>PHOTO TO BE ADDED</i>
           </div>
           <div className="about-identity">
-            <h3>NAME <span>/ 姓名</span></h3>
+            <h3>YANG TING <span>/ 杨婷</span></h3>
             <b>VISUAL DESIGNER</b>
-            <p>ROLE / SPECIALITY PLACEHOLDER</p>
+            <p>BRAND VISUAL · IP COMMERCIAL DESIGN</p>
           </div>
           <div className="about-contact-placeholder">
-            <div><span>LOCATION</span><b>CITY / 城市</b></div>
-            <div><span>EDUCATION</span><b>SCHOOL / MAJOR</b></div>
-            <div><span>E-MAIL</span><b>EMAIL PLACEHOLDER</b></div>
-            <div><span>SOCIAL</span><b>ACCOUNT PLACEHOLDER</b></div>
+            <div><span>LOCATION</span><b>GUANGZHOU / 广州</b></div>
+            <div><span>EDUCATION</span><b>工业设计 / 2018—2022</b></div>
+            <div><span>E-MAIL</span><b>310919644@qq.com</b></div>
+            <div><span>WECHAT</span><b>18813893925</b></div>
           </div>
         </div>
 
@@ -324,17 +324,17 @@ export default function Home() {
             <i aria-hidden="true">✦</i>
           </div>
           <div className="about-intro-label"><span>DESIGNER PROFILE</span><i /></div>
-          <p className="about-placeholder-copy">个人简介内容将在资料确认后补充。这里将用于介绍设计背景、项目经验、擅长领域，以及个人的视觉表达方向与工作方式。</p>
+          <p className="about-placeholder-copy">具备品牌视觉设计与 IP 商业化项目经验，熟悉从创意概念、视觉策略到设计落地的完整流程。参与新消费品牌、正版 IP 联名、食玩盲盒及线下展陈等项目，能够结合品牌定位与用户需求进行视觉表达与方案输出。擅长品牌视觉体系搭建、电商视觉设计、IP 角色延展及商业场景应用，具备较强的视觉整合能力与项目推进能力，能够在团队协作中高效完成设计方案落地。</p>
           <div className="about-experience-block">
             <h3><b>01</b> EXPERIENCE <i aria-hidden="true">✣</i></h3>
             <div className="about-timeline">
               <article>
-                <time>20XX.XX — 20XX.XX</time>
-                <div><h4>COMPANY NAME / 公司名称</h4><b>JOB TITLE · ROLE PLACEHOLDER</b><p>工作内容与项目经历将在资料确认后补充。</p></div>
+                <time>2025.12 — 2026.05</time>
+                <div><h4>广州灵动创想科技有限公司</h4><b>平面设计师</b><ul><li>独立完成食玩的线上线下视觉方案，高效产出产品详情长图、宣传物料等多样化设计内容，精准匹配 IP 调性与产品卖点。</li><li>参与品牌展会快闪店、终端陈列展陈的空间视觉设计，打造兼具商品展示与打卡互动的线下消费场景。</li><li>跟进设计落地全流程，熟悉包装材质特性与印刷工艺，维护 IP 衍生产品的视觉语言一致性。</li></ul></div>
               </article>
               <article>
-                <time>20XX.XX — 20XX.XX</time>
-                <div><h4>COMPANY NAME / 公司名称</h4><b>JOB TITLE · ROLE PLACEHOLDER</b><p>工作内容与项目经历将在资料确认后补充。</p></div>
+                <time>2023.03 — 2025.06</time>
+                <div><h4>广州昌邻餐饮管理有限公司</h4><b>平面设计师</b><ul><li>独立完成品牌新品上市、日常营销活动的线上线下视觉方案，高效产出海报、Banner、宣传单页等多样化物料。</li><li>多次负责参与项目周边新品设计，了解包装材质特性及后期印刷工艺，深入参与从概念构思到落地的全流程。</li><li>维护与拓展品牌视觉形象，确保品牌设计语言的一致性，并灵活应对部门临时性设计需求。</li></ul></div>
               </article>
             </div>
           </div>
