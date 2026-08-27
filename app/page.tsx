@@ -328,17 +328,25 @@ export default function Home() {
       </section>
 
       <section className="contact-section" id="contact" aria-labelledby="contact-title" data-reveal>
-        <div className="contact-copy"><p>READY TO CONNECT?</p><h2 id="contact-title">添加我的<br /><span>FRIEND CODE</span></h2><small>期待新的工作机会与创意合作。</small></div>
-        <div className="friend-card">
-          <div className="friend-top"><span>PLAYER 01</span><i>● ONLINE</i></div>
-          <div className="friend-name"><small>VISUAL DESIGNER</small><strong>杨 婷</strong><span>YANG TING</span></div>
-          <div className="contact-list">
-            <a href="mailto:310919644@qq.com"><span>EMAIL</span><b>310919644@qq.com</b></a>
-            <a href="tel:19124373925"><span>PHONE</span><b>191 2437 3925</b></a>
-            <div><span>WECHAT</span><b>188 1389 3925</b></div>
-            <button type="button" disabled><span>RESUME</span><b>COMING SOON</b></button>
+        <div className="contact-availability"><i aria-hidden="true" /> AVAILABLE FOR WORK</div>
+        <h2 id="contact-title">THANK <span>YOU</span></h2>
+        <p className="contact-message">感谢浏览我的作品集。<br />无论是项目合作、全职机会，还是一次设计交流，都期待与你取得联系。</p>
+        <div className="contact-card-grid">
+          <a className="contact-method-card" href="mailto:310919644@qq.com" aria-label="发送邮件给杨婷">
+            <i className="contact-method-icon" aria-hidden="true">✉</i>
+            <strong>Email</strong>
+            <span>310919644@qq.com</span>
+          </a>
+          <div className="contact-method-card">
+            <i className="contact-method-icon contact-method-wechat" aria-hidden="true">••</i>
+            <strong>WeChat</strong>
+            <span>188 1389 3925</span>
           </div>
-          <div className="friend-footer"><span>NO. 3109 1964 4</span><span>PRESS START TO SAY HELLO</span></div>
+          <a className="contact-method-card" href="tel:19124373925" aria-label="拨打杨婷的电话">
+            <i className="contact-method-icon" aria-hidden="true">☎</i>
+            <strong>Phone</strong>
+            <span>191 2437 3925</span>
+          </a>
         </div>
       </section>
 
