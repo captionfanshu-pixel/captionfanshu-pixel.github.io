@@ -1,9 +1,11 @@
 @import 'tailwindcss';
+@import url('https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Medium.min.css');
+@import url('https://cdn.jsdelivr.net/npm/misans@4.1.0/lib/Normal/MiSans-Bold.min.css');
 
 @font-face { font-family:'BoutiqueBitmap9x9 Gradient'; src:url('/fonts/BoutiqueBitmap9x9_Gradient-portfolio.woff2') format('woff2'); font-display:swap; font-style:normal; font-weight:400; }
 
 :root { --ink:#f2f0e9; --void:#08080a; --violet:#7058ff; --violet-deep:#3b288d; --acid:#b8ff49; --scroll-progress:0; }
-* { box-sizing:border-box; }
+* { box-sizing:border-box; font-family:'MiSans',sans-serif !important; }
 html { scroll-behavior:smooth; }
 body { margin:0; overflow-x:hidden; background:var(--void); color:var(--ink); font-family:Arial,"Microsoft YaHei",sans-serif; }
 button,a { color:inherit; }
@@ -25,7 +27,7 @@ button { font:inherit; }
 .nav-links a:hover,.nav-links a:focus-visible { color:#fff; background:rgba(255,255,255,.07); box-shadow:inset 0 0 20px rgba(255,255,255,.025); }
 .nav-links a:hover:after,.nav-links a:focus-visible:after { opacity:1; transform:translateX(-50%) scale(1); }
 .nav-links a:focus-visible,.wordmark:focus-visible,.detail-nav a:focus-visible,footer a:focus-visible { outline:1px solid var(--acid); outline-offset:5px; }
-.nav-language { display:grid; place-items:center; width:38px; height:38px; border:1px solid rgba(255,255,255,.12); border-radius:50%; background:rgba(255,255,255,.035); color:rgba(242,240,233,.7); font:700 11px/1 "Microsoft YaHei",sans-serif; text-decoration:none; transition:color .2s ease,border-color .2s ease,background .2s ease; }
+.nav-language { display:grid; place-items:center; width:38px; height:38px; padding:0; border:1px solid rgba(255,255,255,.12); border-radius:50%; background:rgba(255,255,255,.035); color:rgba(242,240,233,.7); font:700 11px/1 'MiSans',sans-serif; cursor:pointer; text-decoration:none; transition:color .2s ease,border-color .2s ease,background .2s ease; }
 .nav-language:hover,.nav-language:focus-visible { border-color:rgba(184,255,73,.48); background:rgba(184,255,73,.08); color:var(--acid); outline:0; }
 .hero { position:relative; min-height:860px; height:100vh; max-height:1000px; padding:120px 4vw 30px; scroll-margin-top:96px; }
 .hero-backdrop-word { position:absolute; z-index:1; left:50%; bottom:1%; width:100%; transform:translateX(-50%); color:#7658ff; filter:drop-shadow(0 0 13px rgba(112,88,255,.24)); font:400 clamp(130px,18.5vw,330px)/.78 'BoutiqueBitmap9x9 Gradient',monospace; letter-spacing:0; text-align:center; white-space:nowrap; opacity:.96; pointer-events:none; user-select:none; }

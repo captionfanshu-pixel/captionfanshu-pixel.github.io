@@ -35,6 +35,7 @@ const projectGroups = [
 export default function Home() {
   const [active, setActive] = useState<Project | null>(null);
   const [fanOpen, setFanOpen] = useState(false);
+  const [isChinese, setIsChinese] = useState(false);
   const [archiveActive, setArchiveActive] = useState(projects[0].slug);
   const activeCartridgeIndex = active ? featuredProjects.findIndex((project) => project.id === active.id) : -1;
   const activeScreenImage = activeCartridgeIndex >= 0 ? cartridgeScreenImages[activeCartridgeIndex] : null;
@@ -92,21 +93,33 @@ export default function Home() {
     return () => window.removeEventListener('keydown', handleKey);
   }, [active, moveSelection]);
 
+  useEffect(() => {
+    document.documentElement.lang = isChinese ? 'zh-CN' : 'en';
+  }, [isChinese]);
+
   return (
     <main className="site-shell">
       <nav className="top-nav" aria-label="主导航">
         <a className="wordmark" href="#top" aria-label="杨婷作品集首页">
           <span className="nav-monogram">YT</span>
-          <span className="nav-role">VISUAL</span>
+          <span className="nav-role">{isChinese ? '视觉设计' : 'VISUAL'}</span>
         </a>
         <div className="nav-links">
-          <a href="#top">Home</a>
-          <a href="#work">Work</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="#top">{isChinese ? '首页' : 'Home'}</a>
+          <a href="#work">{isChinese ? '作品' : 'Work'}</a>
+          <a href="#gallery">{isChinese ? '图集' : 'Gallery'}</a>
+          <a href="#about">{isChinese ? '关于' : 'About'}</a>
+          <a href="#contact">{isChinese ? '联系' : 'Contact'}</a>
         </div>
-        <a className="nav-language" href="#contact" aria-label="中文联系信息">中</a>
+        <button
+          className="nav-language"
+          type="button"
+          onClick={() => setIsChinese((current) => !current)}
+          aria-label={isChinese ? 'Switch to English' : '翻译成中文'}
+          aria-pressed={isChinese}
+        >
+          {isChinese ? 'EN' : '中'}
+        </button>
       </nav>
 
       <section
@@ -274,7 +287,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer><span>© 2026 YANG TING</span><a href="#top">BACK TO START ↑</a><span>GAME SAVED</span></footer>
+      <footer><span>© 2026 YANG TING · TYPEFACE MISANS</span><a href="#top">BACK TO START ↑</a><span>GAME SAVED</span></footer>
     </main>
   );
 }
