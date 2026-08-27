@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/0g5o.h9aqf~y1.css","style"]
+:HL["/_next/static/chunks/0845ew59a3i_6.css","style"]
 :HL["/projects/summy-dessert.jpg","image"]
 :HL["/projects/spring-duck.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"summy-dessert","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"BYwTXniY8STsq8tJXkAIh"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"summy-dessert","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"BEhGCabZYNOMauL6uUCoh"}
