@@ -244,25 +244,53 @@ export default function Home() {
       </section>
 
       <section className="about-section" id="about" aria-labelledby="about-title" data-reveal>
-        <div className="profile-card">
-          <div className="profile-head"><span>PLAYER PROFILE</span><span>01</span></div>
-          <div className="profile-main">
-            <div className="avatar"><strong>杨</strong><i>ONLINE</i></div>
-            <div><p>VISUAL DESIGNER</p><h2 id="about-title">杨婷</h2><span>工业设计背景 / 视觉设计实践</span></div>
+        <div className="about-profile-card">
+          <div className="about-card-head">
+            <div><b>PROFILE FILE</b><span>VISUAL DESIGNER</span></div>
+            <strong>001</strong>
           </div>
-          <div className="stat-list">
-            <div><span>BRAND VISUAL</span><i><b style={{width:'92%'}} /></i><em>92</em></div>
-            <div><span>IP DESIGN</span><i><b style={{width:'88%'}} /></i><em>88</em></div>
-            <div><span>3D VISUAL</span><i><b style={{width:'84%'}} /></i><em>84</em></div>
-            <div><span>CAMPAIGN</span><i><b style={{width:'90%'}} /></i><em>90</em></div>
+          <div className="about-portrait-placeholder" role="img" aria-label="个人形象照片占位">
+            <span>PORTRAIT</span>
+            <b>IMAGE<br />PLACEHOLDER</b>
+            <i>PHOTO TO BE ADDED</i>
+          </div>
+          <div className="about-identity">
+            <h3>NAME <span>/ 姓名</span></h3>
+            <b>VISUAL DESIGNER</b>
+            <p>ROLE / SPECIALITY PLACEHOLDER</p>
+          </div>
+          <div className="about-contact-placeholder">
+            <div><span>LOCATION</span><b>CITY / 城市</b></div>
+            <div><span>EDUCATION</span><b>SCHOOL / MAJOR</b></div>
+            <div><span>E-MAIL</span><b>EMAIL PLACEHOLDER</b></div>
+            <div><span>SOCIAL</span><b>ACCOUNT PLACEHOLDER</b></div>
           </div>
         </div>
-        <div className="about-copy">
-          <p>ABOUT THE PLAYER</p>
-          <h3>从品牌活动到原创 IP，<br />让视觉成为可进入的世界。</h3>
-          <p className="about-body">拥有品牌营销、IP 衍生与空间视觉经验，能够独立完成从概念构思、主视觉到多触点落地的完整设计流程。关注角色、商品与消费场景之间的一致体验。</p>
-          <div className="experience"><span>2025—2026</span><p><b>广州灵动创想科技有限公司</b>平面设计师</p></div>
-          <div className="experience"><span>2023—2025</span><p><b>广州昌邻餐饮管理有限公司</b>平面设计师</p></div>
+
+        <div className="about-content">
+          <div className="about-title-row">
+            <h2 id="about-title">ABOUT ME</h2>
+            <i aria-hidden="true">✦</i>
+          </div>
+          <div className="about-intro-label"><span>DESIGNER PROFILE</span><i /></div>
+          <p className="about-placeholder-copy">个人简介内容将在资料确认后补充。这里将用于介绍设计背景、项目经验、擅长领域，以及个人的视觉表达方向与工作方式。</p>
+          <div className="about-skill-tags" aria-label="专业能力占位">
+            <span>SKILL 01</span><span>SKILL 02</span><span>SKILL 03</span>
+            <span>SKILL 04</span><span>SKILL 05</span><span>SKILL 06</span>
+          </div>
+          <div className="about-experience-block">
+            <h3><b>01</b> EXPERIENCE <i aria-hidden="true">✣</i></h3>
+            <div className="about-timeline">
+              <article>
+                <time>20XX.XX — 20XX.XX</time>
+                <div><h4>COMPANY NAME / 公司名称</h4><b>JOB TITLE · ROLE PLACEHOLDER</b><p>工作内容与项目经历将在资料确认后补充。</p></div>
+              </article>
+              <article>
+                <time>20XX.XX — 20XX.XX</time>
+                <div><h4>COMPANY NAME / 公司名称</h4><b>JOB TITLE · ROLE PLACEHOLDER</b><p>工作内容与项目经历将在资料确认后补充。</p></div>
+              </article>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -285,4 +313,3 @@ export default function Home() {
     </main>
   );
 }
-
