@@ -61,7 +61,7 @@ export default function Home() {
     screenLoadTimer.current = setTimeout(() => {
       setIsScreenLoading(false);
       screenLoadTimer.current = null;
-    }, 560);
+    }, 760);
   }, []);
 
   const moveSelection = useCallback((direction: number) => {
@@ -183,19 +183,17 @@ export default function Home() {
         <div className="console-stage" aria-label="互动作品游戏机" data-reveal="scale">
           <div className="stage-glow" /><div className="console-shadow" />
           <div className={`console-render-wrap ${active ? 'has-project' : ''}`}>
-            <img className="console-render" src="/console-wumi.webp" alt="WUMI 紫色掌上游戏机" />
-            {active && (
+            <img
+              className="console-render"
+              src={isScreenLoading ? '/console-loading.webp' : '/console-wumi.webp'}
+              alt={isScreenLoading ? 'WUMI 掌上游戏机正在载入项目' : 'WUMI 紫色掌上游戏机'}
+            />
+            {isScreenLoading && <span className="console-load-progress" aria-hidden="true"><i /></span>}
+            {active && !isScreenLoading && (
               <div className="render-screen-overlay" key={active.id}>
-                {isScreenLoading ? (
-                  <div className="render-screen-loading" role="status" aria-live="polite">
-                    <span>WELCOME</span>
-                    <i aria-hidden="true" />
-                  </div>
-                ) : (
-                  <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
-                    <img src={activeScreenImage ?? active.image} alt={`${active.title}项目预览`} />
-                  </a>
-                )}
+                <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
+                  <img src={activeScreenImage ?? active.image} alt={`${active.title}项目预览`} />
+                </a>
               </div>
             )}
             <button className="render-prev" type="button" onClick={() => moveSelection(-1)} aria-label="上一个项目">PREV</button>
@@ -306,7 +304,7 @@ export default function Home() {
             <i>PHOTO TO BE ADDED</i>
           </div>
           <div className="about-identity">
-            <h3>YANG TING <span>/ 杨婷</span></h3>
+            <h3>YANGTING <span>/ 杨婷</span></h3>
             <b>VISUAL DESIGNER</b>
             <p>BRAND VISUAL · IP COMMERCIAL DESIGN</p>
           </div>
@@ -321,20 +319,19 @@ export default function Home() {
         <div className="about-content">
           <div className="about-title-row">
             <h2 id="about-title">ABOUT ME</h2>
-            <i aria-hidden="true">✦</i>
           </div>
-          <div className="about-intro-label"><span>DESIGNER PROFILE</span><i /></div>
+          <div className="about-intro-label"><span>个人简介</span><i /></div>
           <p className="about-placeholder-copy">具备品牌视觉设计与 IP 商业化项目经验，熟悉从创意概念、视觉策略到设计落地的完整流程。参与新消费品牌、正版 IP 联名、食玩盲盒及线下展陈等项目，能够结合品牌定位与用户需求进行视觉表达与方案输出。擅长品牌视觉体系搭建、电商视觉设计、IP 角色延展及商业场景应用，具备较强的视觉整合能力与项目推进能力，能够在团队协作中高效完成设计方案落地。</p>
           <div className="about-experience-block">
-            <h3><b>01</b> EXPERIENCE <i aria-hidden="true">✣</i></h3>
+            <h3>工作经历</h3>
             <div className="about-timeline">
               <article>
+                <div className="about-job"><div className="about-job-heading"><h4>广州灵动创想科技有限公司</h4><b>平面设计师</b></div><ul><li>独立完成食玩的线上线下视觉方案，高效产出产品详情长图、宣传物料等多样化设计内容，精准匹配 IP 调性与产品卖点。</li><li>参与品牌展会快闪店、终端陈列展陈的空间视觉设计，打造兼具商品展示与打卡互动的线下消费场景。</li><li>跟进设计落地全流程，熟悉包装材质特性与印刷工艺，维护 IP 衍生产品的视觉语言一致性。</li></ul></div>
                 <time>2025.12 — 2026.05</time>
-                <div><h4>广州灵动创想科技有限公司</h4><b>平面设计师</b><ul><li>独立完成食玩的线上线下视觉方案，高效产出产品详情长图、宣传物料等多样化设计内容，精准匹配 IP 调性与产品卖点。</li><li>参与品牌展会快闪店、终端陈列展陈的空间视觉设计，打造兼具商品展示与打卡互动的线下消费场景。</li><li>跟进设计落地全流程，熟悉包装材质特性与印刷工艺，维护 IP 衍生产品的视觉语言一致性。</li></ul></div>
               </article>
               <article>
+                <div className="about-job"><div className="about-job-heading"><h4>广州昌邻餐饮管理有限公司</h4><b>平面设计师</b></div><ul><li>独立完成品牌新品上市、日常营销活动的线上线下视觉方案，高效产出海报、Banner、宣传单页等多样化物料。</li><li>多次负责参与项目周边新品设计，了解包装材质特性及后期印刷工艺，深入参与从概念构思到落地的全流程。</li><li>维护与拓展品牌视觉形象，确保品牌设计语言的一致性，并灵活应对部门临时性设计需求。</li></ul></div>
                 <time>2023.03 — 2025.06</time>
-                <div><h4>广州昌邻餐饮管理有限公司</h4><b>平面设计师</b><ul><li>独立完成品牌新品上市、日常营销活动的线上线下视觉方案，高效产出海报、Banner、宣传单页等多样化物料。</li><li>多次负责参与项目周边新品设计，了解包装材质特性及后期印刷工艺，深入参与从概念构思到落地的全流程。</li><li>维护与拓展品牌视觉形象，确保品牌设计语言的一致性，并灵活应对部门临时性设计需求。</li></ul></div>
               </article>
             </div>
           </div>
