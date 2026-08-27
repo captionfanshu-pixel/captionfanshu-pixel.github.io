@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useState, type PointerEvent } from 'react';
-import { featuredProjects, projects, type Project } from './projects';
+import { featuredProjects, type Project } from './projects';
 
 const fanPositions = [
   { x: 'clamp(-340px, -27vw, -210px)', y: 'clamp(-150px, -12vw, -92px)', r: '-8deg' },
@@ -26,17 +26,19 @@ const cartridgeScreenImages = [
   '/screen-composites/red.webp',
 ];
 
-const projectGroups = [
-  { id: '01', title: '品牌与营销视觉', english: 'BRAND / CAMPAIGN', projects: projects.slice(0, 3) },
-  { id: '02', title: '商业 IP 与空间', english: 'COMMERCIAL IP', projects: projects.slice(3, 4) },
-  { id: '03', title: '原创角色世界', english: 'ORIGINAL IP', projects: projects.slice(4) },
+const workPlaceholders = [
+  { id: '01', key: 'work-01', title: 'PROJECT NAME 01', category: 'VISUAL DESIGN', year: '2024—2025', color: '#b8ff49' },
+  { id: '02', key: 'work-02', title: 'PROJECT NAME 02', category: 'BRAND DESIGN', year: '2024—2025', color: '#63d8f4' },
+  { id: '03', key: 'work-03', title: 'PROJECT NAME 03', category: 'IP DESIGN', year: '2024—2025', color: '#ff6f91' },
+  { id: '04', key: 'work-04', title: 'PROJECT NAME 04', category: '3D VISUAL', year: '2024—2025', color: '#f3a46f' },
+  { id: '05', key: 'work-05', title: 'PROJECT NAME 05', category: 'EXPERIMENT', year: '2024—2025', color: '#8c77ff' },
 ];
 
 export default function Home() {
   const [active, setActive] = useState<Project | null>(null);
   const [fanOpen, setFanOpen] = useState(false);
   const [isChinese, setIsChinese] = useState(false);
-  const [archiveActive, setArchiveActive] = useState(projects[0].slug);
+  const [archiveActive, setArchiveActive] = useState(workPlaceholders[0].key);
   const activeCartridgeIndex = active ? featuredProjects.findIndex((project) => project.id === active.id) : -1;
   const activeScreenImage = activeCartridgeIndex >= 0 ? cartridgeScreenImages[activeCartridgeIndex] : null;
 
@@ -176,47 +178,46 @@ export default function Home() {
       </section>
 
       <section className="project-index" id="work" aria-label="项目分类" data-reveal>
-        <div className="project-groups">
-          {projectGroups.map((group) => (
-            <div className="project-group" key={group.id}>
-              <div className="project-group-heading"><span>{group.id}</span><h3>{group.title}</h3><small>{group.english}</small></div>
-              <div className="project-rows">
-                {group.projects.map((project) => {
-                  const isOpen = archiveActive === project.slug;
-                  return (
-                    <article
-                      className={`project-row ${isOpen ? 'is-open' : ''}`}
-                      key={project.id}
-                      style={{ '--project-row-color': project.color } as React.CSSProperties}
-                      onMouseEnter={() => setArchiveActive(project.slug)}
-                      onFocusCapture={() => setArchiveActive(project.slug)}
-                    >
-                      <button className="project-row-trigger" type="button" onClick={() => setArchiveActive(project.slug)} aria-expanded={isOpen}>
-                        <span>{project.id}</span>
-                        <strong>{project.title}</strong>
-                        <small>{project.category}</small>
-                        <em>{project.year}</em>
-                        <i aria-hidden="true">↗</i>
-                      </button>
-                      <div className="project-row-detail">
-                        <div>
-                          <a className="project-row-image" href={`/work/${project.slug}`} aria-label={`查看${project.title}完整项目`}>
-                            <img src={project.image} alt={`${project.title}项目预览`} />
-                            <span>{project.english}</span>
-                          </a>
-                          <div className="project-row-copy">
-                            <p>{project.summary}</p>
-                            <dl><div><dt>ROLE</dt><dd>{project.role}</dd></div><div><dt>TYPE</dt><dd>{project.subtitle}</dd></div></dl>
-                            <a href={`/work/${project.slug}`}>VIEW PROJECT <b>→</b></a>
-                          </div>
-                        </div>
+        <div className="work-placeholder-heading">
+          <span>01 / WORK INDEX</span>
+          <span>HOVER TO PREVIEW — CONTENT COMING SOON</span>
+        </div>
+        <div className="project-rows work-placeholder-list">
+          {workPlaceholders.map((project) => {
+            const isOpen = archiveActive === project.key;
+            return (
+              <article
+                className={`project-row work-placeholder-row ${isOpen ? 'is-open' : ''}`}
+                key={project.key}
+                style={{ '--project-row-color': project.color } as React.CSSProperties}
+                onMouseEnter={() => setArchiveActive(project.key)}
+                onFocusCapture={() => setArchiveActive(project.key)}
+              >
+                <button className="project-row-trigger" type="button" onClick={() => setArchiveActive(project.key)} aria-expanded={isOpen}>
+                  <span>{project.id}</span>
+                  <strong>{project.title}</strong>
+                  <small>{project.category}</small>
+                  <em>{project.year}</em>
+                  <i aria-hidden="true">↗</i>
+                </button>
+                <div className="project-row-detail">
+                  <div>
+                    <div>
+                      <div className="project-row-image work-placeholder-image" aria-label={`${project.title}图片占位`}>
+                        <span>IMAGE PLACEHOLDER</span>
+                        <b>{project.id}</b>
                       </div>
-                    </article>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
+                      <div className="project-row-copy work-placeholder-copy">
+                        <p>项目名称、封面图片与详细内容将在素材确认后替换。</p>
+                        <dl><div><dt>STATUS</dt><dd>CONTENT PENDING</dd></div><div><dt>TYPE</dt><dd>{project.category}</dd></div></dl>
+                        <span className="placeholder-status">WAITING FOR CONTENT <b>→</b></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
