@@ -307,10 +307,6 @@ export default function Home() {
           </div>
           <div className="about-intro-label"><span>DESIGNER PROFILE</span><i /></div>
           <p className="about-placeholder-copy">个人简介内容将在资料确认后补充。这里将用于介绍设计背景、项目经验、擅长领域，以及个人的视觉表达方向与工作方式。</p>
-          <div className="about-skill-tags" aria-label="专业能力占位">
-            <span>SKILL 01</span><span>SKILL 02</span><span>SKILL 03</span>
-            <span>SKILL 04</span><span>SKILL 05</span><span>SKILL 06</span>
-          </div>
           <div className="about-experience-block">
             <h3><b>01</b> EXPERIENCE <i aria-hidden="true">✣</i></h3>
             <div className="about-timeline">
