@@ -101,8 +101,8 @@ export default function Home() {
     <main className="site-shell">
       <nav className="top-nav" aria-label="主导航">
         <a className="wordmark" href="#top" aria-label="杨婷作品集首页">
-          <span className="nav-monogram">YT</span>
-          <span className="nav-role">{isChinese ? '视觉设计' : 'VISUAL'}</span>
+          <span className="nav-brand-name">WUMI</span>
+          <span className="nav-brand-dot" aria-hidden="true" />
         </a>
         <div className="nav-links">
           <a href="#top">{isChinese ? '首页' : 'Home'}</a>
