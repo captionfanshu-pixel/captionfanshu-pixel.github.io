@@ -95,9 +95,18 @@ export default function Home() {
   return (
     <main className="site-shell">
       <nav className="top-nav" aria-label="主导航">
-        <a className="wordmark" href="#top" aria-label="杨婷作品集首页"><span className="power-dot" />YANG TING / PORTFOLIO</a>
-        <div className="nav-links"><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></div>
-        <span className="nav-year">2023—2026</span>
+        <a className="wordmark" href="#top" aria-label="杨婷作品集首页">
+          <span className="nav-monogram">YT</span>
+          <span className="nav-role">VISUAL</span>
+        </a>
+        <div className="nav-links">
+          <a href="#top">Home</a>
+          <a href="#work">Work</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a className="nav-language" href="#contact" aria-label="中文联系信息">中</a>
       </nav>
 
       <section
@@ -201,6 +210,28 @@ export default function Home() {
                 })}
               </div>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="gallery-section" id="gallery" aria-labelledby="gallery-title" data-reveal>
+        <div className="section-index"><span>03 / VISUAL GALLERY</span><span>SELECTED FRAMES — 2024/2025</span></div>
+        <div className="gallery-heading">
+          <div><p>GALLERY</p><h2 id="gallery-title">视觉作品一览</h2></div>
+          <span>从品牌活动、IP 衍生到原创角色设计，快速浏览四个代表项目。</span>
+        </div>
+        <div className="gallery-grid">
+          {featuredProjects.map((project, index) => (
+            <a
+              className="gallery-card"
+              href={`/work/${project.slug}`}
+              key={project.id}
+              style={{ '--gallery-color': project.color } as React.CSSProperties}
+              aria-label={`查看${project.title}项目`}
+            >
+              <img src={project.image} alt={`${project.title}作品画面`} />
+              <span><small>0{index + 1}</small><b>{project.title}</b><i>↗</i></span>
+            </a>
           ))}
         </div>
       </section>
