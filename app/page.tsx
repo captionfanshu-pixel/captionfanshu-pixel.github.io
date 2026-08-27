@@ -324,7 +324,6 @@ export default function Home() {
       </section>
 
       <section className="contact-section" id="contact" aria-labelledby="contact-title" data-reveal>
-        <div className="contact-availability"><i aria-hidden="true" /> AVAILABLE FOR WORK</div>
         <h2 id="contact-title">THANK <span>YOU</span></h2>
         <p className="contact-message">感谢浏览我的作品集。<br />无论是项目合作、全职机会，还是一次设计交流，都期待与你取得联系。</p>
         <div className="contact-card-grid">
