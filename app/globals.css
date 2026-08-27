@@ -303,8 +303,7 @@ button { font:inherit; }
 .about-timeline article div>b { color:rgba(255,255,255,.64); font-size:11px; }
 .about-timeline p { margin:8px 0 0; color:rgba(255,255,255,.42); font-size:11px; line-height:1.7; }
 .contact-section { position:relative; width:var(--frame-nav); margin:110px auto 80px; padding:38px 0 25px; overflow:hidden; text-align:center; isolation:isolate; scroll-margin-top:110px; }
-.contact-section:before { content:''; position:absolute; z-index:-2; inset:0; background:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px); background-size:76px 76px; mask-image:linear-gradient(transparent,black 12%,black 88%,transparent); }
-.contact-section:after { content:''; position:absolute; z-index:-1; left:50%; bottom:-230px; width:760px; height:720px; transform:translateX(-50%); background:radial-gradient(circle at 50% 35%,rgba(55,173,222,.36),transparent 34%),radial-gradient(circle at 56% 8%,rgba(198,31,123,.38),transparent 42%),radial-gradient(circle at 50% 52%,rgba(112,88,255,.28),transparent 58%); filter:blur(28px); pointer-events:none; }
+.contact-section:before,.contact-section:after { content:none; }
 .contact-section>h2 { margin:0 0 20px; color:#f4f3ef; font:400 clamp(66px,8.3vw,118px)/.78 'BoutiqueBitmap9x9 Gradient',monospace; font-family:'BoutiqueBitmap9x9 Gradient',monospace !important; letter-spacing:0; }
 .contact-section>h2 span { background:linear-gradient(105deg,#ae4cff,#ff5e6f); background-clip:text; -webkit-background-clip:text; color:transparent; font-family:'BoutiqueBitmap9x9 Gradient',monospace !important; }
 .contact-message { max-width:700px; margin:0 auto; color:rgba(223,220,239,.62); font-size:clamp(13px,1.1vw,16px); line-height:1.7; }
