@@ -234,8 +234,8 @@ export default function Home() {
       <section className="gallery-section" id="gallery" aria-labelledby="gallery-title" data-reveal>
         <div className="section-index"><span>03 / DAILY GALLERY</span><span>06 PRACTICE CARDS — IMAGES COMING SOON</span></div>
         <div className="gallery-heading">
-          <div><p>VISUAL NOTES</p><h2 id="gallery-title">some daily practice</h2></div>
-          <span>点击任意卡片即可将它弹出。当前图片使用占位符，后续可直接替换为日常练习作品。</span>
+          <div><p>VISUAL NOTES</p><h2 id="gallery-title">DAILY PRACTICE</h2></div>
+          <span>modeling &amp; AI art. Hope you enjoy! More works to come, stay tuned.</span>
         </div>
         <div className="daily-gallery-shell">
           <div className="daily-glass-panel" aria-hidden="true">
