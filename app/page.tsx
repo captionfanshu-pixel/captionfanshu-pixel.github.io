@@ -175,14 +175,7 @@ export default function Home() {
 
       </section>
 
-      <section className="project-index" id="work" aria-labelledby="project-index-title" data-reveal>
-        <div className="section-index"><span>02 / PROJECT ARCHIVE</span><span>HOVER TO PREVIEW — 2024/2025</span></div>
-        <div className="project-index-intro">
-          <p>SELECTED WORKS</p>
-          <h2 id="project-index-title">按创作类型，<br />浏览全部项目。</h2>
-          <span>将鼠标停在项目上即可展开详情；点击绿色按钮进入完整项目页面。</span>
-        </div>
-
+      <section className="project-index" id="work" aria-label="项目分类" data-reveal>
         <div className="project-groups">
           {projectGroups.map((group) => (
             <div className="project-group" key={group.id}>
