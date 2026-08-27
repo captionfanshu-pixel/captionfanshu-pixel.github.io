@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState, type PointerEvent } from 'react';
+import { useCallback, useEffect, useRef, useState, type PointerEvent } from 'react';
 import { featuredProjects, type Project } from './projects';
 
 const fanPositions = [
@@ -49,11 +49,19 @@ export default function Home() {
   const [isChinese, setIsChinese] = useState(false);
   const [archiveActive, setArchiveActive] = useState(workPlaceholders[0].key);
   const [dailyActive, setDailyActive] = useState(2);
+  const [isScreenLoading, setIsScreenLoading] = useState(false);
+  const screenLoadTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const activeCartridgeIndex = active ? featuredProjects.findIndex((project) => project.id === active.id) : -1;
   const activeScreenImage = activeCartridgeIndex >= 0 ? cartridgeScreenImages[activeCartridgeIndex] : null;
 
   const loadProject = useCallback((project: Project) => {
+    if (screenLoadTimer.current) clearTimeout(screenLoadTimer.current);
     setActive(project);
+    setIsScreenLoading(true);
+    screenLoadTimer.current = setTimeout(() => {
+      setIsScreenLoading(false);
+      screenLoadTimer.current = null;
+    }, 560);
   }, []);
 
   const moveSelection = useCallback((direction: number) => {
@@ -108,6 +116,10 @@ export default function Home() {
   useEffect(() => {
     document.documentElement.lang = isChinese ? 'zh-CN' : 'en';
   }, [isChinese]);
+
+  useEffect(() => () => {
+    if (screenLoadTimer.current) clearTimeout(screenLoadTimer.current);
+  }, []);
 
   return (
     <main className="site-shell">
@@ -174,9 +186,16 @@ export default function Home() {
             <img className="console-render" src="/console-wumi.webp" alt="WUMI 紫色掌上游戏机" />
             {active && (
               <div className="render-screen-overlay" key={active.id}>
-                <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
-                  <img src={activeScreenImage ?? active.image} alt={`${active.title}项目预览`} />
-                </a>
+                {isScreenLoading ? (
+                  <div className="render-screen-loading" role="status" aria-live="polite">
+                    <span>LOADING</span>
+                    <i aria-hidden="true" />
+                  </div>
+                ) : (
+                  <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
+                    <img src={activeScreenImage ?? active.image} alt={`${active.title}项目预览`} />
+                  </a>
+                )}
               </div>
             )}
             <button className="render-prev" type="button" onClick={() => moveSelection(-1)} aria-label="上一个项目">PREV</button>
@@ -214,13 +233,12 @@ export default function Home() {
                   <div>
                     <div>
                       <div className="project-row-image work-placeholder-image" aria-label={`${project.title}图片占位`}>
-                        <span>IMAGE PLACEHOLDER</span>
                         <b>{project.id}</b>
+                        <span className="placeholder-status">WAITING FOR CONTENT <b>→</b></span>
                       </div>
                       <div className="project-row-copy work-placeholder-copy">
                         <p>项目名称、封面图片与详细内容将在素材确认后替换。</p>
                         <dl><div><dt>STATUS</dt><dd>CONTENT PENDING</dd></div><div><dt>TYPE</dt><dd>{project.category}</dd></div></dl>
-                        <span className="placeholder-status">WAITING FOR CONTENT <b>→</b></span>
                       </div>
                     </div>
                   </div>
@@ -349,3 +367,4 @@ export default function Home() {
     </main>
   );
 }
+
