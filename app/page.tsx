@@ -34,11 +34,21 @@ const workPlaceholders = [
   { id: '05', key: 'work-05', title: 'PROJECT NAME 05', category: 'EXPERIMENT', year: '2024—2025', color: '#8c77ff' },
 ];
 
+const dailyPracticeCards = [
+  { id: '01', title: 'DAILY 01', color: '#4f907d', lift: '18px', rotate: '-6deg' },
+  { id: '02', title: 'DAILY 02', color: '#7192f2', lift: '2px', rotate: '-3deg' },
+  { id: '03', title: 'DAILY 03', color: '#ff724d', lift: '-8px', rotate: '3deg' },
+  { id: '04', title: 'DAILY 04', color: '#a72e58', lift: '7px', rotate: '-2deg' },
+  { id: '05', title: 'DAILY 05', color: '#d995ef', lift: '-2px', rotate: '5deg' },
+  { id: '06', title: 'DAILY 06', color: '#d8e66f', lift: '20px', rotate: '7deg' },
+];
+
 export default function Home() {
   const [active, setActive] = useState<Project | null>(null);
   const [fanOpen, setFanOpen] = useState(false);
   const [isChinese, setIsChinese] = useState(false);
   const [archiveActive, setArchiveActive] = useState(workPlaceholders[0].key);
+  const [dailyActive, setDailyActive] = useState(2);
   const activeCartridgeIndex = active ? featuredProjects.findIndex((project) => project.id === active.id) : -1;
   const activeScreenImage = activeCartridgeIndex >= 0 ? cartridgeScreenImages[activeCartridgeIndex] : null;
 
@@ -222,24 +232,47 @@ export default function Home() {
       </section>
 
       <section className="gallery-section" id="gallery" aria-labelledby="gallery-title" data-reveal>
-        <div className="section-index"><span>03 / VISUAL GALLERY</span><span>SELECTED FRAMES — 2024/2025</span></div>
+        <div className="section-index"><span>03 / DAILY GALLERY</span><span>06 PRACTICE CARDS — IMAGES COMING SOON</span></div>
         <div className="gallery-heading">
-          <div><p>GALLERY</p><h2 id="gallery-title">视觉作品一览</h2></div>
-          <span>从品牌活动、IP 衍生到原创角色设计，快速浏览四个代表项目。</span>
+          <div><p>VISUAL NOTES</p><h2 id="gallery-title">some daily practice</h2></div>
+          <span>点击任意卡片即可将它弹出。当前图片使用占位符，后续可直接替换为日常练习作品。</span>
         </div>
-        <div className="gallery-grid">
-          {featuredProjects.map((project, index) => (
-            <a
-              className="gallery-card"
-              href={`/work/${project.slug}`}
-              key={project.id}
-              style={{ '--gallery-color': project.color } as React.CSSProperties}
-              aria-label={`查看${project.title}项目`}
-            >
-              <img src={project.image} alt={`${project.title}作品画面`} />
-              <span><small>0{index + 1}</small><b>{project.title}</b><i>↗</i></span>
-            </a>
-          ))}
+        <div className="daily-gallery-shell">
+          <div className="daily-glass-panel" aria-hidden="true">
+            <span>WUMI / DAILY ARCHIVE</span>
+            <b>CLICK A CARD TO PREVIEW</b>
+            <i>06</i>
+          </div>
+          <div className="daily-card-stage" role="list" aria-label="日常练习卡片">
+            {dailyPracticeCards.map((card, index) => (
+              <button
+                className={`daily-practice-card ${dailyActive === index ? 'is-active' : ''}`}
+                key={card.id}
+                type="button"
+                role="listitem"
+                aria-pressed={dailyActive === index}
+                aria-label={`弹出${card.title}`}
+                onClick={() => setDailyActive(index)}
+                style={{
+                  '--daily-color': card.color,
+                  '--daily-lift': card.lift,
+                  '--daily-rotate': card.rotate,
+                  '--daily-index': index,
+                } as React.CSSProperties}
+              >
+                <span className="daily-placeholder">
+                  <small>IMAGE PLACEHOLDER</small>
+                  <b>{card.id}</b>
+                  <i>ARTWORK TO BE ADDED</i>
+                </span>
+                <span className="daily-card-copy">
+                  <small>DAILY PRACTICE / {card.id}</small>
+                  <strong>{card.title}</strong>
+                  <i aria-hidden="true">↗</i>
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
