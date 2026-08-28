@@ -185,11 +185,9 @@ export default function Home() {
           <div className={`console-render-wrap ${active ? 'has-project' : ''}`}>
             <img
               className="console-render"
-              src={isScreenLoading ? '/console-loading-v3.webp' : '/console-welcome-v3.webp'}
+              src={isScreenLoading ? '/console-loading-v4.webp' : '/console-welcome-v3.webp'}
               alt={isScreenLoading ? 'WUMI 掌上游戏机正在载入项目' : 'WUMI 紫色掌上游戏机'}
             />
-            <img className={`console-loading-screen-source ${isScreenLoading ? 'is-visible' : ''}`} src="/console-loading-source-v4.png" alt="" aria-hidden="true" />
-            {isScreenLoading && <span className="console-static-progress-cover" aria-hidden="true" />}
             {active && !isScreenLoading && (
               <div className="render-screen-overlay" key={active.id}>
                 <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
