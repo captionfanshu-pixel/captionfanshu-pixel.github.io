@@ -50,7 +50,6 @@ export default function Home() {
   const [archiveActive, setArchiveActive] = useState(workPlaceholders[0].key);
   const [dailyActive, setDailyActive] = useState(2);
   const [isScreenLoading, setIsScreenLoading] = useState(false);
-  const [screenLoadCycle, setScreenLoadCycle] = useState(0);
   const screenLoadTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const activeCartridgeIndex = active ? featuredProjects.findIndex((project) => project.id === active.id) : -1;
   const activeScreenImage = activeCartridgeIndex >= 0 ? cartridgeScreenImages[activeCartridgeIndex] : null;
@@ -59,7 +58,6 @@ export default function Home() {
     if (screenLoadTimer.current) clearTimeout(screenLoadTimer.current);
     setActive(project);
     setIsScreenLoading(true);
-    setScreenLoadCycle((cycle) => cycle + 1);
     screenLoadTimer.current = setTimeout(() => {
       setIsScreenLoading(false);
       screenLoadTimer.current = null;
@@ -192,7 +190,6 @@ export default function Home() {
             />
             <img className={`console-loading-screen-source ${isScreenLoading ? 'is-visible' : ''}`} src="/console-loading-source-v4.png" alt="" aria-hidden="true" />
             {isScreenLoading && <span className="console-static-progress-cover" aria-hidden="true" />}
-            {isScreenLoading && <span className="console-load-progress" key={screenLoadCycle} aria-hidden="true"><i /></span>}
             {active && !isScreenLoading && (
               <div className="render-screen-overlay" key={active.id}>
                 <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
