@@ -191,6 +191,7 @@ export default function Home() {
               alt={isScreenLoading ? 'WUMI 掌上游戏机正在载入项目' : 'WUMI 紫色掌上游戏机'}
             />
             <img className={`console-loading-screen-source ${isScreenLoading ? 'is-visible' : ''}`} src="/console-loading-source-v4.png" alt="" aria-hidden="true" />
+            {isScreenLoading && <span className="console-static-progress-cover" aria-hidden="true" />}
             {isScreenLoading && <span className="console-load-progress" key={screenLoadCycle} aria-hidden="true"><i /></span>}
             {active && !isScreenLoading && (
               <div className="render-screen-overlay" key={active.id}>
