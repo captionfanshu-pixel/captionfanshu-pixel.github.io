@@ -61,7 +61,7 @@ export default function Home() {
     screenLoadTimer.current = setTimeout(() => {
       setIsScreenLoading(false);
       screenLoadTimer.current = null;
-    }, 760);
+    }, 1200);
   }, []);
 
   const moveSelection = useCallback((direction: number) => {
@@ -188,6 +188,7 @@ export default function Home() {
               src={isScreenLoading ? '/console-loading-v3.webp' : '/console-welcome-v3.webp'}
               alt={isScreenLoading ? 'WUMI 掌上游戏机正在载入项目' : 'WUMI 紫色掌上游戏机'}
             />
+            {isScreenLoading && <span className="console-load-progress" aria-hidden="true"><i /></span>}
             {active && !isScreenLoading && (
               <div className="render-screen-overlay" key={active.id}>
                 <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
