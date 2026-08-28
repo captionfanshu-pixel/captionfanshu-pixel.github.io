@@ -27,20 +27,20 @@ const cartridgeScreenImages = [
 ];
 
 const workPlaceholders = [
-  { id: '01', key: 'work-01', title: 'PROJECT NAME 01', category: 'VISUAL DESIGN', year: '2024—2025', color: '#b8ff49' },
-  { id: '02', key: 'work-02', title: 'PROJECT NAME 02', category: 'BRAND DESIGN', year: '2024—2025', color: '#63d8f4' },
-  { id: '03', key: 'work-03', title: 'PROJECT NAME 03', category: 'IP DESIGN', year: '2024—2025', color: '#ff6f91' },
-  { id: '04', key: 'work-04', title: 'PROJECT NAME 04', category: '3D VISUAL', year: '2024—2025', color: '#f3a46f' },
-  { id: '05', key: 'work-05', title: 'PROJECT NAME 05', category: 'EXPERIMENT', year: '2024—2025', color: '#8c77ff' },
+  { id: '01', key: 'work-01', title: 'PROJECT NAME 01', category: 'VISUAL DESIGN', year: '2024—2025', color: '#b8ff49', image: '/work/project-01-cover-v1.jpg' },
+  { id: '02', key: 'work-02', title: 'PROJECT NAME 02', category: 'BRAND DESIGN', year: '2024—2025', color: '#63d8f4', image: '/work/project-02-cover-v1.jpg' },
+  { id: '03', key: 'work-03', title: 'PROJECT NAME 03', category: 'IP DESIGN', year: '2024—2025', color: '#ff6f91', image: '/work/project-03-cover-v1.jpg' },
+  { id: '04', key: 'work-04', title: 'PROJECT NAME 04', category: '3D VISUAL', year: '2024—2025', color: '#f3a46f', image: null },
+  { id: '05', key: 'work-05', title: 'PROJECT NAME 05', category: 'EXPERIMENT', year: '2024—2025', color: '#8c77ff', image: null },
 ];
 
 const dailyPracticeCards = [
-  { id: '01', title: 'DAILY 01', image: '/daily/01-v2.png', color: '#e9bd50', surface: '#f3e7b6', lift: '18px', rotate: '-6deg' },
-  { id: '02', title: 'DAILY 02', image: '/daily/02-v2.png', color: '#7bc9ca', surface: '#bee5e6', lift: '2px', rotate: '-3deg' },
-  { id: '03', title: 'DAILY 03', image: '/daily/03-v2.png', color: '#66a9d5', surface: '#9cc7e6', lift: '-8px', rotate: '3deg' },
-  { id: '04', title: 'DAILY 04', image: '/daily/04-v2.png', color: '#70cf69', surface: '#bce7ba', lift: '7px', rotate: '-2deg' },
-  { id: '05', title: 'DAILY 05', image: '/daily/05-v2.png', color: '#ef91bf', surface: '#f5d0e1', lift: '-2px', rotate: '5deg' },
-  { id: '06', title: 'DAILY 06', image: '/daily/06-v2.png', color: '#76bde7', surface: '#afd7eb', lift: '20px', rotate: '7deg' },
+  { id: '01', title: 'DAILY 01', image: '/daily/01-v2.png', color: '#e9bd50', lift: '18px', rotate: '-6deg' },
+  { id: '02', title: 'DAILY 02', image: '/daily/02-v2.png', color: '#7bc9ca', lift: '2px', rotate: '-3deg' },
+  { id: '03', title: 'DAILY 03', image: '/daily/03-v2.png', color: '#66a9d5', lift: '-8px', rotate: '3deg' },
+  { id: '04', title: 'DAILY 04', image: '/daily/04-v2.png', color: '#70cf69', lift: '7px', rotate: '-2deg' },
+  { id: '05', title: 'DAILY 05', image: '/daily/05-v2.png', color: '#ef91bf', lift: '-2px', rotate: '5deg' },
+  { id: '06', title: 'DAILY 06', image: '/daily/06-v2.png', color: '#76bde7', lift: '20px', rotate: '7deg' },
 ];
 
 export default function Home() {
@@ -190,6 +190,7 @@ export default function Home() {
               src={isScreenLoading ? '/console-loading-v3.webp' : '/console-welcome-v3.webp'}
               alt={isScreenLoading ? 'WUMI 掌上游戏机正在载入项目' : 'WUMI 紫色掌上游戏机'}
             />
+            <img className={`console-loading-screen-source ${isScreenLoading ? 'is-visible' : ''}`} src="/console-loading-source-v4.png" alt="" aria-hidden="true" />
             {isScreenLoading && <span className="console-load-progress" key={screenLoadCycle} aria-hidden="true"><i /></span>}
             {active && !isScreenLoading && (
               <div className="render-screen-overlay" key={active.id}>
@@ -232,9 +233,8 @@ export default function Home() {
                 <div className="project-row-detail">
                   <div>
                     <div>
-                      <div className="project-row-image work-placeholder-image" aria-label={`${project.title}图片占位`}>
-                        <b>{project.id}</b>
-                        <span className="placeholder-status">WAITING FOR CONTENT <b>→</b></span>
+                      <div className={`project-row-image work-placeholder-image ${project.image ? 'has-image' : ''}`} aria-label={project.image ? `${project.title}项目图片` : `${project.title}图片占位`}>
+                        {project.image ? <img src={project.image} alt={`${project.title}项目封面`} /> : <><b>{project.id}</b><span className="placeholder-status">WAITING FOR CONTENT <b>→</b></span></>}
                       </div>
                       <div className="project-row-copy work-placeholder-copy">
                         <p>项目名称、封面图片与详细内容将在素材确认后替换。</p>
@@ -273,7 +273,6 @@ export default function Home() {
                 onClick={() => setDailyActive(index)}
                 style={{
                   '--daily-color': card.color,
-                  '--daily-surface': card.surface,
                   '--daily-lift': card.lift,
                   '--daily-rotate': card.rotate,
                   '--daily-index': index,
