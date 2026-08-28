@@ -27,11 +27,11 @@ const cartridgeScreenImages = [
 ];
 
 const workPlaceholders = [
-  { id: '01', key: 'work-01', title: 'PROJECT NAME 01', category: 'VISUAL DESIGN', year: '2024—2025', color: '#b8ff49', image: '/work/project-01-cover-v2.webp' },
-  { id: '02', key: 'work-02', title: 'PROJECT NAME 02', category: 'BRAND DESIGN', year: '2024—2025', color: '#63d8f4', image: '/work/project-02-cover-v2.webp' },
-  { id: '03', key: 'work-03', title: 'PROJECT NAME 03', category: 'IP DESIGN', year: '2024—2025', color: '#ff6f91', image: '/work/project-03-cover-v2.webp' },
-  { id: '04', key: 'work-04', title: 'PROJECT NAME 04', category: '3D VISUAL', year: '2024—2025', color: '#f3a46f', image: null },
-  { id: '05', key: 'work-05', title: 'PROJECT NAME 05', category: 'EXPERIMENT', year: '2024—2025', color: '#8c77ff', image: null },
+  { id: '01', key: 'work-01', slug: 'spring-duck', title: 'PROJECT NAME 01', category: 'VISUAL DESIGN', year: '2024—2025', color: '#b8ff49', image: '/work/project-01-cover-v2.webp' },
+  { id: '02', key: 'work-02', slug: 'crayon-shin', title: 'PROJECT NAME 02', category: 'BRAND DESIGN', year: '2024—2025', color: '#63d8f4', image: '/work/project-02-cover-v2.webp' },
+  { id: '03', key: 'work-03', slug: 'veggie-kingdom', title: 'PROJECT NAME 03', category: 'IP DESIGN', year: '2024—2025', color: '#ff6f91', image: '/work/project-03-cover-v2.webp' },
+  { id: '04', key: 'work-04', slug: null, title: 'PROJECT NAME 04', category: '3D VISUAL', year: '2024—2025', color: '#f3a46f', image: null },
+  { id: '05', key: 'work-05', slug: null, title: 'PROJECT NAME 05', category: 'EXPERIMENT', year: '2024—2025', color: '#8c77ff', image: null },
 ];
 
 const dailyPracticeCards = [
@@ -227,12 +227,19 @@ export default function Home() {
                   <em>{project.year}</em>
                   <i aria-hidden="true">↗</i>
                 </button>
+                {project.slug && <a className="project-row-arrow-link" href={`/work/${project.slug}`} aria-label={`进入${project.title}项目详情页`} />}
                 <div className="project-row-detail">
                   <div>
                     <div>
-                      <div className={`project-row-image work-placeholder-image ${project.image ? 'has-image' : ''}`} aria-label={project.image ? `${project.title}项目图片` : `${project.title}图片占位`}>
-                        {project.image ? <img src={project.image} alt={`${project.title}项目封面`} loading="eager" decoding="async" /> : <><b>{project.id}</b><span className="placeholder-status">WAITING FOR CONTENT <b>→</b></span></>}
-                      </div>
+                      {project.image && project.slug ? (
+                        <a className="project-row-image work-placeholder-image has-image" href={`/work/${project.slug}`} aria-label={`进入${project.title}项目详情页`}>
+                          <img src={project.image} alt={`${project.title}项目封面`} loading="eager" decoding="async" />
+                        </a>
+                      ) : (
+                        <div className="project-row-image work-placeholder-image" aria-label={`${project.title}图片占位`}>
+                          <b>{project.id}</b><span className="placeholder-status">WAITING FOR CONTENT <b>→</b></span>
+                        </div>
+                      )}
                       <div className="project-row-copy work-placeholder-copy">
                         <p>项目名称、封面图片与详细内容将在素材确认后替换。</p>
                         <dl><div><dt>STATUS</dt><dd>CONTENT PENDING</dd></div><div><dt>TYPE</dt><dd>{project.category}</dd></div></dl>
