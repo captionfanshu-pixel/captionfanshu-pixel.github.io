@@ -35,12 +35,12 @@ const workPlaceholders = [
 ];
 
 const dailyPracticeCards = [
-  { id: '01', title: 'DAILY 01', image: '/daily/01.png', color: '#70cf69', lift: '18px', rotate: '-6deg' },
-  { id: '02', title: 'DAILY 02', image: '/daily/02.png', color: '#ef91bf', lift: '2px', rotate: '-3deg' },
-  { id: '03', title: 'DAILY 03', image: '/daily/03.png', color: '#76bde7', lift: '-8px', rotate: '3deg' },
-  { id: '04', title: 'DAILY 04', image: '/daily/04.png', color: '#7bc9ca', lift: '7px', rotate: '-2deg' },
-  { id: '05', title: 'DAILY 05', image: '/daily/05.png', color: '#66a9d5', lift: '-2px', rotate: '5deg' },
-  { id: '06', title: 'DAILY 06', image: '/daily/06.png', color: '#e9bd50', lift: '20px', rotate: '7deg' },
+  { id: '01', title: 'DAILY 01', image: '/daily/01-v2.png', color: '#e9bd50', lift: '18px', rotate: '-6deg' },
+  { id: '02', title: 'DAILY 02', image: '/daily/02-v2.png', color: '#7bc9ca', lift: '2px', rotate: '-3deg' },
+  { id: '03', title: 'DAILY 03', image: '/daily/03-v2.png', color: '#66a9d5', lift: '-8px', rotate: '3deg' },
+  { id: '04', title: 'DAILY 04', image: '/daily/04-v2.png', color: '#70cf69', lift: '7px', rotate: '-2deg' },
+  { id: '05', title: 'DAILY 05', image: '/daily/05-v2.png', color: '#ef91bf', lift: '-2px', rotate: '5deg' },
+  { id: '06', title: 'DAILY 06', image: '/daily/06-v2.png', color: '#76bde7', lift: '20px', rotate: '7deg' },
 ];
 
 export default function Home() {
@@ -50,6 +50,7 @@ export default function Home() {
   const [archiveActive, setArchiveActive] = useState(workPlaceholders[0].key);
   const [dailyActive, setDailyActive] = useState(2);
   const [isScreenLoading, setIsScreenLoading] = useState(false);
+  const [screenLoadCycle, setScreenLoadCycle] = useState(0);
   const screenLoadTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const activeCartridgeIndex = active ? featuredProjects.findIndex((project) => project.id === active.id) : -1;
   const activeScreenImage = activeCartridgeIndex >= 0 ? cartridgeScreenImages[activeCartridgeIndex] : null;
@@ -58,6 +59,7 @@ export default function Home() {
     if (screenLoadTimer.current) clearTimeout(screenLoadTimer.current);
     setActive(project);
     setIsScreenLoading(true);
+    setScreenLoadCycle((cycle) => cycle + 1);
     screenLoadTimer.current = setTimeout(() => {
       setIsScreenLoading(false);
       screenLoadTimer.current = null;
@@ -188,7 +190,7 @@ export default function Home() {
               src={isScreenLoading ? '/console-loading-v3.webp' : '/console-welcome-v3.webp'}
               alt={isScreenLoading ? 'WUMI 掌上游戏机正在载入项目' : 'WUMI 紫色掌上游戏机'}
             />
-            {isScreenLoading && <span className="console-load-progress" aria-hidden="true"><i /></span>}
+            {isScreenLoading && <span className="console-load-progress" key={screenLoadCycle} aria-hidden="true"><i /></span>}
             {active && !isScreenLoading && (
               <div className="render-screen-overlay" key={active.id}>
                 <a className="render-project" href={`/work/${active.slug}`} aria-label={`进入${active.title}项目`}>
@@ -283,11 +285,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about-section" id="about" aria-labelledby="about-title" data-reveal>
+      <section className="about-wrap" id="about" aria-labelledby="about-title" data-reveal>
         <div className="about-index-heading">
           <span>03 / ABOUT PROFILE</span>
           <span>DESIGNER PROFILE — YANGTING / 2026</span>
         </div>
+        <div className="about-section">
         <div className="about-profile-card">
           <div className="about-card-head">
             <div><b>PROFILE FILE</b><span>VISUAL DESIGNER</span></div>
@@ -321,15 +324,16 @@ export default function Home() {
             <h3>工作经历</h3>
             <div className="about-timeline">
               <article>
-                <div className="about-job"><div className="about-job-heading"><h4>广州灵动创想科技有限公司</h4><b>平面设计师</b></div><p className="about-job-summary">负责食玩项目线上线下视觉、产品详情与宣传物料设计，并参与展会快闪、终端陈列及包装印刷落地，持续维护 IP 衍生产品视觉一致性。</p></div>
+                <div className="about-job"><div className="about-job-heading"><h4>广州灵动创想科技有限公司</h4><b>平面设计师</b></div><ul><li>独立完成食玩的线上线下视觉方案，高效产出产品详情长图、宣传物料等多样化设计内容，精准匹配 IP 调性与产品卖点。</li><li>参与品牌展会快闪店、终端陈列展陈的空间视觉设计，打造兼具商品展示与打卡互动的线下消费场景。</li><li>跟进设计落地全流程，熟悉包装材质特性与印刷工艺，维护 IP 衍生产品的视觉语言一致性。</li></ul></div>
                 <time>2025.12 — 2026.05</time>
               </article>
               <article>
-                <div className="about-job"><div className="about-job-heading"><h4>广州昌邻餐饮管理有限公司</h4><b>平面设计师</b></div><p className="about-job-summary">负责品牌新品上市与日常营销视觉、海报及 Banner 等物料设计，参与周边包装从概念到印刷落地，并持续维护品牌视觉一致性。</p></div>
+                <div className="about-job"><div className="about-job-heading"><h4>广州昌邻餐饮管理有限公司</h4><b>平面设计师</b></div><ul><li>独立完成品牌新品上市、日常营销活动的线上线下视觉方案，高效产出海报、Banner、宣传单页等多样化物料。</li><li>多次负责参与项目周边新品设计，了解包装材质特性及后期印刷工艺，深入参与从概念构思到落地的全流程。</li><li>维护与拓展品牌视觉形象，确保品牌设计语言的一致性，并灵活应对部门临时性设计需求。</li></ul></div>
                 <time>2023.03 — 2025.06</time>
               </article>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
