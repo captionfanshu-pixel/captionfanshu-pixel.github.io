@@ -61,7 +61,7 @@ export default function Home() {
     screenLoadTimer.current = setTimeout(() => {
       setIsScreenLoading(false);
       screenLoadTimer.current = null;
-    }, 1200);
+    }, 850);
   }, []);
 
   const moveSelection = useCallback((direction: number) => {
