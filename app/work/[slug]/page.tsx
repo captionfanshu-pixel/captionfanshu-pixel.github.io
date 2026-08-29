@@ -42,7 +42,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </div>
           <div className="manual-heading-row">
             <div className="manual-primary-copy">
-              <small>PROJECT {project.id}</small>
               <h1>{project.title}</h1>
               <h2>{project.english}</h2>
               <div className="manual-intro-copy">
@@ -58,7 +57,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <div className="manual-media-column">
               <figure className="manual-cover-card">
                 <img className="manual-hero-image" src={project.image} alt={`${project.title}主视觉`} />
-                <figcaption>KEY VISUAL / {project.english}</figcaption>
               </figure>
             </div>
           </div>
@@ -82,7 +80,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </div>
           <div className="problem-solution">
             <article><span>PROBLEM / 问题</span><h3>设计挑战</h3><p>{project.challenge}</p></article>
-            <i>&amp;</i>
             <article><span>SOLUTION / 解法</span><h3>设计方案</h3><p>{project.approach}</p></article>
           </div>
         </div>
@@ -131,7 +128,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       </section>
 
       <section className="next-game" data-reveal>
-        <div><p>PROJECT COMPLETE / NEXT CASE</p><h2>继续浏览<br />下一项作品。</h2></div>
+        <div><p>PROJECT COMPLETE / NEXT CASE</p><h2>继续浏览<br />下一个作品</h2></div>
         <Link href={`/work/${next.slug}`} style={{ '--next-color': next.color } as React.CSSProperties}>
           <div className="next-cart"><img src={next.image} alt="" /><span>{next.id}</span></div>
           <div><small>NEXT PROJECT</small><strong>{next.title}</strong><span>{next.subtitle}</span></div>
