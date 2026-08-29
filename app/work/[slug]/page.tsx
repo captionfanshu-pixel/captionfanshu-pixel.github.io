@@ -131,7 +131,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div><p>PROJECT COMPLETE / NEXT CASE</p><h2>继续浏览<br />下一个作品</h2></div>
         <Link href={`/work/${next.slug}`} style={{ '--next-color': next.color } as React.CSSProperties}>
           <div className="next-cart"><img src={next.image} alt="" /><span>{next.id}</span></div>
-          <div><small>NEXT PROJECT</small><strong>{next.title}</strong><span>{next.subtitle}</span></div>
+          <div><strong>{next.title}</strong><span>{next.english}</span></div>
           <b>VIEW →</b>
         </Link>
       </section>
