@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { projects } from '../../projects';
-import ProjectGallery from './project-gallery';
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -36,26 +35,25 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       </nav>
 
       <header className="manual-hero" data-reveal>
+        <img className="manual-hero-image" src={project.image} alt={`${project.title}主视觉`} />
+        <div className="manual-hero-shade" />
         <div className="manual-title">
           <div className="manual-eyebrow">
             <p>PORTFOLIO CASE / {project.category}</p>
-            <span>{project.id} · {project.year}</span>
+            <span>YANGTING / {project.year}</span>
           </div>
           <div className="manual-heading-row">
             <div>
+              <small>PROJECT {project.id}</small>
               <h1>{project.title}</h1>
               <h2>{project.english}</h2>
             </div>
             <div className="manual-intro-copy">
               <small>PROJECT OVERVIEW</small>
               <p className="manual-summary">{project.summary}</p>
-              <a href="#chapter-one">VIEW CASE STUDY ↓</a>
+              <a href="#chapter-one">EXPLORE PROJECT ↓</a>
             </div>
           </div>
-        </div>
-        <div className="manual-cover">
-          <img src={project.image} alt={`${project.title}主视觉`} />
-          <span>KEY VISUAL / {project.english}</span>
         </div>
       </header>
 
@@ -71,37 +69,57 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="chapter-grid">
           <div className="chapter-heading">
             <small>OPERATION DESIGN</small>
-            <h2>从问题到方案，<br />建立完整视觉叙事。</h2>
-            <p>围绕项目需求梳理挑战、设计思路与成果，让读者快速理解作品背后的判断与方法。</p>
+            <h2>从项目背景出发，<br />找到设计的核心问题。</h2>
+            <p>{project.summary}</p>
           </div>
-          <div className="story-blocks">
-            <article><span>01 / CHALLENGE</span><h3>设计挑战</h3><p>{project.challenge}</p></article>
-            <article><span>02 / APPROACH</span><h3>创意方案</h3><p>{project.approach}</p></article>
-            <article><span>03 / OUTCOME</span><h3>最终成果</h3><p>{project.outcome}</p></article>
+          <div className="problem-solution">
+            <article><span>PROBLEM / 问题</span><h3>设计挑战</h3><p>{project.challenge}</p></article>
+            <i>&amp;</i>
+            <article><span>SOLUTION / 解法</span><h3>设计方案</h3><p>{project.approach}</p></article>
           </div>
         </div>
       </section>
 
-      <section className="manual-color-section" data-reveal>
-        <div className="chapter-label"><span>02 / 视觉系统</span><b>VISUAL SYSTEM</b></div>
-        <div className="manual-color-grid">
-          <div>
-            <small>COLOR COLLECTION</small>
-            <h2>用主色建立<br />项目视觉记忆。</h2>
-            <p>以项目主色为视觉锚点，搭配深色与暖白中性色，让内容、图片与信息层级保持统一。</p>
-          </div>
+      <section className="manual-objectives" data-reveal>
+        <div className="chapter-label"><span>02 / 设计目标</span><b>DESIGN OBJECTIVES</b></div>
+        <div className="objective-intro">
+          <div><small>DESIGN DIRECTION</small><h2>明确目标，建立统一且有记忆点的视觉表达。</h2></div>
+          <p>围绕品牌识别、内容传播与实际应用三个维度展开，让设计兼具视觉吸引力、信息效率与延展能力。</p>
+        </div>
+        <div className="objective-grid">
+          <article><b>01</b><span>核心目标一</span><h3>强化视觉识别</h3><p>建立清晰的核心符号与色彩记忆，让项目在不同媒介中保持一致。</p></article>
+          <article><b>02</b><span>核心目标二</span><h3>提升传播效率</h3><p>优化内容层级和阅读路径，让受众快速理解项目主题与主要卖点。</p></article>
+          <article><b>03</b><span>核心目标三</span><h3>支持场景延展</h3><p>形成可持续应用的视觉系统，适配线上、线下及后续衍生内容。</p></article>
+        </div>
+        <div className="objective-outcome"><span>FINAL OUTCOME / 设计成果</span><p>{project.outcome}</p></div>
+      </section>
+
+      <section className="manual-visual-showcase" data-reveal>
+        <div className="chapter-label"><span>03 / 视觉展示</span><b>VISUAL SHOWCASE</b></div>
+        <div className="showcase-hero-placeholder">
+          <span>KEY VISUAL</span><b>主视觉图片待补充</b><small>IMAGE PLACEHOLDER / 16:9</small>
+        </div>
+        <div className="color-system">
+          <div><small>COLOR COLLECTION</small><h2>项目视觉配色</h2></div>
           <div className="color-swatches" aria-label="项目配色">
-            <span className="swatch-primary"><b>{project.color.toUpperCase()}</b><small>PRIMARY</small></span>
             <span className="swatch-dark"><b>#09090B</b><small>INK</small></span>
+            <span className="swatch-primary"><b>{project.color.toUpperCase()}</b><small>PRIMARY</small></span>
             <span className="swatch-mid"><b>#8E8E92</b><small>NEUTRAL</small></span>
             <span className="swatch-light"><b>#F2F0E9</b><small>PAPER</small></span>
           </div>
         </div>
       </section>
 
-      <section className="visual-chapter" data-reveal>
-        <div className="chapter-label"><span>03 / 细节展示</span><b>VISUAL WALKTHROUGH</b></div>
-        <ProjectGallery gallery={project.gallery} projectId={project.id} projectTitle={project.title} />
+      <section className="manual-detail-showcase" data-reveal>
+        <div className="chapter-label"><span>04 / 细节展示</span><b>DETAIL SHOWCASE</b></div>
+        <div className="detail-placeholder-grid">
+          <div className="detail-placeholder detail-placeholder-wide"><span>DETAIL 01</span><b>横版细节图待补充</b></div>
+          <div className="detail-placeholder detail-placeholder-tall"><span>DETAIL 02</span><b>竖版细节图待补充</b></div>
+          <div className="detail-placeholder detail-placeholder-tall"><span>DETAIL 03</span><b>竖版细节图待补充</b></div>
+          <div className="detail-placeholder"><span>DETAIL 04</span><b>局部细节图待补充</b></div>
+          <div className="detail-placeholder"><span>DETAIL 05</span><b>局部细节图待补充</b></div>
+          <div className="detail-placeholder"><span>DETAIL 06</span><b>局部细节图待补充</b></div>
+        </div>
       </section>
 
       <section className="next-game" data-reveal>
