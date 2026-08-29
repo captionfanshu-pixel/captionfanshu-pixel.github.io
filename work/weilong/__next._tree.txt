@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/0y2j4g2bwbhj3.css","style"]
+:HL["/_next/static/chunks/03myu9xm0xofl.css","style"]
 :HL["/projects/weilong.jpg","image"]
 :HL["/projects/bitter-melon.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"weilong","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"CMyQyG3bfupk2Ge7x1WKn"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"weilong","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"d5d5v2jVLiZ5rJO9rFkhd"}
