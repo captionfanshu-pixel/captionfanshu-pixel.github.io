@@ -956,3 +956,19 @@ body { background:#1a1a1b; }
   .objective-grid article>span { font-size:13px; }
 }
 
+/* Project detail v13 — align supporting copy */
+.manual-chapter .chapter-heading>p { align-self:center; margin-top:58px; margin-bottom:0; }
+.objective-intro>p { justify-self:end; max-width:390px; text-align:right; }
+
+@media (max-width:900px) {
+  .manual-chapter .chapter-heading>p { align-self:start; margin-top:0; }
+  .objective-intro>p { justify-self:start; max-width:620px; text-align:left; }
+}
+
+/* Project detail v14 — consistent section label size */
+.chapter-label,.manual-chapter .chapter-label,.manual-objectives .chapter-label,.manual-visual-showcase .chapter-label,.manual-detail-showcase .chapter-label { font-size:14px; line-height:1.2; }
+
+@media (max-width:600px) {
+  .chapter-label,.manual-chapter .chapter-label,.manual-objectives .chapter-label,.manual-visual-showcase .chapter-label,.manual-detail-showcase .chapter-label { font-size:12px; }
+}
+
