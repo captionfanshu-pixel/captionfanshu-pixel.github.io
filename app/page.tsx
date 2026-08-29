@@ -30,8 +30,8 @@ const workPlaceholders = [
   { id: '01', key: 'work-01', slug: 'spring-duck', title: 'PROJECT NAME 01', category: 'VISUAL DESIGN', year: '2024—2025', color: '#b8ff49', image: '/work/project-01-cover-v2.webp' },
   { id: '02', key: 'work-02', slug: 'crayon-shin', title: 'PROJECT NAME 02', category: 'BRAND DESIGN', year: '2024—2025', color: '#63d8f4', image: '/work/project-02-cover-v2.webp' },
   { id: '03', key: 'work-03', slug: 'veggie-kingdom', title: 'PROJECT NAME 03', category: 'IP DESIGN', year: '2024—2025', color: '#ff6f91', image: '/work/project-03-cover-v2.webp' },
-  { id: '04', key: 'work-04', slug: null, title: 'PROJECT NAME 04', category: '3D VISUAL', year: '2024—2025', color: '#f3a46f', image: null },
-  { id: '05', key: 'work-05', slug: null, title: 'PROJECT NAME 05', category: 'EXPERIMENT', year: '2024—2025', color: '#8c77ff', image: null },
+  { id: '04', key: 'work-04', slug: 'snow-online', title: 'PROJECT NAME 04', category: '3D VISUAL', year: '2024—2025', color: '#f3a46f', image: '/work/project-04-cover-v2.webp' },
+  { id: '05', key: 'work-05', slug: 'sunny-restaurant', title: 'PROJECT NAME 05', category: 'IP DESIGN', year: '2024—2025', color: '#8c77ff', image: '/work/project-05-cover-v2.webp' },
 ];
 
 const dailyPracticeCards = [

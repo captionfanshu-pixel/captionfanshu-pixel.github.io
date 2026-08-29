@@ -65,6 +65,23 @@ export const projects: Project[] = [
     outcome:'形成从角色设定到商业空间想象的完整原创 IP 提案，具备系列化开发潜力。',
     gallery:['/projects/summy-dessert-1.jpg','/projects/summy-dessert-2.jpg','/projects/summy-dessert-3.jpg','/projects/summy-dessert-4.jpg','/projects/summy-dessert-5.jpg','/projects/summy-dessert-6.jpg'],
   },
+  {
+    id:'P07', slug:'snow-online', title:'雪山 ONLINE', english:'SNOW ONLINE', subtitle:'雪山动物角色视觉', category:'3D 视觉设计', year:'2025', role:'角色视觉 / 场景 / 主视觉', image:'/work/project-04-cover-v2.webp', color:'#f3a46f',
+    summary:'以雪山探险为主题，用拟人动物角色与电影感冰雪场景构成活泼、亲切的三维主视觉。',
+    challenge:'在多人角色同框的画面中兼顾角色辨识度、故事氛围与大标题的视觉冲击。',
+    approach:'通过前后景层次、统一冬季服装和明亮冷暖对比，让角色群像保持清晰并强化雪山主题。',
+    outcome:'完成一套适合活动封面与线上传播的雪山主题角色视觉。',
+    gallery:['/work/project-04-cover-v2.webp'],
+  },
+  {
+    id:'P08', slug:'sunny-restaurant', title:'晴日餐厅', english:'SUNNY RESTAURANT', subtitle:'原创餐厅 IP 视觉', category:'原创 IP 设计', year:'2025', role:'角色 / 场景 / 品牌主视觉', image:'/work/project-05-cover-v2.webp', color:'#8c77ff',
+    summary:'以温暖的晴日餐厅为背景，通过拟人猫咪店员与柔和光影建立轻松治愈的品牌气质。',
+    challenge:'让角色、餐厅空间与品牌标识在同一画面中形成明确层级，同时保留生活感与故事感。',
+    approach:'运用暖色木质场景、自然逆光和统一制服造型，塑造具有亲和力的餐厅角色世界。',
+    outcome:'形成可延展到海报、菜单、包装和社交传播的原创餐厅 IP 主视觉。',
+    gallery:['/work/project-05-cover-v2.webp'],
+  },
 ];
 
 export const featuredProjects = projects.slice(0,4);
+
