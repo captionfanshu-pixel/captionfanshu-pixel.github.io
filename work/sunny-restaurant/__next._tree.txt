@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/12ky6.f.9_779.css","style"]
+:HL["/_next/static/chunks/0iz9mcpr-e.vi.css","style"]
 :HL["/work/project-05-cover-v2.webp","image"]
 :HL["/projects/spring-duck.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"sunny-restaurant","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"eWA1U8SrGDDmYj-1nKnrT"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"sunny-restaurant","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"UmB3GGG38NLA2uTIvxNE_"}
