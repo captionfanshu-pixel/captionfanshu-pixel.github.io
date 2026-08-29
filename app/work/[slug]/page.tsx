@@ -45,16 +45,21 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <small>PROJECT {project.id}</small>
               <h1>{project.title}</h1>
               <h2>{project.english}</h2>
+              <div className="manual-intro-copy">
+                <small>PROJECT OVERVIEW</small>
+                <p className="manual-summary">{project.summary}</p>
+              </div>
+              <div className="manual-hero-tags" aria-label="项目关键词">
+                <span>{project.category}</span>
+                <span>{project.role.split(' / ')[0]}</span>
+                <span>{project.year}</span>
+              </div>
             </div>
             <div className="manual-media-column">
               <figure className="manual-cover-card">
                 <img className="manual-hero-image" src={project.image} alt={`${project.title}主视觉`} />
                 <figcaption>KEY VISUAL / {project.english}</figcaption>
               </figure>
-              <div className="manual-intro-copy">
-                <small>PROJECT OVERVIEW</small>
-                <p className="manual-summary">{project.summary}</p>
-              </div>
             </div>
           </div>
         </div>
