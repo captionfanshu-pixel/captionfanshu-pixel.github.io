@@ -74,7 +74,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="chapter-label"><span>01 / 设计背景</span><b>DESIGN BACKGROUND</b></div>
         <div className="chapter-grid">
           <div className="chapter-heading">
-            <small>OPERATION DESIGN</small>
             <h2>从项目背景出发，<br />找到设计的核心问题。</h2>
             <p>{project.summary}</p>
           </div>

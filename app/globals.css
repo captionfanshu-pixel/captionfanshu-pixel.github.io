@@ -965,10 +965,38 @@ body { background:#1a1a1b; }
   .objective-intro>p { justify-self:start; max-width:620px; text-align:left; }
 }
 
-/* Project detail v14 — consistent section label size */
-.chapter-label,.manual-chapter .chapter-label,.manual-objectives .chapter-label,.manual-visual-showcase .chapter-label,.manual-detail-showcase .chapter-label { font-size:14px; line-height:1.2; }
+/* Project detail v14 — compact section label size */
+.chapter-label,.manual-chapter .chapter-label,.manual-objectives .chapter-label,.manual-visual-showcase .chapter-label,.manual-detail-showcase .chapter-label { font-size:12px; line-height:1.2; }
 
 @media (max-width:600px) {
-  .chapter-label,.manual-chapter .chapter-label,.manual-objectives .chapter-label,.manual-visual-showcase .chapter-label,.manual-detail-showcase .chapter-label { font-size:12px; }
+  .chapter-label,.manual-chapter .chapter-label,.manual-objectives .chapter-label,.manual-visual-showcase .chapter-label,.manual-detail-showcase .chapter-label { font-size:11px; }
+}
+
+/* Project detail v15 — bottom-aligned background introduction */
+.manual-chapter .chapter-heading {
+  min-height:0;
+  grid-template-columns:1.28fr .72fr;
+  grid-template-rows:auto;
+  align-items:end;
+  gap:64px;
+}
+.manual-chapter .chapter-heading>h2 {
+  grid-column:1;
+  grid-row:1;
+  align-self:end;
+  margin:0;
+}
+.manual-chapter .chapter-heading>p {
+  grid-column:2;
+  grid-row:1;
+  align-self:end;
+  justify-self:end;
+  margin:0 0 2px;
+}
+
+@media (max-width:900px) {
+  .manual-chapter .chapter-heading { grid-template-columns:1fr; gap:22px; }
+  .manual-chapter .chapter-heading>h2,.manual-chapter .chapter-heading>p { grid-column:1; grid-row:auto; }
+  .manual-chapter .chapter-heading>p { justify-self:start; margin:0; }
 }
 
