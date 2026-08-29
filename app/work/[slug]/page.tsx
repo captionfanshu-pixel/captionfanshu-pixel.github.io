@@ -54,7 +54,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <div className="manual-intro-copy">
                 <small>PROJECT OVERVIEW</small>
                 <p className="manual-summary">{project.summary}</p>
-                <a href="#chapter-one">EXPLORE PROJECT ↓</a>
               </div>
             </div>
           </div>
@@ -73,7 +72,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="chapter-grid">
           <div className="chapter-heading">
             <small>OPERATION DESIGN</small>
-            <h2>从项目背景出发，<br />找到设计的核心问题。</h2>
+            <h2>从项目背景出发，<br />找到设计的<br />核心问题。</h2>
             <p>{project.summary}</p>
           </div>
           <div className="problem-solution">
