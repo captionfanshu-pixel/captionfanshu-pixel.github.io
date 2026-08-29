@@ -275,7 +275,7 @@ button { font:inherit; }
 .about-section:before { content:''; position:absolute; z-index:-2; inset:0; background:linear-gradient(145deg,rgba(117,70,239,.11),rgba(255,255,255,.035) 38%,rgba(8,8,12,.38)); backdrop-filter:blur(24px) saturate(115%); }
 .about-section:after { content:''; position:absolute; z-index:-1; left:12%; right:8%; bottom:-34%; height:62%; background:radial-gradient(ellipse at center,rgba(117,70,239,.18),transparent 66%); filter:blur(35px); pointer-events:none; }
 .about-index-heading { display:flex; justify-content:space-between; align-items:center; min-height:36px; margin:0 0 36px; padding:0 10px 13px; border-bottom:1px solid rgba(255,255,255,.28); color:rgba(255,255,255,.48); font-size:10px; font-weight:800; line-height:1; letter-spacing:.07em; }
-.about-profile-card { position:relative; height:100%; min-height:530px; padding:20px 20px 22px; overflow:hidden; border:1px solid color-mix(in srgb,var(--about-purple),white 12%); border-radius:24px; background:linear-gradient(150deg,rgba(117,70,239,.16),rgba(19,17,27,.94) 42%,rgba(8,8,10,.98)); }
+.about-profile-card { position:relative; display:flex; flex-direction:column; height:100%; min-height:530px; padding:20px 20px 22px; overflow:hidden; border:1px solid color-mix(in srgb,var(--about-purple),white 12%); border-radius:24px; background:linear-gradient(150deg,rgba(117,70,239,.16),rgba(19,17,27,.94) 42%,rgba(8,8,10,.98)); }
 .about-profile-card:before { content:''; position:absolute; inset:11px; border:1px solid rgba(117,70,239,.15); border-radius:17px; pointer-events:none; }
 .about-card-head { position:relative; z-index:2; display:flex; justify-content:space-between; align-items:start; }
 .about-card-head div { display:flex; flex-direction:column; gap:6px; }
@@ -294,7 +294,7 @@ button { font:inherit; }
 .about-identity h3 span { font-size:.46em; letter-spacing:0; }
 .about-identity>b { color:var(--about-purple); font-size:16px; }
 .about-identity p { margin:9px 0 0; color:rgba(255,255,255,.5); font-size:9px; letter-spacing:.08em; }
-.about-contact-placeholder { position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:11px 18px; padding:12px 4px 0; }
+.about-contact-placeholder { position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:11px 18px; margin-top:auto; padding:12px 4px 0; }
 .about-contact-placeholder div { display:flex; flex-direction:column; gap:6px; min-width:0; }
 .about-contact-placeholder span { color:var(--about-purple); font-size:11px; font-weight:800; line-height:1; letter-spacing:.05em; }
 .about-contact-placeholder b { overflow:hidden; color:rgba(255,255,255,.68); font-size:11px; line-height:1.35; white-space:nowrap; text-overflow:ellipsis; }
