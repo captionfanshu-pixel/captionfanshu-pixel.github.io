@@ -18,7 +18,7 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id:'P01', slug:'spring-duck', title:'春游鸭先知', english:'SPRING OUTING', subtitle:'品牌春日视觉活动', category:'品牌视觉设计', year:'2024', role:'主视觉 / 电商 / 社交传播', image:'/projects/spring-duck.jpg', color:'#b7ff4a',
+    id:'P01', slug:'spring-duck', title:'春游鸭上新', english:'SPRING OUTING', subtitle:'品牌春日视觉活动', category:'品牌视觉设计', year:'2024', role:'主视觉 / 电商 / 社交传播', image:'/projects/spring-duck.jpg', color:'#b7ff4a',
     summary:'以春游、户外与年轻社交为核心，把品牌鸭子角色带入明亮轻快的春日世界。',
     challenge:'在保持品牌识别的同时，为季节活动建立更鲜明、更容易传播的情绪记忆点。',
     approach:'以蓝天、草地和柔软三维角色构成主视觉，再将统一图形语言延展至详情页与移动端传播。',

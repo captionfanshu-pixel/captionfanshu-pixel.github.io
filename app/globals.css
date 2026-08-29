@@ -724,3 +724,51 @@ body { background:#1a1a1b; }
   .next-game { padding:82px 0 92px; }
 }
 
+/* Project detail v5 — blurred hero with overlaid type and readable labels */
+.manual-heading-row { position:relative; display:block; min-height:540px; overflow:hidden; border:1px solid rgba(255,255,255,.09); border-radius:24px; background:#141416; }
+.manual-heading-row:after { content:''; position:absolute; z-index:1; inset:0; background:linear-gradient(90deg,rgba(6,6,8,.9) 0%,rgba(6,6,8,.56) 48%,rgba(6,6,8,.2) 78%),linear-gradient(0deg,rgba(6,6,8,.85) 0%,transparent 55%); pointer-events:none; }
+.manual-primary-copy { position:absolute; z-index:3; left:36px; top:36px; width:min(64%,650px); min-height:0; display:block; padding:0; border:0; border-radius:0; background:transparent; }
+.manual-heading-row>div:first-child>small { margin:0; font-size:11px; }
+.manual-title h1 { margin:22px 0 0; font-size:clamp(58px,7.2vw,94px); line-height:.86; text-wrap:balance; }
+.manual-title h2 { margin-top:16px; font-size:clamp(25px,3vw,38px); }
+.manual-media-column { position:absolute; z-index:0; inset:0; display:block; }
+.manual-cover-card { position:absolute; inset:0; border:0; border-radius:0; }
+.manual-cover-card .manual-hero-image { width:100%; height:100%; aspect-ratio:auto; object-fit:cover; filter:blur(3px) saturate(.9) brightness(.7); transform:scale(1.025); }
+.manual-cover-card figcaption { z-index:3; right:18px; top:18px; bottom:auto; font-size:9px; }
+.manual-intro-copy { position:absolute; z-index:3; right:28px; bottom:28px; width:min(390px,46%); display:block; padding:22px 24px; border-color:rgba(255,255,255,.14); background:rgba(10,10,12,.82); backdrop-filter:blur(12px); }
+.manual-intro-copy>small { margin-bottom:12px; font-size:10px; }
+.manual-summary { font-size:14px; line-height:1.75; }
+.manual-intro-copy>a { margin-top:18px; font-size:10px; }
+
+.detail-nav { font-size:10px; }
+.manual-eyebrow p,.manual-eyebrow span { font-size:10px; }
+.meta-strip small { font-size:10px; }
+.meta-strip b { font-size:14px; }
+.chapter-label { font-size:11px; }
+.chapter-heading small,.manual-objectives small { font-size:10px; }
+.chapter-heading p,.objective-intro p { font-size:14px; }
+.problem-solution article>span { font-size:10px; }
+.problem-solution p { font-size:14px; }
+.objective-grid article>span { font-size:11px; }
+.objective-grid h3 { font-size:24px; }
+.objective-grid p { font-size:14px; }
+.objective-outcome span { font-size:11px; }
+.objective-outcome p { font-size:14px; }
+.showcase-hero-placeholder span,.showcase-hero-placeholder small,.color-system small,.color-swatches small,.detail-placeholder span { font-size:10px; }
+.color-swatches b { font-size:11px; }
+.detail-placeholder b { font-size:17px; }
+.next-game>div>p,.next-game>a small,.next-game>a>b { font-size:10px; }
+
+@media (max-width:600px) {
+  .manual-heading-row { min-height:560px; border-radius:18px; }
+  .manual-heading-row:after { background:linear-gradient(0deg,rgba(6,6,8,.94) 0%,rgba(6,6,8,.55) 66%,rgba(6,6,8,.26) 100%); }
+  .manual-primary-copy { left:22px; top:24px; width:calc(100% - 44px); }
+  .manual-title h1 { margin-top:18px; font-size:50px; }
+  .manual-media-column { inset:0; }
+  .manual-intro-copy { left:18px; right:18px; bottom:18px; width:auto; padding:18px; }
+  .manual-cover-card figcaption { display:none; }
+  .meta-strip small { font-size:9px; }
+  .meta-strip b { font-size:13px; }
+  .chapter-label { font-size:10px; }
+}
+
