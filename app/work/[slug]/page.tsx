@@ -35,23 +35,27 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       </nav>
 
       <header className="manual-hero" data-reveal>
-        <img className="manual-hero-image" src={project.image} alt={`${project.title}主视觉`} />
-        <div className="manual-hero-shade" />
         <div className="manual-title">
           <div className="manual-eyebrow">
             <p>PORTFOLIO CASE / {project.category}</p>
             <span>YANGTING / {project.year}</span>
           </div>
           <div className="manual-heading-row">
-            <div>
+            <div className="manual-primary-copy">
               <small>PROJECT {project.id}</small>
               <h1>{project.title}</h1>
               <h2>{project.english}</h2>
             </div>
-            <div className="manual-intro-copy">
-              <small>PROJECT OVERVIEW</small>
-              <p className="manual-summary">{project.summary}</p>
-              <a href="#chapter-one">EXPLORE PROJECT ↓</a>
+            <div className="manual-media-column">
+              <figure className="manual-cover-card">
+                <img className="manual-hero-image" src={project.image} alt={`${project.title}主视觉`} />
+                <figcaption>KEY VISUAL / {project.english}</figcaption>
+              </figure>
+              <div className="manual-intro-copy">
+                <small>PROJECT OVERVIEW</small>
+                <p className="manual-summary">{project.summary}</p>
+                <a href="#chapter-one">EXPLORE PROJECT ↓</a>
+              </div>
             </div>
           </div>
         </div>
