@@ -75,7 +75,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="chapter-grid">
           <div className="chapter-heading">
             <small>OPERATION DESIGN</small>
-            <h2>从项目背景出发，<br />找到设计的<br />核心问题。</h2>
+            <h2>从项目背景出发，<br />找到设计的核心问题。</h2>
             <p>{project.summary}</p>
           </div>
           <div className="problem-solution">
@@ -88,7 +88,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <section className="manual-objectives" data-reveal>
         <div className="chapter-label"><span>02 / 设计目标</span><b>DESIGN OBJECTIVES</b></div>
         <div className="objective-intro">
-          <div><small>DESIGN DIRECTION</small><h2>明确目标，建立统一且有记忆点的视觉表达。</h2></div>
+          <div><h2>明确目标，建立统一且有记忆点的视觉表达。</h2></div>
           <p>围绕品牌识别、内容传播与实际应用三个维度展开，让设计兼具视觉吸引力、信息效率与延展能力。</p>
         </div>
         <div className="objective-grid">
