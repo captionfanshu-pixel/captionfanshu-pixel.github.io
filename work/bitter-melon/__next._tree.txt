@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/0iz9mcpr-e.vi.css","style"]
+:HL["/_next/static/chunks/0rnd9ytzg2zf4.css","style"]
 :HL["/projects/bitter-melon.jpg","image"]
 :HL["/projects/crayon-shin.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"bitter-melon","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"UmB3GGG38NLA2uTIvxNE_"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"bitter-melon","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"KFBgBcUl65JZRdNffINcP"}
