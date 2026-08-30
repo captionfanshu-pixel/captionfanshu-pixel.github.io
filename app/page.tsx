@@ -56,19 +56,19 @@ const workPlaceholders: WorkPlaceholder[] = [
     ],
   },
   {
-    id: '02', key: 'work-02', slug: 'crayon-shin', title: 'PROJECT NAME 02', category: 'IP商业化设计', year: '2025—2026', color: '#63d8f4', image: '/work/project-02-cover-v2.webp',
+    id: '02', key: 'work-02', slug: 'crayon-shin', title: 'IP商业化设计', category: 'IP COMMERCIAL DESIGN', year: '2025—2026', color: '#63d8f4', image: '/work/project-02-cover-v2.webp',
     description: '围绕正版 IP 项目，完成产品视觉、电商 Banner 与线下展示等系列商业化设计。',
     status: 'IMPLEMENTED',
-    type: 'IP COMMERCIALIZATION DESIGN',
+    type: 'IP COMMERCIAL DESIGN',
     subprojects: [
       { slug: 'crayon-jar-flavor', title: '罐罐有味', english: 'CRAYON SHIN-CHAN JAR SERIES', image: '/projects/crayon-jar-flavor.jpg' },
       { slug: 'sanrio-magic-fruit', title: '幻变果粒', english: 'SANRIO MAGIC FRUIT', image: '/projects/sanrio-magic-fruit.jpg' },
       { slug: 'crayon-finger-football', title: '指偶足球联赛', english: 'FINGER PUPPET FOOTBALL', image: '/projects/crayon-finger-football.jpg' },
     ],
   },
-  { id: '03', key: 'work-03', slug: 'veggie-kingdom', title: 'PROJECT NAME 03', category: 'IP DESIGN', year: '2024—2025', color: '#ff6f91', image: '/work/project-03-cover-v2.webp' },
-  { id: '04', key: 'work-04', slug: 'snow-online', title: 'PROJECT NAME 04', category: '3D VISUAL', year: '2024—2025', color: '#f3a46f', image: '/work/project-04-cover-v2.webp' },
-  { id: '05', key: 'work-05', slug: 'sunny-restaurant', title: 'PROJECT NAME 05', category: 'IP DESIGN', year: '2024—2025', color: '#8c77ff', image: '/work/project-05-cover-v2.webp' },
+  { id: '03', key: 'work-03', slug: 'veggie-kingdom', title: 'VEGGIE KINGDOM', category: 'IP DESIGN', year: '2026', color: '#ff6f91', image: '/work/project-03-cover-v2.webp' },
+  { id: '04', key: 'work-04', slug: 'snow-online', title: '雪山Online｜一起登顶', category: 'AI VIDEO', year: '2026', color: '#f3a46f', image: '/work/project-04-cover-v2.webp', type: 'AI VIDEO' },
+  { id: '05', key: 'work-05', slug: 'sunny-restaurant', title: 'Sunny Desserts', category: 'IP DESIGN', year: '2025', color: '#8c77ff', image: '/work/project-05-cover-v2.webp' },
 ];
 
 const dailyPracticeCards = [
