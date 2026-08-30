@@ -144,11 +144,18 @@ export const projects: Project[] = [
   },
   {
     id:'P07', slug:'snow-online', title:'雪山 ONLINE', english:'SNOW ONLINE', subtitle:'雪山动物角色视觉', category:'3D 视觉设计', year:'2025', role:'角色视觉 / 场景 / 主视觉', image:'/work/project-04-cover-v2.webp', color:'#f3a46f',
-    summary:'以雪山探险为主题，用拟人动物角色与电影感冰雪场景构成活泼、亲切的三维主视觉。',
-    challenge:'在多人角色同框的画面中兼顾角色辨识度、故事氛围与大标题的视觉冲击。',
-    approach:'通过前后景层次、统一冬季服装和明亮冷暖对比，让角色群像保持清晰并强化雪山主题。',
+    summary:'围绕“10086个 online 时刻”的赛事主题，将“雪山登顶”这一具有挑战感和情绪张力的瞬间作为故事核心。通过不同角色身处雪山、居家、海边及办公等场景的交叉叙事，表现数字连接如何跨越空间，让原本属于一个人的冒险，被远方的伙伴共同看见、回应与分享，呼应中国移动作为“数字生活伙伴”陪伴用户重要时刻的品牌角色。',
+    challenge:'将赛事中的“always online”从抽象功能概念转化为可感知的情绪体验，同时让多场景叙事、角色关系与品牌价值保持清晰。',
+    approach:'通过登山挑战、信号连接、好友响应与最终共同见证登顶的故事递进，结合视频通话、在线状态与多场景切换强化“Online”概念。',
     outcome:'完成一套适合活动封面与线上传播的雪山主题角色视觉。',
     gallery:['/work/project-04-cover-v2.webp'],
+    objectiveTitle:'明确目标，让一次登顶成为大家共同在线的时刻。',
+    objectiveSummary:'围绕情绪共鸣、数字连接与品牌陪伴三个维度展开，让“Online”从功能概念转化为具有温度的生活体验。',
+    objectives:[
+      { title:'建立情绪共鸣', description:'以雪山登顶作为故事高潮，通过挑战与陪伴的情绪递进，让用户感受到重要时刻被共同见证的价值。' },
+      { title:'强化 Online 概念', description:'将视频连线、在线状态与多场景互动融入剧情，使网络连接成为推动故事发展的核心线索。' },
+      { title:'自然融入品牌价值', description:'通过跨场景连接体现中国移动“数字生活伙伴”的陪伴属性，让品牌能力自然服务于故事与人物关系。' },
+    ],
   },
   {
     id:'P08', slug:'sunny-restaurant', title:'晴日餐厅', english:'SUNNY RESTAURANT', subtitle:'原创餐厅 IP 视觉', category:'原创 IP 设计', year:'2025', role:'角色 / 场景 / 品牌主视觉', image:'/work/project-05-cover-v2.webp', color:'#8c77ff',
