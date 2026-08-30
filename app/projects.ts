@@ -17,6 +17,8 @@ export type Project = {
   objectiveTitle?: string;
   objectiveSummary?: string;
   objectives?: { title: string; description: string }[];
+  backgroundTitle?: string;
+  hideObjectives?: boolean;
 };
 
 export const projects: Project[] = [
@@ -127,24 +129,33 @@ export const projects: Project[] = [
     ],
   },
   {
-    id:'P05', slug:'veggie-kingdom', title:'Veggie Kingdom', english:'RACING CLUB', subtitle:'原创赛车王国 IP', category:'原创 IP 设计', year:'2025', role:'角色设定 / 3D 视觉 / 衍生品', image:'/projects/veggie-kingdom.jpg', color:'#ff8f3d',
-    summary:'由七位蔬果赛车手组成的原创世界，以速度、勇气与梦想构建轻松明快的角色群像。',
-    challenge:'让多个角色拥有独立性格与轮廓，同时共享同一套赛车世界观和品牌识别。',
-    approach:'从角色剪影、车辆造型与主题色出发，延展至海报、贴纸、证件卡和收藏型周边。',
+    id:'P05', slug:'veggie-kingdom', title:'VEGGIE KINGDOM', english:'RACING CLUB', subtitle:'原创赛车王国 IP', category:'原创 IP 设计', year:'2026', role:'角色设定 / 3D 视觉 / 衍生品', image:'/projects/veggie-kingdom.jpg', color:'#ff8f3d',
+    summary:'以蔬果赛车与小动物车手组成原创 IP 世界，通过角色、赛车与赛事场景，构建轻松、活力且具有持续延展能力的赛车主题视觉体系。',
+    challenge:'在多角色、多赛车并行的设定下，既要保证每个角色拥有鲜明的造型与性格差异，又需要建立统一的赛车视觉语言，避免角色割裂、元素堆叠以及过度“蔬菜卡通化”。',
+    approach:'以角色剪影、专属赛车、统一赛事视觉为核心，建立角色与车辆一一对应的识别系统，并延展至游戏界面、赛事场景、地图及商业周边，形成完整一致的 IP 世界观。',
     outcome:'完成可持续扩展的原创 IP 基础系统，为后续故事内容与商业衍生提供统一资产。',
     gallery:['/projects/veggie-kingdom-1.jpg','/projects/veggie-kingdom-2.jpg','/projects/veggie-kingdom-3.jpg','/projects/veggie-kingdom-4.jpg','/projects/veggie-kingdom-5.jpg'],
+    objectiveTitle:'明确目标，建立统一且有记忆点的赛车 IP 视觉表达。',
+    objectiveSummary:'围绕角色识别、赛事体验与商业延展三个维度展开，让不同内容在统一世界观下保持清晰、高效且具有持续扩展能力。',
+    objectives:[
+      { title:'强化角色识别', description:'通过动物特征、标志性配饰、专属色彩及蔬果赛车建立角色记忆点，让每位车手即使脱离场景也具有清晰辨识度。' },
+      { title:'建立赛车氛围', description:'减少单纯“蔬果卡通”的视觉表达，以赛道、工牌、号码、格纹、起跑系统及动态镜头强化竞速感，使项目首先被感知为一个赛车 IP。' },
+      { title:'支持多场景延展', description:'建立可复用的角色、车辆与视觉资产体系，使 IP 能够自然延展至游戏 UI、赛事海报、地图、动画、盲盒、毛绒及周边产品。' },
+    ],
   },
   {
-    id:'P06', slug:'summy-dessert', title:'Summy Dessert', english:'SUMMER DESSERT', subtitle:'原创甜品店 IP', category:'原创 IP 设计', year:'2025', role:'世界观 / 角色 / 包装与场景', image:'/projects/summy-dessert.jpg', color:'#b68cff',
-    summary:'以一家夏日甜品店为舞台，塑造不同职业与性格的动物角色，建立温暖的品牌故事。',
-    challenge:'让角色群像既能独立用于传播，又能共同支撑完整的甜品店空间与产品体验。',
-    approach:'统一三维比例、服装语言与暖色光影，再延展到角色卡、包装、店铺场景和户外广告。',
+    id:'P06', slug:'summy-dessert', title:'Sunny Desserts', english:'SUNNY DESSERTS', subtitle:'原创甜品店 IP', category:'原创 IP 设计', year:'2025', role:'世界观 / 角色 / 包装与场景', image:'/projects/summy-dessert.jpg', color:'#b68cff',
+    summary:'以猫头鹰店长为视觉核心，通过咖啡与甜品日常场景，建立轻松、亲切且具有故事感的品牌 IP 形象。',
+    challenge:'让角色既保留独立性格与识别度，同时与 Sunny Dessert 的品牌气质、场景和应用保持统一。',
+    approach:'从角色轮廓、标志动作与主色调出发，构建统一 2D 视觉体系，并延展至品牌 Logo、主视觉与周边物料。',
     outcome:'形成从角色设定到商业空间想象的完整原创 IP 提案，具备系列化开发潜力。',
     gallery:['/projects/summy-dessert-1.jpg','/projects/summy-dessert-2.jpg','/projects/summy-dessert-3.jpg','/projects/summy-dessert-4.jpg','/projects/summy-dessert-5.jpg','/projects/summy-dessert-6.jpg'],
+    backgroundTitle:'从角色设定出发，找到品牌的核心记忆点。',
+    hideObjectives:true,
   },
   {
-    id:'P07', slug:'snow-online', title:'雪山 ONLINE', english:'SNOW ONLINE', subtitle:'雪山动物角色视觉', category:'3D 视觉设计', year:'2025', role:'角色视觉 / 场景 / 主视觉', image:'/work/project-04-cover-v2.webp', color:'#f3a46f',
-    summary:'围绕“10086个 online 时刻”的赛事主题，将“雪山登顶”这一具有挑战感和情绪张力的瞬间作为故事核心。通过不同角色身处雪山、居家、海边及办公等场景的交叉叙事，表现数字连接如何跨越空间，让原本属于一个人的冒险，被远方的伙伴共同看见、回应与分享，呼应中国移动作为“数字生活伙伴”陪伴用户重要时刻的品牌角色。',
+    id:'P07', slug:'snow-online', title:'雪山Online｜一起登顶', english:'SNOW ONLINE', subtitle:'雪山动物角色视觉', category:'AI 视频', year:'2026', role:'角色视觉 / 场景 / 主视觉', image:'/work/project-04-cover-v2.webp', color:'#f3a46f',
+    summary:'围绕“10086个 online 时刻”的赛事主题，将“雪山登顶”这一具有挑战感和情绪张力的瞬间作为故事核心。',
     challenge:'将赛事中的“always online”从抽象功能概念转化为可感知的情绪体验，同时让多场景叙事、角色关系与品牌价值保持清晰。',
     approach:'通过登山挑战、信号连接、好友响应与最终共同见证登顶的故事递进，结合视频通话、在线状态与多场景切换强化“Online”概念。',
     outcome:'完成一套适合活动封面与线上传播的雪山主题角色视觉。',

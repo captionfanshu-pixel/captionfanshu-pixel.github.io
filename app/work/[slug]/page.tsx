@@ -34,7 +34,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   ];
 
   return (
-    <main className="manual-page" style={{ '--project-color': project.color } as React.CSSProperties}>
+    <main className={`manual-page manual-page--${project.slug}`} style={{ '--project-color': project.color } as React.CSSProperties}>
       <nav className="detail-nav">
         <Link href="/#work">← 返回上一级</Link>
         <span>{project.id} / {String(projects.length).padStart(2, '0')}</span>
@@ -81,7 +81,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="chapter-label"><span>01 / 设计背景</span><b>DESIGN BACKGROUND</b></div>
         <div className="chapter-grid">
           <div className="chapter-heading">
-            <h2>从项目背景出发，<br />找到设计的核心问题。</h2>
+            <h2>{project.backgroundTitle ?? <>从项目背景出发，<br />找到设计的核心问题。</>}</h2>
             <p>{project.summary}</p>
           </div>
           <div className="problem-solution">
@@ -91,7 +91,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      <section className="manual-objectives" data-reveal>
+      {!project.hideObjectives && <section className="manual-objectives" data-reveal>
         <div className="chapter-label"><span>02 / 设计目标</span><b>DESIGN OBJECTIVES</b></div>
         <div className="objective-intro">
           <div><h2>{project.objectiveTitle ?? '明确目标，建立统一且有记忆点的视觉表达。'}</h2></div>
@@ -108,7 +108,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           ))}
         </div>
         <div className="objective-outcome"><span>FINAL OUTCOME / 设计成果</span><p>{project.outcome}</p></div>
-      </section>
+      </section>}
 
       <section className="manual-visual-showcase" data-reveal>
         <div className="chapter-label"><span>03 / 视觉展示</span><b>VISUAL SHOWCASE</b></div>
