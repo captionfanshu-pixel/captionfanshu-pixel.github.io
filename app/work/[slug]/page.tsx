@@ -25,6 +25,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   if (index < 0) notFound();
   const project = projects[index];
   const next = projects[(index + 1) % projects.length];
+  const objectiveCards = project.objectives ?? [
+    { title: '强化视觉识别', description: '建立清晰的核心符号与色彩记忆，让项目在不同媒介中保持一致。' },
+    { title: '提升传播效率', description: '优化内容层级和阅读路径，让受众快速理解项目主题与主要卖点。' },
+    { title: '支持场景延展', description: '形成可持续应用的视觉系统，适配线上、线下及后续衍生内容。' },
+  ];
 
   return (
     <main className="manual-page" style={{ '--project-color': project.color } as React.CSSProperties}>
@@ -87,13 +92,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <section className="manual-objectives" data-reveal>
         <div className="chapter-label"><span>02 / 设计目标</span><b>DESIGN OBJECTIVES</b></div>
         <div className="objective-intro">
-          <div><h2>明确目标，建立统一且有记忆点的视觉表达。</h2></div>
-          <p>围绕品牌识别、内容传播与实际应用三个维度展开，让设计兼具视觉吸引力、信息效率与延展能力。</p>
+          <div><h2>{project.objectiveTitle ?? '明确目标，建立统一且有记忆点的视觉表达。'}</h2></div>
+          <p>{project.objectiveSummary ?? '围绕品牌识别、内容传播与实际应用三个维度展开，让设计兼具视觉吸引力、信息效率与延展能力。'}</p>
         </div>
         <div className="objective-grid">
-          <article><b>01</b><span>核心目标一</span><h3>强化视觉识别</h3><p>建立清晰的核心符号与色彩记忆，让项目在不同媒介中保持一致。</p></article>
-          <article><b>02</b><span>核心目标二</span><h3>提升传播效率</h3><p>优化内容层级和阅读路径，让受众快速理解项目主题与主要卖点。</p></article>
-          <article><b>03</b><span>核心目标三</span><h3>支持场景延展</h3><p>形成可持续应用的视觉系统，适配线上、线下及后续衍生内容。</p></article>
+          {objectiveCards.map((objective, objectiveIndex) => (
+            <article key={objective.title}>
+              <b>{String(objectiveIndex + 1).padStart(2, '0')}</b>
+              <span>核心目标{['一', '二', '三'][objectiveIndex] ?? objectiveIndex + 1}</span>
+              <h3>{objective.title}</h3>
+              <p>{objective.description}</p>
+            </article>
+          ))}
         </div>
         <div className="objective-outcome"><span>FINAL OUTCOME / 设计成果</span><p>{project.outcome}</p></div>
       </section>

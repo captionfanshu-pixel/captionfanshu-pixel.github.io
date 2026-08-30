@@ -14,6 +14,9 @@ export type Project = {
   approach: string;
   outcome: string;
   gallery: string[];
+  objectiveTitle?: string;
+  objectiveSummary?: string;
+  objectives?: { title: string; description: string }[];
 };
 
 export const projects: Project[] = [
@@ -24,6 +27,13 @@ export const projects: Project[] = [
     approach:'以蓝天、草地和柔软三维角色构成主视觉，再将统一图形语言延展至详情页与移动端传播。',
     outcome:'形成从活动主画面到电商触点的完整视觉套系，让角色、产品与春游主题保持一致。',
     gallery:['/projects/spring-duck-1.jpg','/projects/spring-duck-2.jpg','/projects/spring-duck-3.jpg'],
+    objectiveTitle:'明确目标，建立统一且具有春日记忆点的视觉表达。',
+    objectiveSummary:'围绕“春游鸭”主题，从活动识别、信息传播与场景延展三个维度建立统一视觉体系，让角色、产品与春日氛围形成完整关联。',
+    objectives:[
+      { title:'强化活动识别', description:'以小黄鸭角色、春日色彩与户外元素建立鲜明的主题视觉记忆，使消费者能够快速识别“春游鸭”活动内容，并与品牌形成稳定关联。' },
+      { title:'提升信息传播效率', description:'通过清晰的视觉层级与重点信息强化，让消费者快速理解活动主题、新品信息与核心卖点，提升线上传播中的阅读效率与视觉吸引力。' },
+      { title:'支持多场景延展', description:'建立可持续延展的视觉语言，使主题角色、色彩与图形元素能够灵活应用于电商页面、活动物料及线下场景，保持不同触点的视觉一致性。' },
+    ],
   },
   {
     id:'P02', slug:'weilong', title:'卫龙联名活动', english:'WEILONG COLLAB', subtitle:'品牌联合营销视觉', category:'联名活动设计', year:'2024', role:'KV / 电商页面 / 传播物料', image:'/projects/weilong.jpg', color:'#ff5c35',
