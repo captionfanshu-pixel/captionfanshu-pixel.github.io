@@ -42,6 +42,14 @@ export const projects: Project[] = [
     gallery:['/projects/bitter-melon-1.jpg','/projects/bitter-melon-2.jpg','/projects/bitter-melon-3.jpg'],
   },
   {
+    id:'P03-1', slug:'linlee-mini-store', title:'林里迷你门店', english:'LINLEE MINI STORE', subtitle:'品牌空间概念视觉', category:'品牌视觉设计', year:'2025', role:'空间概念 / 3D 视觉 / 品牌延展', image:'/projects/linlee-mini-store.jpg', color:'#9be23d',
+    summary:'以林里品牌绿色与积木语言为核心，把门店形象转化为轻松、有趣且具有识别度的迷你空间视觉。',
+    challenge:'在简洁的积木造型中保留品牌识别，同时清楚呈现门店结构、服务角色与产品氛围。',
+    approach:'以高饱和绿色、模块化建筑和品牌店员角色构成主体，通过明亮天空背景强化轻快的空间想象。',
+    outcome:'形成可用于品牌传播、空间概念展示与社交媒体发布的迷你门店主视觉。',
+    gallery:['/projects/linlee-mini-store.jpg'],
+  },
+  {
     id:'P04', slug:'crayon-shin', title:'蜡笔小新商业系列', english:'CRAYON SHIN-CHAN', subtitle:'IP 衍生与空间设计', category:'商业 IP 设计', year:'2025', role:'衍生品 / 展陈 / 快闪空间', image:'/projects/crayon-shin.jpg', color:'#70d8ff',
     summary:'围绕蜡笔小新的轻松日常与角色魅力，完成多主题长图、衍生品和线下展陈视觉。',
     challenge:'在多种营销主题和空间尺寸中保持 IP 性格统一，同时让商品陈列足够清晰。',

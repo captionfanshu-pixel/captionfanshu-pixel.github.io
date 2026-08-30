@@ -39,11 +39,22 @@ type WorkPlaceholder = {
   description?: string;
   status?: string;
   type?: string;
+  subprojectLabel?: string;
   subprojects?: WorkSubproject[];
 };
 
 const workPlaceholders: WorkPlaceholder[] = [
-  { id: '01', key: 'work-01', slug: 'spring-duck', title: 'PROJECT NAME 01', category: '品牌视觉设计', year: '2024—2025', color: '#b8ff49', image: '/work/project-01-cover-v2.webp' },
+  {
+    id: '01', key: 'work-01', slug: 'spring-duck', title: '品牌视觉设计', category: 'BRAND VISUALS', year: '2024—2025', color: '#b8ff49', image: '/work/project-01-cover-v2.webp',
+    description: '围绕品牌主视觉、新品传播与联名活动，建立清晰、有记忆点且可持续延展的视觉表达。',
+    type: 'BRAND VISUAL DESIGN',
+    subprojectLabel: 'PROJECT 01 / BRAND VISUALS',
+    subprojects: [
+      { slug: 'weilong', title: '卫龙联名活动', english: 'WEILONG COLLAB', image: '/projects/weilong.jpg' },
+      { slug: 'bitter-melon', title: '苦瓜轻蔬茶', english: 'BITTER MELON TEA', image: '/projects/bitter-melon.jpg' },
+      { slug: 'linlee-mini-store', title: '林里迷你门店', english: 'LINLEE MINI STORE', image: '/projects/linlee-mini-store.jpg' },
+    ],
+  },
   {
     id: '02', key: 'work-02', slug: 'crayon-shin', title: 'PROJECT NAME 02', category: 'IP商业化设计', year: '2025—2026', color: '#63d8f4', image: '/work/project-02-cover-v2.webp',
     description: '围绕正版 IP 项目，完成产品视觉、电商 Banner 与线下展示等系列商业化设计。',
@@ -206,7 +217,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="console-stage" aria-label="互动作品游戏机" data-reveal="scale">
+        <div className="console-stage" aria-label="互动作品游戏机">
           <div className="stage-glow" /><div className="console-shadow" />
           <div className={`console-render-wrap ${active ? 'has-project' : ''}`}>
             <img
@@ -273,7 +284,7 @@ export default function Home() {
                     </div>
                     {project.subprojects && project.subprojects.length > 0 && (
                       <section className="work-subproject-section" aria-label={`${project.title}子项目`}>
-                        <div className="work-subproject-heading"><span>PROJECT 02 / IP COMMERCIALIZATION</span><b>03 CASES</b></div>
+                        <div className="work-subproject-heading"><span>{project.subprojectLabel ?? 'PROJECT 02 / IP COMMERCIALIZATION'}</span><b>{String(project.subprojects.length).padStart(2, '0')} CASES</b></div>
                         <div className="work-subproject-grid">
                           {project.subprojects.map((subproject) => (
                             <a href={`/work/${subproject.slug}`} key={subproject.slug} aria-label={`进入${subproject.title}项目详情页`}>
