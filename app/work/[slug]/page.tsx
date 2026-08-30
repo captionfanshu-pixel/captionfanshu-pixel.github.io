@@ -29,7 +29,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   return (
     <main className="manual-page" style={{ '--project-color': project.color } as React.CSSProperties}>
       <nav className="detail-nav">
-        <Link href="/#work">← EJECT / 返回卡带库</Link>
+        <Link href="/#work">← 返回上一级</Link>
         <span>{project.id} / {String(projects.length).padStart(2, '0')}</span>
         <Link href="/#contact">CONTACT</Link>
       </nav>

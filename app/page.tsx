@@ -26,9 +26,35 @@ const cartridgeScreenImages = [
   '/screen-composites/red.webp',
 ];
 
-const workPlaceholders = [
-  { id: '01', key: 'work-01', slug: 'spring-duck', title: 'PROJECT NAME 01', category: 'VISUAL DESIGN', year: '2024—2025', color: '#b8ff49', image: '/work/project-01-cover-v2.webp' },
-  { id: '02', key: 'work-02', slug: 'crayon-shin', title: 'PROJECT NAME 02', category: 'BRAND DESIGN', year: '2024—2025', color: '#63d8f4', image: '/work/project-02-cover-v2.webp' },
+type WorkSubproject = { slug: string; title: string; english: string; image: string };
+type WorkPlaceholder = {
+  id: string;
+  key: string;
+  slug: string;
+  title: string;
+  category: string;
+  year: string;
+  color: string;
+  image: string;
+  description?: string;
+  status?: string;
+  type?: string;
+  subprojects?: WorkSubproject[];
+};
+
+const workPlaceholders: WorkPlaceholder[] = [
+  { id: '01', key: 'work-01', slug: 'spring-duck', title: 'PROJECT NAME 01', category: '品牌视觉设计', year: '2024—2025', color: '#b8ff49', image: '/work/project-01-cover-v2.webp' },
+  {
+    id: '02', key: 'work-02', slug: 'crayon-shin', title: 'PROJECT NAME 02', category: 'IP商业化设计', year: '2025—2026', color: '#63d8f4', image: '/work/project-02-cover-v2.webp',
+    description: '围绕正版 IP 项目，完成产品视觉、电商 Banner 与线下展示等系列商业化设计。',
+    status: 'IMPLEMENTED',
+    type: 'IP COMMERCIALIZATION DESIGN',
+    subprojects: [
+      { slug: 'crayon-jar-flavor', title: '罐罐有味', english: 'CRAYON SHIN-CHAN JAR SERIES', image: '/projects/crayon-jar-flavor.jpg' },
+      { slug: 'sanrio-magic-fruit', title: '幻变果粒', english: 'SANRIO MAGIC FRUIT', image: '/projects/sanrio-magic-fruit.jpg' },
+      { slug: 'crayon-finger-football', title: '指偶足球联赛', english: 'FINGER PUPPET FOOTBALL', image: '/projects/crayon-finger-football.jpg' },
+    ],
+  },
   { id: '03', key: 'work-03', slug: 'veggie-kingdom', title: 'PROJECT NAME 03', category: 'IP DESIGN', year: '2024—2025', color: '#ff6f91', image: '/work/project-03-cover-v2.webp' },
   { id: '04', key: 'work-04', slug: 'snow-online', title: 'PROJECT NAME 04', category: '3D VISUAL', year: '2024—2025', color: '#f3a46f', image: '/work/project-04-cover-v2.webp' },
   { id: '05', key: 'work-05', slug: 'sunny-restaurant', title: 'PROJECT NAME 05', category: 'IP DESIGN', year: '2024—2025', color: '#8c77ff', image: '/work/project-05-cover-v2.webp' },
@@ -241,10 +267,24 @@ export default function Home() {
                         </div>
                       )}
                       <div className="project-row-copy work-placeholder-copy">
-                        <p>项目名称、封面图片与详细内容将在素材确认后替换。</p>
-                        <dl><div><dt>STATUS</dt><dd>CONTENT PENDING</dd></div><div><dt>TYPE</dt><dd>{project.category}</dd></div></dl>
+                        <p>{project.description ?? '项目名称、封面图片与详细内容将在素材确认后替换。'}</p>
+                        <dl><div><dt>STATUS</dt><dd>{project.status ?? 'CONTENT PENDING'}</dd></div><div><dt>TYPE</dt><dd>{project.type ?? project.category}</dd></div></dl>
                       </div>
                     </div>
+                    {project.subprojects && project.subprojects.length > 0 && (
+                      <section className="work-subproject-section" aria-label={`${project.title}子项目`}>
+                        <div className="work-subproject-heading"><span>PROJECT 02 / IP COMMERCIALIZATION</span><b>03 CASES</b></div>
+                        <div className="work-subproject-grid">
+                          {project.subprojects.map((subproject) => (
+                            <a href={`/work/${subproject.slug}`} key={subproject.slug} aria-label={`进入${subproject.title}项目详情页`}>
+                              <img src={subproject.image} alt={`${subproject.title}项目封面`} loading="eager" decoding="async" />
+                              <span><strong>{subproject.title}</strong><small>{subproject.english}</small></span>
+                              <i aria-hidden="true">↗</i>
+                            </a>
+                          ))}
+                        </div>
+                      </section>
+                    )}
                   </div>
                 </div>
               </article>

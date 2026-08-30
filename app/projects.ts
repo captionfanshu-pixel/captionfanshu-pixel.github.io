@@ -50,6 +50,30 @@ export const projects: Project[] = [
     gallery:['/projects/crayon-shin-1.jpg','/projects/crayon-shin-2.jpg','/projects/crayon-shin-3.jpg','/projects/crayon-shin-4.jpg','/projects/crayon-shin-5.jpg'],
   },
   {
+    id:'P04-1', slug:'crayon-jar-flavor', title:'罐罐有味', english:'CRAYON SHIN-CHAN JAR SERIES', subtitle:'蜡笔小新联名产品视觉', category:'品牌视觉设计', year:'2026', role:'主视觉 / 电商 Banner / IP 延展', image:'/projects/crayon-jar-flavor.jpg', color:'#ff5959',
+    summary:'围绕蜡笔小新春日部防卫队角色，打造轻松有趣的罐装产品推荐视觉，强化角色互动与商品记忆点。',
+    challenge:'在有限的横版画面中兼顾角色表现、产品卖点与授权信息，让内容清楚且具有吸引力。',
+    approach:'以红粉色场景、夸张角色表情和罐装造型为视觉核心，建立活泼鲜明的联名传播画面。',
+    outcome:'形成适合电商推荐位与社交传播的联名主视觉，可继续延展至详情页与系列物料。',
+    gallery:['/projects/crayon-jar-flavor.jpg'],
+  },
+  {
+    id:'P04-2', slug:'sanrio-magic-fruit', title:'幻变果粒', english:'SANRIO MAGIC FRUIT', subtitle:'三丽鸥角色联名视觉', category:'品牌视觉设计', year:'2026', role:'主视觉 / 产品卖点 / 电商 Banner', image:'/projects/sanrio-magic-fruit.jpg', color:'#c9a0ff',
+    summary:'以三丽鸥角色与透明果粒概念结合，营造柔软梦幻的产品氛围，突出轻盈、可爱与收藏感。',
+    challenge:'在浅色梦幻画面中保持产品主体清晰，并让角色授权信息与促销卖点拥有明确层级。',
+    approach:'运用紫粉渐变、透明泡泡和柔和云朵构建空间，通过集中构图放大产品与角色识别。',
+    outcome:'完成适用于新品推广、电商焦点图与社交媒体传播的联名视觉方案。',
+    gallery:['/projects/sanrio-magic-fruit.jpg'],
+  },
+  {
+    id:'P04-3', slug:'crayon-finger-football', title:'指偶足球联赛', english:'FINGER PUPPET FOOTBALL', subtitle:'蜡笔小新夏日产品视觉', category:'品牌视觉设计', year:'2026', role:'主视觉 / 活动主题 / 电商 Banner', image:'/projects/crayon-finger-football.jpg', color:'#62d6ff',
+    summary:'以夏日足球联赛为主题，将蜡笔小新角色指偶融入球场场景，呈现轻松热闹的互动产品体验。',
+    challenge:'同时表达角色趣味、产品形态与比赛主题，让小尺寸 Banner 仍保持清晰的视觉焦点。',
+    approach:'采用清爽蓝色、球场透视和庆典彩带强化运动气氛，以双角色对比形成画面中心。',
+    outcome:'建立适合电商 Banner、活动宣传与系列产品延展的夏日联名视觉。',
+    gallery:['/projects/crayon-finger-football.jpg'],
+  },
+  {
     id:'P05', slug:'veggie-kingdom', title:'Veggie Kingdom', english:'RACING CLUB', subtitle:'原创赛车王国 IP', category:'原创 IP 设计', year:'2025', role:'角色设定 / 3D 视觉 / 衍生品', image:'/projects/veggie-kingdom.jpg', color:'#ff8f3d',
     summary:'由七位蔬果赛车手组成的原创世界，以速度、勇气与梦想构建轻松明快的角色群像。',
     challenge:'让多个角色拥有独立性格与轮廓，同时共享同一套赛车世界观和品牌识别。',
@@ -83,5 +107,10 @@ export const projects: Project[] = [
   },
 ];
 
-export const featuredProjects = projects.slice(0,4);
+// The console cartridges have a fixed visual order:
+// orange Veggie Kingdom, blue collaboration, green Spring Duck, red Crayon Shin-chan.
+const featuredSlugs = ['veggie-kingdom', 'weilong', 'spring-duck', 'crayon-shin'];
+export const featuredProjects = featuredSlugs
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter((project): project is Project => Boolean(project));
 
