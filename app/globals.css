@@ -1007,6 +1007,24 @@ body { background:#1a1a1b; }
 .manual-page--snow-online .manual-chapter .chapter-heading>p { align-self:start; }
 .manual-page--snow-online .manual-chapter .chapter-heading>p { margin:0; }
 
+/* Sunny Desserts — keep the long background title inside its column */
+.manual-page--sunny-restaurant .manual-chapter .chapter-heading {
+  grid-template-columns:minmax(0,1.25fr) minmax(250px,.75fr);
+  align-items:start;
+}
+.manual-page--sunny-restaurant .manual-chapter .chapter-heading>h2 {
+  min-width:0;
+  max-width:650px;
+  white-space:normal;
+  text-wrap:balance;
+}
+.manual-page--sunny-restaurant .manual-chapter .chapter-heading>p {
+  min-width:0;
+  align-self:start;
+  margin:0;
+  overflow-wrap:anywhere;
+}
+
 /* Project 02 — IP commercialization child cases */
 .work-subproject-section { margin:0 72px 58px 94px; padding-top:28px; border-top:1px solid rgba(255,255,255,.13); }
 .work-subproject-heading { display:flex; justify-content:space-between; margin-bottom:18px; color:var(--project-row-color); font:800 9px/1.3 monospace; letter-spacing:.1em; }
