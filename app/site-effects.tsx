@@ -1,8 +1,11 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function SiteEffects() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const root = document.documentElement;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -41,7 +44,8 @@ export default function SiteEffects() {
       observer?.disconnect();
       root.classList.remove('effects-ready');
     };
-  }, []);
+  }, [pathname]);
 
   return <div className="site-effects" aria-hidden="true"><span className="scroll-progress" /></div>;
 }
+

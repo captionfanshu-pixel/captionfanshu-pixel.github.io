@@ -24,7 +24,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const index = projects.findIndex((item) => item.slug === slug);
   if (index < 0) notFound();
   const project = projects[index];
-  const next = projects[(index + 1) % projects.length];
+  const next = project.slug === 'spring-duck'
+    ? projects.find((item) => item.slug === 'weilong') ?? projects[(index + 1) % projects.length]
+    : projects[(index + 1) % projects.length];
   const objectiveCards = project.objectives ?? [
     { title: '强化视觉识别', description: '建立清晰的核心符号与色彩记忆，让项目在不同媒介中保持一致。' },
     { title: '提升传播效率', description: '优化内容层级和阅读路径，让受众快速理解项目主题与主要卖点。' },
@@ -138,7 +140,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
       <section className="next-game" data-reveal>
         <div><p>PROJECT COMPLETE / NEXT CASE</p><h2>继续浏览<br />下一个作品</h2></div>
-        <Link href={`/work/${next.slug}`} style={{ '--next-color': next.color } as React.CSSProperties}>
+        <Link href={`/work/${next.slug}/`} style={{ '--next-color': next.color } as React.CSSProperties}>
           <div className="next-cart"><img src={next.image} alt="" /><span>{next.id}</span></div>
           <div><strong>{next.title}</strong><span>{next.english}</span></div>
           <b>VIEW →</b>
