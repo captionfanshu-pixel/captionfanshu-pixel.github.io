@@ -144,14 +144,12 @@ export const projects: Project[] = [
     ],
   },
   {
-    id:'P06', slug:'summy-dessert', title:'Sunny Desserts', english:'SUNNY DESSERTS', subtitle:'原创甜品店 IP', category:'原创 IP 设计', year:'2025', role:'世界观 / 角色 / 包装与场景', image:'/projects/summy-dessert.jpg', color:'#b68cff',
-    summary:'以猫头鹰店长为视觉核心，通过咖啡与甜品日常场景，建立轻松、亲切且具有故事感的品牌 IP 形象。',
-    challenge:'让角色既保留独立性格与识别度，同时与 Sunny Dessert 的品牌气质、场景和应用保持统一。',
-    approach:'从角色轮廓、标志动作与主色调出发，构建统一 2D 视觉体系，并延展至品牌 Logo、主视觉与周边物料。',
+    id:'P06', slug:'summy-dessert', title:'Summy Dessert', english:'SUMMER DESSERT', subtitle:'原创甜品店 IP', category:'原创 IP 设计', year:'2025', role:'世界观 / 角色 / 包装与场景', image:'/projects/summy-dessert.jpg', color:'#b68cff',
+    summary:'以一家夏日甜品店为舞台，构建明亮、亲切且具有生活气息的原创角色世界。',
+    challenge:'让角色群像在保持各自性格差异的同时，形成统一、温暖的品牌气质。',
+    approach:'统一三维比例、材质语言与柔和暖色光影，并延展到门店、包装与场景叙事。',
     outcome:'形成从角色设定到商业空间想象的完整原创 IP 提案，具备系列化开发潜力。',
     gallery:['/projects/summy-dessert-1.jpg','/projects/summy-dessert-2.jpg','/projects/summy-dessert-3.jpg','/projects/summy-dessert-4.jpg','/projects/summy-dessert-5.jpg','/projects/summy-dessert-6.jpg'],
-    backgroundTitle:'从角色设定出发，找到品牌的核心记忆点。',
-    hideObjectives:true,
   },
   {
     id:'P07', slug:'snow-online', title:'雪山Online｜一起登顶', english:'SNOW ONLINE', subtitle:'雪山动物角色视觉', category:'AI 视频', year:'2026', role:'角色视觉 / 场景 / 主视觉', image:'/work/project-04-cover-v2.webp', color:'#f3a46f',
@@ -169,12 +167,14 @@ export const projects: Project[] = [
     ],
   },
   {
-    id:'P08', slug:'sunny-restaurant', title:'晴日餐厅', english:'SUNNY RESTAURANT', subtitle:'原创餐厅 IP 视觉', category:'原创 IP 设计', year:'2025', role:'角色 / 场景 / 品牌主视觉', image:'/work/project-05-cover-v2.webp', color:'#8c77ff',
-    summary:'以温暖的晴日餐厅为背景，通过拟人猫咪店员与柔和光影建立轻松治愈的品牌气质。',
-    challenge:'让角色、餐厅空间与品牌标识在同一画面中形成明确层级，同时保留生活感与故事感。',
-    approach:'运用暖色木质场景、自然逆光和统一制服造型，塑造具有亲和力的餐厅角色世界。',
+    id:'P08', slug:'sunny-restaurant', title:'Sunny Desserts', english:'SUNNY DESSERTS', subtitle:'原创餐厅 IP 视觉', category:'原创 IP 设计', year:'2025', role:'角色 / 场景 / 品牌主视觉', image:'/work/project-05-cover-v2.webp', color:'#8c77ff',
+    summary:'以猫头鹰店长为视觉核心，通过咖啡与甜品日常场景，建立轻松、亲切且具有故事感的品牌 IP 形象。',
+    challenge:'让角色既保留独立性格与识别度，同时与 Sunny Dessert 的品牌气质、场景和应用保持统一。',
+    approach:'从角色轮廓、标志动作与主色调出发，构建统一 2D 视觉体系，并延展至品牌 Logo、主视觉与周边物料。',
     outcome:'形成可延展到海报、菜单、包装和社交传播的原创餐厅 IP 主视觉。',
     gallery:['/work/project-05-cover-v2.webp'],
+    backgroundTitle:'从角色设定出发，找到品牌的核心记忆点。',
+    hideObjectives:true,
   },
 ];
 
