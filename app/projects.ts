@@ -164,7 +164,14 @@ export const projects: Project[] = [
     challenge:'让角色群像在保持各自性格差异的同时，形成统一、温暖的品牌气质。',
     approach:'统一三维比例、材质语言与柔和暖色光影，并延展到门店、包装与场景叙事。',
     outcome:'形成从角色设定到商业空间想象的完整原创 IP 提案，具备系列化开发潜力。',
-    gallery:['/projects/summy-dessert-1.jpg','/projects/summy-dessert-2.jpg','/projects/summy-dessert-3.jpg','/projects/summy-dessert-4.jpg','/projects/summy-dessert-5.jpg','/projects/summy-dessert-6.jpg'],
+    gallery:[
+      '/projects/sunny-desserts-gallery-01.webp','/projects/sunny-desserts-gallery-02.webp','/projects/sunny-desserts-gallery-03.webp',
+      '/projects/sunny-desserts-gallery-04.webp','/projects/sunny-desserts-gallery-05.webp','/projects/sunny-desserts-gallery-06.webp',
+      '/projects/sunny-desserts-gallery-07.webp','/projects/sunny-desserts-gallery-08.webp','/projects/sunny-desserts-gallery-09.webp',
+      '/projects/sunny-desserts-gallery-10.webp','/projects/sunny-desserts-gallery-11.webp','/projects/sunny-desserts-gallery-12.webp',
+      '/projects/sunny-desserts-gallery-13.webp','/projects/sunny-desserts-gallery-14.webp','/projects/sunny-desserts-gallery-15.webp',
+      '/projects/sunny-desserts-gallery-16.webp','/projects/sunny-desserts-gallery-17.webp',
+    ],
   },
   {
     id:'P07', slug:'snow-online', title:'雪山Online｜一起登顶', english:'SNOW ONLINE', subtitle:'雪山动物角色视觉', category:'AI 视频', year:'2026', role:'角色视觉 / 场景 / 主视觉', image:'/work/project-04-cover-v2.webp', color:'#f3a46f',
@@ -207,3 +214,4 @@ const featuredSlugs = ['veggie-kingdom', 'weilong', 'spring-duck', 'crayon-shin'
 export const featuredProjects = featuredSlugs
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
+
