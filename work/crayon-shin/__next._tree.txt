@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/15.o13cinpo25.css","style"]
+:HL["/_next/static/chunks/06fh9jo5.p1vt.css","style"]
 :HL["/projects/crayon-shin.jpg","image"]
 :HL["/projects/crayon-jar-flavor.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"crayon-shin","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"whKfQTEFVaJ_1PshVoUyS"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"crayon-shin","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"bBeZ-kfTdkO-RIK53ykG4"}
