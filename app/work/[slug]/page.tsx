@@ -134,7 +134,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      {project.gallery.length > 0 && <section className="manual-detail-showcase" data-reveal>
+      {project.gallery.length > 0 && <section className="manual-detail-showcase">
         <div className="chapter-label"><span>04 / 细节展示</span><b>DETAIL SHOWCASE</b></div>
         {project.video && (
           <div className="project-video-frame">

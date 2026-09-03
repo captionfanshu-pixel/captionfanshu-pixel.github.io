@@ -33,7 +33,7 @@ export default function ProjectGallery({ gallery, projectId, projectTitle }: Pro
     <>
       <div className="visual-stack">
         {gallery.map((image, imageIndex) => (
-          <figure key={image} data-reveal>
+          <figure key={image}>
             <button className="gallery-frame" type="button" onClick={() => setActiveIndex(imageIndex)} aria-label={`放大查看${projectTitle}设计展示 ${imageIndex + 1}`}>
               <img src={image} alt={`${projectTitle}设计展示 ${imageIndex + 1}`} />
               <span className="inspect-hint">VIEW FULLSCREEN ↗</span>
