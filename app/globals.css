@@ -1055,15 +1055,38 @@ body { background:#1a1a1b; }
 }
 .project-video-frame video { display:block; width:100%; height:auto; max-height:82vh; background:#05070a; }
 
+/* Full-bleed single-column portfolio boards: preserve every artwork's natural ratio. */
+.manual-detail-showcase>.visual-stack {
+  width:100%;
+  grid-template-columns:1fr;
+  gap:0;
+}
+.manual-detail-showcase .visual-stack figure,
+.manual-detail-showcase .visual-stack figure:first-child { grid-column:1 / -1; }
+.manual-detail-showcase .gallery-frame {
+  border:0;
+  border-radius:0;
+  background:transparent;
+}
+.manual-detail-showcase .visual-stack img {
+  width:100%;
+  height:auto;
+  max-height:none;
+  object-fit:contain;
+  background:transparent;
+}
+.manual-detail-showcase .visual-stack figcaption,
+.manual-detail-showcase .inspect-hint { display:none; }
+
 @media (max-width:900px) {
   .manual-visual-showcase>.showcase-hero-image,
-  .manual-detail-showcase>.visual-stack { width:min(88vw,720px); }
+  .manual-detail-showcase>.visual-stack { width:100%; }
   .project-video-frame { width:min(88vw,1200px); }
 }
 
 @media (max-width:600px) {
   .manual-visual-showcase>.showcase-hero-image,
-  .manual-detail-showcase>.visual-stack { width:calc(100% - 32px); }
+  .manual-detail-showcase>.visual-stack { width:100%; }
   .showcase-hero-image { margin-top:34px !important; border-radius:18px; }
   .manual-detail-showcase>.visual-stack { padding-top:34px; }
   .project-video-frame { width:calc(100% - 32px); margin-top:34px; border-radius:18px; }
