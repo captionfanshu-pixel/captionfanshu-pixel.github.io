@@ -1025,6 +1025,25 @@ body { background:#1a1a1b; }
   overflow-wrap:anywhere;
 }
 
+/* Summy Dessert — keep the split-hero copy safely inside narrower desktop viewports. */
+.manual-page--summy-dessert .manual-heading-row {
+  grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr);
+}
+.manual-page--summy-dessert .manual-primary-copy {
+  min-width:0;
+  padding-left:clamp(16px,2vw,28px);
+}
+.manual-page--summy-dessert .manual-title h1,
+.manual-page--summy-dessert .manual-summary {
+  max-width:100%;
+  overflow-wrap:anywhere;
+}
+
+@media (max-width:900px) {
+  .manual-page--summy-dessert .manual-heading-row { grid-template-columns:1fr; }
+  .manual-page--summy-dessert .manual-primary-copy { padding-left:0; }
+}
+
 /* Uploaded project artwork replaces the former visual/detail placeholders. */
 .manual-visual-showcase>.showcase-hero-image,
 .manual-detail-showcase>.visual-stack {
@@ -1114,3 +1133,4 @@ body { background:#1a1a1b; }
   .work-subproject-section { margin:0 12px 30px; padding-top:22px; }
   .work-subproject-grid { grid-template-columns:1fr; }
 }
+
