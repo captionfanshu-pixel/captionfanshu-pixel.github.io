@@ -32,10 +32,10 @@ export const projects: Project[] = [
     outcome:'形成从活动主画面到电商触点的完整视觉套系，让角色、产品与春游主题保持一致。',
     gallery:['/projects/spring-duck-gallery-01.webp','/projects/spring-duck-gallery-03.webp','/projects/spring-duck-gallery-02.webp'],
     palette:[
+      { hex:'#123B55', label:'LAKE', text:'light' },
       { hex:'#18AEEA', label:'SKY', text:'dark' },
-      { hex:'#55D62E', label:'SPRING', text:'dark' },
+      { hex:'#55D62E', label:'GRASS', text:'dark' },
       { hex:'#FFE31A', label:'SUN', text:'dark' },
-      { hex:'#F7F8F2', label:'CLOUD', text:'dark' },
     ],
     objectiveTitle:'明确目标，建立统一且具有春日记忆点的视觉表达。',
     objectiveSummary:'围绕“春游鸭”主题，从活动识别、信息传播与场景延展三个维度建立统一视觉体系，让角色、产品与春日氛围形成完整关联。',
@@ -52,6 +52,12 @@ export const projects: Project[] = [
     approach:'通过高识别度色彩、强对比构图与角色互动强化视觉记忆，并将统一语言延展至主视觉、电商页面及活动物料。',
     outcome:'使联名从单一产品合作转化为更具参与感和传播性的品牌体验。',
     gallery:['/projects/weilong-gallery-01.webp','/projects/weilong-gallery-03.webp','/projects/weilong-gallery-02.webp'],
+    palette:[
+      { hex:'#151515', label:'INK', text:'light' },
+      { hex:'#FF5C35', label:'CHILI', text:'dark' },
+      { hex:'#FFE04B', label:'SPARK', text:'dark' },
+      { hex:'#6EDBFF', label:'FIZZ', text:'dark' },
+    ],
     objectiveTitle:'围绕“清爽 × 爆辣”的反差体验，建立兼具双方品牌识别度的联名视觉体系。',
     objectiveSummary:'通过高识别度色彩、强对比构图与角色互动强化视觉记忆，并将统一语言延展至主视觉、电商页面及活动物料，使联名从单一产品合作转化为更具参与感和传播性的品牌体验。',
     objectives:[
@@ -67,6 +73,12 @@ export const projects: Project[] = [
     approach:'运用低饱和奶油底色、清透绿色和放大的原料细节，建立年轻化的健康饮品形象。',
     outcome:'建立从新品 KV 到电商页面的清晰信息层级，兼顾产品识别、口味表达与促销传播。',
     gallery:['/projects/bitter-melon-gallery-01.webp','/projects/bitter-melon-gallery-02.webp','/projects/bitter-melon-gallery-03.webp'],
+    palette:[
+      { hex:'#173522', label:'LEAF', text:'light' },
+      { hex:'#86F26B', label:'FRESH', text:'dark' },
+      { hex:'#AEB39F', label:'DEW', text:'dark' },
+      { hex:'#F2F0E9', label:'PULP', text:'dark' },
+    ],
   },
   {
     id:'P03-1', slug:'linlee-mini-store', title:'林里迷你门店', english:'LINLEE MINI STORE', subtitle:'品牌空间概念视觉', category:'品牌视觉设计', year:'2025', role:'空间概念 / 3D 视觉 / 品牌延展', image:'/projects/linlee-mini-store.jpg', color:'#9be23d',
@@ -75,6 +87,12 @@ export const projects: Project[] = [
     approach:'将真实门店、店员形象与品牌视觉拆解为模块化积木语言，通过统一结构与标志元素建立可拼装、可组合并可持续扩展的品牌场景。',
     outcome:'兼顾产品展示、包装传播与后续系列化延展，让消费者在拼装过程中重新体验品牌场景。',
     gallery:['/projects/linlee-mini-store.jpg'],
+    palette:[
+      { hex:'#2D5B34', label:'FOREST', text:'light' },
+      { hex:'#9BE23D', label:'LIME', text:'dark' },
+      { hex:'#FFE45D', label:'LEMON', text:'dark' },
+      { hex:'#F5EFE1', label:'CREAM', text:'dark' },
+    ],
     objectiveTitle:'以“林里迷你门店”为核心，将品牌场景转化为具有可玩性与收藏感的积木产品。',
     objectiveSummary:'通过模块化结构和统一的品牌元素，让消费者能够在拼装过程中重新体验品牌场景，同时兼顾产品展示、包装传播与后续系列化延展的可能性。',
     objectives:[
@@ -90,6 +108,12 @@ export const projects: Project[] = [
     approach:'以高识别角色动作、彩色图形和模块化展架为核心，将线上内容与线下空间串联。',
     outcome:'形成覆盖内容传播、陈列道具、快闪空间与迷你店积木的系列化商业设计。',
     gallery:['/projects/crayon-shin-1.jpg','/projects/crayon-shin-2.jpg','/projects/crayon-shin-3.jpg','/projects/crayon-shin-4.jpg','/projects/crayon-shin-5.jpg'],
+    palette:[
+      { hex:'#1E3557', label:'INK', text:'light' },
+      { hex:'#70D8FF', label:'SKY', text:'dark' },
+      { hex:'#FFD447', label:'SUNNY', text:'dark' },
+      { hex:'#FF7068', label:'ACTION', text:'dark' },
+    ],
   },
   {
     id:'P04-1', slug:'crayon-jar-flavor', title:'罐罐有味', english:'CRAYON SHIN-CHAN JAR SERIES', subtitle:'蜡笔小新联名产品视觉', category:'品牌视觉设计', year:'2026', role:'主视觉 / 电商 Banner / IP 延展', image:'/projects/crayon-jar-flavor.jpg', color:'#ff5959',
@@ -98,6 +122,12 @@ export const projects: Project[] = [
     approach:'以红粉色场景、夸张角色表情和罐装造型为视觉核心，建立活泼鲜明的联名传播画面。',
     outcome:'建立兼具 IP 趣味与商品信息传达的详情页体系，使角色吸引力与产品卖点形成统一的消费视觉体验。',
     gallery:['/projects/crayon-jar-flavor.jpg'],
+    palette:[
+      { hex:'#7E1B27', label:'BERRY', text:'light' },
+      { hex:'#FF5959', label:'TOMATO', text:'dark' },
+      { hex:'#FFC8D2', label:'BLUSH', text:'dark' },
+      { hex:'#FFF2DA', label:'CREAM', text:'dark' },
+    ],
     objectiveTitle:'明确目标，建立童趣鲜明且易于理解的商品视觉表达。',
     objectiveSummary:'围绕角色识别、卖点传达与版式统一三个维度展开，让视觉兼具趣味性、商品感与传播效率。',
     objectives:[
@@ -113,6 +143,12 @@ export const projects: Project[] = [
     approach:'运用紫粉渐变、透明泡泡和柔和云朵构建空间，通过集中构图放大产品与角色识别。',
     outcome:'建立从主视觉、角色展示到产品信息的完整详情页视觉体系，使 IP 情绪与商品卖点保持统一表达。',
     gallery:['/projects/sanrio-magic-fruit.jpg'],
+    palette:[
+      { hex:'#5B3C8B', label:'PLUM', text:'light' },
+      { hex:'#C9A0FF', label:'MAGIC', text:'dark' },
+      { hex:'#FF9FC9', label:'BERRY', text:'dark' },
+      { hex:'#F8F0FF', label:'CLOUD', text:'dark' },
+    ],
     objectiveTitle:'明确目标，建立梦幻治愈且具有商品记忆点的视觉表达。',
     objectiveSummary:'围绕 IP 气质、产品卖点与浏览体验三个维度展开，让视觉兼具情绪吸引力、信息清晰度与商品延展性。',
     objectives:[
@@ -128,6 +164,12 @@ export const projects: Project[] = [
     approach:'采用清爽蓝色、球场透视和庆典彩带强化运动气氛，以双角色对比形成画面中心。',
     outcome:'建立适合电商 Banner、活动宣传与系列产品延展的夏日联名视觉。',
     gallery:['/projects/crayon-finger-football.jpg'],
+    palette:[
+      { hex:'#164C8C', label:'LEAGUE', text:'light' },
+      { hex:'#62D6FF', label:'SKY', text:'dark' },
+      { hex:'#8BE85D', label:'TURF', text:'dark' },
+      { hex:'#FFF1B0', label:'SUN', text:'dark' },
+    ],
     objectiveTitle:'明确目标，建立活力有趣且具参与感的互动视觉表达。',
     objectiveSummary:'围绕角色互动、使用场景与页面节奏三个维度展开，让用户快速感知产品玩法与趣味属性。',
     objectives:[
@@ -149,6 +191,12 @@ export const projects: Project[] = [
       '/projects/veggie-kingdom-gallery-15.webp','/projects/veggie-kingdom-gallery-14.webp','/projects/veggie-kingdom-gallery-17.webp',
       '/projects/veggie-kingdom-gallery-07.webp','/projects/veggie-kingdom-gallery-02.webp','/projects/veggie-kingdom-gallery-03.webp',
       '/projects/veggie-kingdom-gallery-08.webp','/projects/veggie-kingdom-gallery-01.webp',
+    ],
+    palette:[
+      { hex:'#09090B', label:'ASPHALT', text:'light' },
+      { hex:'#FF8F3D', label:'TURBO', text:'dark' },
+      { hex:'#31A8FF', label:'TRACK', text:'dark' },
+      { hex:'#F2E8D5', label:'PIT', text:'dark' },
     ],
     objectiveTitle:'明确目标，建立统一且有记忆点的赛车 IP 视觉表达。',
     objectiveSummary:'围绕角色识别、赛事体验与商业延展三个维度展开，让不同内容在统一世界观下保持清晰、高效且具有持续扩展能力。',
@@ -172,6 +220,12 @@ export const projects: Project[] = [
       '/projects/sunny-desserts-gallery-12.webp','/projects/sunny-desserts-gallery-13.webp','/projects/sunny-desserts-gallery-15.webp',
       '/projects/sunny-desserts-gallery-05.webp','/projects/sunny-desserts-gallery-01.webp',
     ],
+    palette:[
+      { hex:'#3C2318', label:'COFFEE', text:'light' },
+      { hex:'#B68CFF', label:'LAVENDER', text:'dark' },
+      { hex:'#F2574B', label:'BAKER', text:'dark' },
+      { hex:'#FFF2DE', label:'CREAM', text:'dark' },
+    ],
   },
   {
     id:'P07', slug:'snow-online', title:'雪山Online｜一起登顶', english:'SNOW ONLINE', subtitle:'雪山动物角色视觉', category:'AI 视频', year:'2026', role:'角色视觉 / 场景 / 主视觉', image:'/work/project-04-cover-v2.webp', color:'#f3a46f',
@@ -181,6 +235,12 @@ export const projects: Project[] = [
     outcome:'完成一套适合活动封面与线上传播的雪山主题角色视觉。',
     gallery:['/projects/snow-online-gallery-01.webp','/projects/snow-online-gallery-02.webp'],
     video:'/projects/snow-online-film.mp4',
+    palette:[
+      { hex:'#173B5D', label:'NIGHT', text:'light' },
+      { hex:'#73CFF0', label:'ICE', text:'dark' },
+      { hex:'#F3A46F', label:'SUMMIT', text:'dark' },
+      { hex:'#F7FBFF', label:'SNOW', text:'dark' },
+    ],
     objectiveTitle:'明确目标，让一次登顶成为大家共同在线的时刻。',
     objectiveSummary:'围绕情绪共鸣、数字连接与品牌陪伴三个维度展开，让“Online”从功能概念转化为具有温度的生活体验。',
     objectives:[
@@ -202,6 +262,12 @@ export const projects: Project[] = [
       '/projects/sunny-desserts-gallery-04.webp','/projects/sunny-desserts-gallery-11.webp','/projects/sunny-desserts-gallery-14.webp',
       '/projects/sunny-desserts-gallery-12.webp','/projects/sunny-desserts-gallery-13.webp','/projects/sunny-desserts-gallery-15.webp',
       '/projects/sunny-desserts-gallery-05.webp','/projects/sunny-desserts-gallery-01.webp',
+    ],
+    palette:[
+      { hex:'#3B213F', label:'PLUM', text:'light' },
+      { hex:'#8C77FF', label:'VIOLET', text:'dark' },
+      { hex:'#F2B15D', label:'PASTRY', text:'dark' },
+      { hex:'#FFF1E4', label:'CREAM', text:'dark' },
     ],
     backgroundTitle:'从角色设定出发，找到品牌的核心记忆点。',
     hideObjectives:true,
