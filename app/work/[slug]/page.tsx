@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { projects } from '../../projects';
+import ProjectGallery from './project-gallery';
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -31,6 +32,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     { title: '强化视觉识别', description: '建立清晰的核心符号与色彩记忆，让项目在不同媒介中保持一致。' },
     { title: '提升传播效率', description: '优化内容层级和阅读路径，让受众快速理解项目主题与主要卖点。' },
     { title: '支持场景延展', description: '形成可持续应用的视觉系统，适配线上、线下及后续衍生内容。' },
+  ];
+  const palette = project.palette ?? [
+    { hex: '#09090B', label: 'INK', text: 'light' as const },
+    { hex: project.color.toUpperCase(), label: 'PRIMARY', text: 'dark' as const },
+    { hex: '#8E8E92', label: 'NEUTRAL', text: 'light' as const },
+    { hex: '#F2F0E9', label: 'PAPER', text: 'dark' as const },
   ];
 
   return (
@@ -112,31 +119,33 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
       <section className="manual-visual-showcase" data-reveal>
         <div className="chapter-label"><span>03 / 视觉展示</span><b>VISUAL SHOWCASE</b></div>
-        <div className="showcase-hero-placeholder">
-          <span>KEY VISUAL</span><b>主视觉图片待补充</b><small>IMAGE PLACEHOLDER / 16:9</small>
-        </div>
+        <figure className="showcase-hero-image">
+          <img src={project.image} alt={`${project.title}主视觉展示`} />
+        </figure>
         <div className="color-system">
           <div><small>COLOR COLLECTION</small><h2>项目视觉配色</h2></div>
           <div className="color-swatches" aria-label="项目配色">
-            <span className="swatch-dark"><b>#09090B</b><small>INK</small></span>
-            <span className="swatch-primary"><b>{project.color.toUpperCase()}</b><small>PRIMARY</small></span>
-            <span className="swatch-mid"><b>#8E8E92</b><small>NEUTRAL</small></span>
-            <span className="swatch-light"><b>#F2F0E9</b><small>PAPER</small></span>
+            {palette.map((swatch) => (
+              <span key={swatch.hex} style={{ backgroundColor: swatch.hex, color: swatch.text === 'light' ? '#fff' : '#111' }}>
+                <b>{swatch.hex.toUpperCase()}</b><small>{swatch.label}</small>
+              </span>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="manual-detail-showcase" data-reveal>
+      {project.gallery.length > 0 && <section className="manual-detail-showcase" data-reveal>
         <div className="chapter-label"><span>04 / 细节展示</span><b>DETAIL SHOWCASE</b></div>
-        <div className="detail-placeholder-grid">
-          <div className="detail-placeholder detail-placeholder-wide"><span>DETAIL 01</span><b>横版细节图待补充</b></div>
-          <div className="detail-placeholder detail-placeholder-tall"><span>DETAIL 02</span><b>竖版细节图待补充</b></div>
-          <div className="detail-placeholder detail-placeholder-tall"><span>DETAIL 03</span><b>竖版细节图待补充</b></div>
-          <div className="detail-placeholder"><span>DETAIL 04</span><b>局部细节图待补充</b></div>
-          <div className="detail-placeholder"><span>DETAIL 05</span><b>局部细节图待补充</b></div>
-          <div className="detail-placeholder"><span>DETAIL 06</span><b>局部细节图待补充</b></div>
-        </div>
-      </section>
+        {project.video && (
+          <div className="project-video-frame">
+            <video controls playsInline preload="metadata" poster={project.image}>
+              <source src={project.video} type="video/mp4" />
+              你的浏览器暂不支持视频播放。
+            </video>
+          </div>
+        )}
+        <ProjectGallery gallery={project.gallery} projectId={project.id} projectTitle={project.title} />
+      </section>}
 
       <section className="next-game" data-reveal>
         <div><p>PROJECT COMPLETE / NEXT CASE</p><h2>继续浏览<br />下一个作品</h2></div>
@@ -149,4 +158,3 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     </main>
   );
 }
-

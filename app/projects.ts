@@ -14,6 +14,8 @@ export type Project = {
   approach: string;
   outcome: string;
   gallery: string[];
+  video?: string;
+  palette?: { hex: string; label: string; text?: 'light' | 'dark' }[];
   objectiveTitle?: string;
   objectiveSummary?: string;
   objectives?: { title: string; description: string }[];
@@ -23,12 +25,18 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id:'P01', slug:'spring-duck', title:'春游鸭上新', english:'SPRING OUTING', subtitle:'品牌春日视觉活动', category:'品牌视觉设计', year:'2024', role:'主视觉 / 电商 / 社交传播', image:'/projects/spring-duck.jpg', color:'#b7ff4a',
+    id:'P01', slug:'spring-duck', title:'春游鸭上新', english:'SPRING OUTING', subtitle:'品牌春日视觉活动', category:'品牌视觉设计', year:'2024', role:'主视觉 / 电商 / 社交传播', image:'/projects/spring-duck-gallery-01.webp', color:'#18aeea',
     summary:'以春游、户外与年轻社交为核心，把品牌鸭子角色带入明亮轻快的春日世界。',
     challenge:'在保持品牌识别的同时，为季节活动建立更鲜明、更容易传播的情绪记忆点。',
     approach:'以蓝天、草地和柔软三维角色构成主视觉，再将统一图形语言延展至详情页与移动端传播。',
     outcome:'形成从活动主画面到电商触点的完整视觉套系，让角色、产品与春游主题保持一致。',
-    gallery:['/projects/spring-duck-1.jpg','/projects/spring-duck-2.jpg','/projects/spring-duck-3.jpg'],
+    gallery:['/projects/spring-duck-gallery-01.webp','/projects/spring-duck-gallery-02.webp','/projects/spring-duck-gallery-03.webp'],
+    palette:[
+      { hex:'#18AEEA', label:'SKY', text:'dark' },
+      { hex:'#55D62E', label:'SPRING', text:'dark' },
+      { hex:'#FFE31A', label:'SUN', text:'dark' },
+      { hex:'#F7F8F2', label:'CLOUD', text:'dark' },
+    ],
     objectiveTitle:'明确目标，建立统一且具有春日记忆点的视觉表达。',
     objectiveSummary:'围绕“春游鸭”主题，从活动识别、信息传播与场景延展三个维度建立统一视觉体系，让角色、产品与春日氛围形成完整关联。',
     objectives:[
@@ -38,12 +46,12 @@ export const projects: Project[] = [
     ],
   },
   {
-    id:'P02', slug:'weilong', title:'卫龙联名活动', english:'WEILONG COLLAB', subtitle:'品牌联合营销视觉', category:'联名活动设计', year:'2024', role:'KV / 电商页面 / 传播物料', image:'/projects/weilong.jpg', color:'#ff5c35',
+    id:'P02', slug:'weilong', title:'卫龙联名活动', english:'WEILONG COLLAB', subtitle:'品牌联合营销视觉', category:'联名活动设计', year:'2024', role:'KV / 电商页面 / 传播物料', image:'/projects/weilong-gallery-01.webp', color:'#ff5c35',
     summary:'林里柠檬茶与卫龙围绕年轻消费群体展开联名合作，希望借助双方鲜明的品牌个性与产品特征，打造具有话题性和传播力的新品活动。设计需要在保留林里清爽活力调性的同时，融入卫龙“爆辣、趣味、强记忆”的品牌特征，让消费者快速感知联名关系与产品差异。',
     challenge:'在保留林里清爽活力调性的同时，融入卫龙“爆辣、趣味、强记忆”的品牌特征，让消费者快速感知联名关系与产品差异。',
     approach:'通过高识别度色彩、强对比构图与角色互动强化视觉记忆，并将统一语言延展至主视觉、电商页面及活动物料。',
     outcome:'使联名从单一产品合作转化为更具参与感和传播性的品牌体验。',
-    gallery:['/projects/weilong-1.jpg','/projects/weilong-2.jpg','/projects/weilong-3.jpg'],
+    gallery:['/projects/weilong-gallery-01.webp','/projects/weilong-gallery-02.webp','/projects/weilong-gallery-03.webp'],
     objectiveTitle:'围绕“清爽 × 爆辣”的反差体验，建立兼具双方品牌识别度的联名视觉体系。',
     objectiveSummary:'通过高识别度色彩、强对比构图与角色互动强化视觉记忆，并将统一语言延展至主视觉、电商页面及活动物料，使联名从单一产品合作转化为更具参与感和传播性的品牌体验。',
     objectives:[
@@ -53,12 +61,12 @@ export const projects: Project[] = [
     ],
   },
   {
-    id:'P03', slug:'bitter-melon', title:'清火苦瓜轻蔬茶', english:'BITTER MELON TEA', subtitle:'新品上市整合视觉', category:'新品上市', year:'2024', role:'主视觉 / 卖点表达 / 电商', image:'/projects/bitter-melon.jpg', color:'#86f26b',
+    id:'P03', slug:'bitter-melon', title:'清火苦瓜轻蔬茶', english:'BITTER MELON TEA', subtitle:'新品上市整合视觉', category:'新品上市', year:'2024', role:'主视觉 / 卖点表达 / 电商', image:'/projects/bitter-melon-gallery-01.webp', color:'#86f26b',
     summary:'把苦瓜的健康属性转译为清爽、有记忆点的新品视觉，强化轻负担与夏日饮用场景。',
     challenge:'在避免传统健康食品印象的同时，准确传达苦瓜与轻蔬茶的核心卖点。',
     approach:'运用低饱和奶油底色、清透绿色和放大的原料细节，建立年轻化的健康饮品形象。',
     outcome:'建立从新品 KV 到电商页面的清晰信息层级，兼顾产品识别、口味表达与促销传播。',
-    gallery:['/projects/bitter-melon-1.jpg','/projects/bitter-melon-2.jpg','/projects/bitter-melon-3.jpg'],
+    gallery:['/projects/bitter-melon-gallery-01.webp','/projects/bitter-melon-gallery-02.webp','/projects/bitter-melon-gallery-03.webp'],
   },
   {
     id:'P03-1', slug:'linlee-mini-store', title:'林里迷你门店', english:'LINLEE MINI STORE', subtitle:'品牌空间概念视觉', category:'品牌视觉设计', year:'2025', role:'空间概念 / 3D 视觉 / 品牌延展', image:'/projects/linlee-mini-store.jpg', color:'#9be23d',
@@ -134,7 +142,14 @@ export const projects: Project[] = [
     challenge:'在多角色、多赛车并行的设定下，既要保证每个角色拥有鲜明的造型与性格差异，又需要建立统一的赛车视觉语言，避免角色割裂、元素堆叠以及过度“蔬菜卡通化”。',
     approach:'以角色剪影、专属赛车、统一赛事视觉为核心，建立角色与车辆一一对应的识别系统，并延展至游戏界面、赛事场景、地图及商业周边，形成完整一致的 IP 世界观。',
     outcome:'完成可持续扩展的原创 IP 基础系统，为后续故事内容与商业衍生提供统一资产。',
-    gallery:['/projects/veggie-kingdom-1.jpg','/projects/veggie-kingdom-2.jpg','/projects/veggie-kingdom-3.jpg','/projects/veggie-kingdom-4.jpg','/projects/veggie-kingdom-5.jpg'],
+    gallery:[
+      '/projects/veggie-kingdom-gallery-01.webp','/projects/veggie-kingdom-gallery-02.webp','/projects/veggie-kingdom-gallery-03.webp',
+      '/projects/veggie-kingdom-gallery-04.webp','/projects/veggie-kingdom-gallery-05.webp','/projects/veggie-kingdom-gallery-06.webp',
+      '/projects/veggie-kingdom-gallery-07.webp','/projects/veggie-kingdom-gallery-08.webp','/projects/veggie-kingdom-gallery-09.webp',
+      '/projects/veggie-kingdom-gallery-10.webp','/projects/veggie-kingdom-gallery-11.webp','/projects/veggie-kingdom-gallery-12.webp',
+      '/projects/veggie-kingdom-gallery-13.webp','/projects/veggie-kingdom-gallery-14.webp','/projects/veggie-kingdom-gallery-15.webp',
+      '/projects/veggie-kingdom-gallery-16.webp','/projects/veggie-kingdom-gallery-17.webp',
+    ],
     objectiveTitle:'明确目标，建立统一且有记忆点的赛车 IP 视觉表达。',
     objectiveSummary:'围绕角色识别、赛事体验与商业延展三个维度展开，让不同内容在统一世界观下保持清晰、高效且具有持续扩展能力。',
     objectives:[
@@ -157,7 +172,8 @@ export const projects: Project[] = [
     challenge:'将赛事中的“always online”从抽象功能概念转化为可感知的情绪体验，同时让多场景叙事、角色关系与品牌价值保持清晰。',
     approach:'通过登山挑战、信号连接、好友响应与最终共同见证登顶的故事递进，结合视频通话、在线状态与多场景切换强化“Online”概念。',
     outcome:'完成一套适合活动封面与线上传播的雪山主题角色视觉。',
-    gallery:['/work/project-04-cover-v2.webp'],
+    gallery:['/projects/snow-online-gallery-01.webp','/projects/snow-online-gallery-02.webp'],
+    video:'/projects/snow-online-film.mp4',
     objectiveTitle:'明确目标，让一次登顶成为大家共同在线的时刻。',
     objectiveSummary:'围绕情绪共鸣、数字连接与品牌陪伴三个维度展开，让“Online”从功能概念转化为具有温度的生活体验。',
     objectives:[
@@ -172,7 +188,14 @@ export const projects: Project[] = [
     challenge:'让角色既保留独立性格与识别度，同时与 Sunny Dessert 的品牌气质、场景和应用保持统一。',
     approach:'从角色轮廓、标志动作与主色调出发，构建统一 2D 视觉体系，并延展至品牌 Logo、主视觉与周边物料。',
     outcome:'形成可延展到海报、菜单、包装和社交传播的原创餐厅 IP 主视觉。',
-    gallery:['/work/project-05-cover-v2.webp'],
+    gallery:[
+      '/projects/sunny-desserts-gallery-01.webp','/projects/sunny-desserts-gallery-02.webp','/projects/sunny-desserts-gallery-03.webp',
+      '/projects/sunny-desserts-gallery-04.webp','/projects/sunny-desserts-gallery-05.webp','/projects/sunny-desserts-gallery-06.webp',
+      '/projects/sunny-desserts-gallery-07.webp','/projects/sunny-desserts-gallery-08.webp','/projects/sunny-desserts-gallery-09.webp',
+      '/projects/sunny-desserts-gallery-10.webp','/projects/sunny-desserts-gallery-11.webp','/projects/sunny-desserts-gallery-12.webp',
+      '/projects/sunny-desserts-gallery-13.webp','/projects/sunny-desserts-gallery-14.webp','/projects/sunny-desserts-gallery-15.webp',
+      '/projects/sunny-desserts-gallery-16.webp','/projects/sunny-desserts-gallery-17.webp',
+    ],
     backgroundTitle:'从角色设定出发，找到品牌的核心记忆点。',
     hideObjectives:true,
   },
@@ -184,4 +207,3 @@ const featuredSlugs = ['veggie-kingdom', 'weilong', 'spring-duck', 'crayon-shin'
 export const featuredProjects = featuredSlugs
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => Boolean(project));
-
