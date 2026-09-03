@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/0cdsdb24l41c6.css","style"]
+:HL["/_next/static/chunks/0e--_2g42-iv~.css","style"]
 :HL["/work/project-05-cover-v2.webp","image"]
-:HL["/projects/spring-duck.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"sunny-restaurant","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"W09ampBpEgvvqwzPHAkrM"}
+:HL["/projects/spring-duck-gallery-01.webp","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"sunny-restaurant","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"eHe7OxKeXI9YMgPWSwFdf"}
