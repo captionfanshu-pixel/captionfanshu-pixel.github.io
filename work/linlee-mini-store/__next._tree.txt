@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/0e--_2g42-iv~.css","style"]
+:HL["/_next/static/chunks/0wf7bq5bswukh.css","style"]
 :HL["/projects/linlee-mini-store.jpg","image"]
 :HL["/projects/crayon-shin.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"linlee-mini-store","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"eHe7OxKeXI9YMgPWSwFdf"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"work","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"linlee-mini-store","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"MnsKYzVV3t2oWywKkgq3H"}
