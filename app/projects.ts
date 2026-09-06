@@ -107,7 +107,7 @@ export const projects: Project[] = [
     challenge:'在多种营销主题和空间尺寸中保持 IP 性格统一，同时让商品陈列足够清晰。',
     approach:'以高识别角色动作、彩色图形和模块化展架为核心，将线上内容与线下空间串联。',
     outcome:'形成覆盖内容传播、陈列道具、快闪空间与迷你店积木的系列化商业设计。',
-    gallery:['/projects/crayon-shin-1.jpg','/projects/crayon-shin-2.jpg','/projects/crayon-shin-3.jpg','/projects/crayon-shin-4.jpg','/projects/crayon-shin-5.jpg'],
+    gallery:['/projects/crayon-shin-2.jpg','/projects/crayon-shin-3.jpg'],
     palette:[
       { hex:'#1E3557', label:'INK', text:'light' },
       { hex:'#70D8FF', label:'SKY', text:'dark' },
