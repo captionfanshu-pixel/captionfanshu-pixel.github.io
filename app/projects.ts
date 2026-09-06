@@ -86,7 +86,7 @@ export const projects: Project[] = [
     challenge:'传统静态周边较难持续激发用户参与，需要在延续品牌识别的同时，把门店、店员与产品元素转化为具有互动性和收藏属性的衍生体验。',
     approach:'将真实门店、店员形象与品牌视觉拆解为模块化积木语言，通过统一结构与标志元素建立可拼装、可组合并可持续扩展的品牌场景。',
     outcome:'兼顾产品展示、包装传播与后续系列化延展，让消费者在拼装过程中重新体验品牌场景。',
-    gallery:['/projects/linlee-mini-store.jpg'],
+    gallery:['/projects/linlee-detail-01.jpg','/projects/linlee-detail-02.jpg','/projects/linlee-detail-03.jpg','/projects/linlee-detail-04.jpg'],
     palette:[
       { hex:'#2D5B34', label:'FOREST', text:'light' },
       { hex:'#9BE23D', label:'LIME', text:'dark' },
@@ -121,7 +121,7 @@ export const projects: Project[] = [
     challenge:'在有限的横版画面中兼顾角色表现、产品卖点与授权信息，让内容清楚且具有吸引力。',
     approach:'以红粉色场景、夸张角色表情和罐装造型为视觉核心，建立活泼鲜明的联名传播画面。',
     outcome:'建立兼具 IP 趣味与商品信息传达的详情页体系，使角色吸引力与产品卖点形成统一的消费视觉体验。',
-    gallery:['/projects/crayon-jar-flavor.jpg'],
+    gallery:['/projects/crayon-jar-flavor-detail.jpg'],
     palette:[
       { hex:'#7E1B27', label:'BERRY', text:'light' },
       { hex:'#FF5959', label:'TOMATO', text:'dark' },
@@ -142,7 +142,7 @@ export const projects: Project[] = [
     challenge:'在浅色梦幻画面中保持产品主体清晰，并让角色授权信息与促销卖点拥有明确层级。',
     approach:'运用紫粉渐变、透明泡泡和柔和云朵构建空间，通过集中构图放大产品与角色识别。',
     outcome:'建立从主视觉、角色展示到产品信息的完整详情页视觉体系，使 IP 情绪与商品卖点保持统一表达。',
-    gallery:['/projects/sanrio-magic-fruit.jpg'],
+    gallery:['/projects/sanrio-magic-fruit-detail.jpg'],
     palette:[
       { hex:'#5B3C8B', label:'PLUM', text:'light' },
       { hex:'#C9A0FF', label:'MAGIC', text:'dark' },
@@ -163,7 +163,7 @@ export const projects: Project[] = [
     challenge:'同时表达角色趣味、产品形态与比赛主题，让小尺寸 Banner 仍保持清晰的视觉焦点。',
     approach:'采用清爽蓝色、球场透视和庆典彩带强化运动气氛，以双角色对比形成画面中心。',
     outcome:'建立适合电商 Banner、活动宣传与系列产品延展的夏日联名视觉。',
-    gallery:['/projects/crayon-finger-football.jpg'],
+    gallery:['/projects/crayon-finger-football-detail.jpg'],
     palette:[
       { hex:'#164C8C', label:'LEAGUE', text:'light' },
       { hex:'#62D6FF', label:'SKY', text:'dark' },
