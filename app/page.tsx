@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState, type PointerEvent } from 'react';
+import { dailyPracticeCards } from './daily-projects';
 import { featuredProjects, type Project } from './projects';
 
 const fanPositions = [
@@ -69,15 +70,6 @@ const workPlaceholders: WorkPlaceholder[] = [
   { id: '03', key: 'work-03', slug: 'veggie-kingdom', title: 'VEGGIE KINGDOM', category: 'IP DESIGN', year: '2026', color: '#ff6f91', image: '/work/project-03-cover-v2.webp' },
   { id: '04', key: 'work-04', slug: 'snow-online', title: '雪山Online｜一起登顶', category: 'AI VIDEO', year: '2026', color: '#f3a46f', image: '/work/project-04-cover-v2.webp', type: 'AI VIDEO' },
   { id: '05', key: 'work-05', slug: 'sunny-restaurant', title: 'Sunny Desserts', category: 'IP DESIGN', year: '2025', color: '#8c77ff', image: '/work/project-05-cover-v2.webp' },
-];
-
-const dailyPracticeCards = [
-  { id: '01', title: 'DAILY 01', image: '/daily/01-v2.png', color: '#e9bd50', lift: '18px', rotate: '-6deg' },
-  { id: '02', title: 'DAILY 02', image: '/daily/02-v2.png', color: '#7bc9ca', lift: '2px', rotate: '-3deg' },
-  { id: '03', title: 'DAILY 03', image: '/daily/03-v2.png', color: '#66a9d5', lift: '-8px', rotate: '3deg' },
-  { id: '04', title: 'DAILY 04', image: '/daily/04-v2.png', color: '#70cf69', lift: '7px', rotate: '-2deg' },
-  { id: '05', title: 'DAILY 05', image: '/daily/05-v2.png', color: '#ef91bf', lift: '-2px', rotate: '5deg' },
-  { id: '06', title: 'DAILY 06', image: '/daily/06-v2.png', color: '#76bde7', lift: '20px', rotate: '7deg' },
 ];
 
 export default function Home() {
@@ -318,14 +310,12 @@ export default function Home() {
           </div>
           <div className="daily-card-stage" role="list" aria-label="日常练习卡片">
             {dailyPracticeCards.map((card, index) => (
-              <button
+              <a
                 className={`daily-practice-card ${dailyActive === index ? 'is-active' : ''}`}
                 key={card.id}
-                type="button"
                 role="listitem"
-                aria-pressed={dailyActive === index}
-                aria-label={`弹出${card.title}`}
-                onClick={() => setDailyActive(index)}
+                href={`/daily/${card.id}/`}
+                aria-label={`进入${card.title}作品页`}
                 style={{
                   '--daily-color': card.color,
                   '--daily-lift': card.lift,
@@ -334,7 +324,7 @@ export default function Home() {
                 } as React.CSSProperties}
               >
                 <img className="daily-card-art" src={card.image} alt={`${card.title} 练习作品`} />
-              </button>
+              </a>
             ))}
           </div>
         </div>
