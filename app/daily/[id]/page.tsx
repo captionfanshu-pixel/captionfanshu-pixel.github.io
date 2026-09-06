@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { dailyPracticeCards } from '../../daily-projects';
 
@@ -20,10 +21,28 @@ export default async function DailyProjectPage({ params }: { params: Promise<{ i
   const { id } = await params;
   const project = dailyPracticeCards.find((item) => item.id === id);
   if (!project) notFound();
+  const gallery = project.gallery ?? [project.image];
 
   return (
-    <main className="daily-detail-page">
-      <img className="daily-detail-image" src={project.image} alt={`${project.title}作品展示`} />
+    <main className="daily-detail-page" style={{ '--daily-color': project.color } as React.CSSProperties}>
+      <div className="daily-detail-shell">
+        <nav className="daily-detail-nav">
+          <Link href="/#gallery">← WUMI / DAILY ARCHIVE</Link>
+          <span>{project.id} / {String(dailyPracticeCards.length).padStart(2, '0')}</span>
+        </nav>
+        <section className="daily-detail-gallery" aria-label={`${project.title}图片展示`}>
+          {gallery.map((image, index) => (
+            <figure key={image}>
+              <img
+                src={image}
+                alt={`${project.title}作品图片 ${String(index + 1).padStart(2, '0')}`}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            </figure>
+          ))}
+        </section>
+      </div>
     </main>
   );
 }
