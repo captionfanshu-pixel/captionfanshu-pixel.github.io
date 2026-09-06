@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { projects } from '../../projects';
 import ProjectGallery from './project-gallery';
+import ProjectModel from './project-model';
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -119,9 +120,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
       <section className="manual-visual-showcase" data-reveal>
         <div className="chapter-label"><span>03 / 视觉展示</span><b>VISUAL SHOWCASE</b></div>
-        <figure className="showcase-hero-image">
+        {project.slug === 'crayon-shin' ? <ProjectModel poster={project.image} /> : <figure className="showcase-hero-image">
           <img src={project.image} alt={`${project.title}主视觉展示`} />
-        </figure>
+        </figure>}
         <div className="color-system">
           <div><small>COLOR COLLECTION</small><h2>项目视觉配色</h2></div>
           <div className="color-swatches" aria-label="项目配色">
@@ -158,3 +159,4 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     </main>
   );
 }
+
